@@ -145,6 +145,29 @@
     nav .brand{margin-right:8px;white-space:nowrap}
     nav .brand span{display:none}
   }
+
+  /* research illustrations */
+  .theme{padding:0;overflow:hidden;border-top:none;display:flex;flex-direction:column}
+  .theme .art{height:150px;background:var(--art-bg);border-bottom:1px solid var(--line)}
+  .theme .art svg{width:100%;height:100%;display:block}
+  .theme .body{padding:18px 22px 22px}
+  .theme .num{font-size:12px;font-weight:600;letter-spacing:.12em;color:var(--c);margin-bottom:4px}
+  .theme{--c:#0f5c6e;--art-bg:#e6f1f3}
+  .theme:nth-child(2){--c:#2f8f7a;--art-bg:#e5f2ee}
+  .theme:nth-child(3){--c:#b5651d;--art-bg:#f6ece1}
+  .theme:nth-child(4){--c:#6a5acd;--art-bg:#ecebf8}
+  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .theme{--art-bg:#1d2b30}
+    :root:not([data-theme="light"]) .theme:nth-child(2){--art-bg:#1c2d2a}
+    :root:not([data-theme="light"]) .theme:nth-child(3){--art-bg:#2d251d}
+    :root:not([data-theme="light"]) .theme:nth-child(4){--art-bg:#24223a}}
+  .art .c{stroke:var(--c);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .art .cf{fill:var(--c)}
+  .art .soil{fill:#c9a97a}.art .soil2{fill:#b38f5f}.art .soil3{fill:#9c7a4e}
+  .art .water{fill:#5aa9c4;opacity:.75}.art .water2{fill:#3d8fae;opacity:.6}
+  .art .ink{fill:var(--ink)}.art .muted{fill:var(--muted)}
+  .art .w{fill:var(--surface)}
+  .art .line{stroke:var(--muted);fill:none;stroke-width:1.4}
+  .art .dash{stroke:#3d8fae;stroke-width:2;fill:none;stroke-dasharray:6 5}
 </style>
 </head>
 <body>
@@ -203,24 +226,100 @@
     <h2>Research</h2>
     <div class="themes">
       <div class="theme">
-        <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3 3 8l9 5 9-5-9-5z"/><path d="m3 13 9 5 9-5"/><path d="m3 18 9 5 9-5" opacity=".5"/></svg></div>
+        <div class="art"><svg viewBox="0 0 400 150" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+<path class="soil" d="M0 40 L150 40 L185 95 L200 118 L0 118Z"/>
+<path class="soil2" d="M0 75 L172 75 L185 95 L200 118 L0 118Z"/>
+<path class="soil3" d="M0 100 L196 100 L200 118 L0 118Z"/>
+<path class="water" d="M175 104 Q200 98 225 104 T275 104 T330 104 T400 104 L400 150 L0 150 L0 118 L200 118Z"/>
+
+<g class="w" opacity=".55"><circle cx="30" cy="55" r="4"/><circle cx="45" cy="60" r="3"/><circle cx="62" cy="52" r="4.5"/><circle cx="80" cy="58" r="3"/><circle cx="98" cy="52" r="4"/><circle cx="116" cy="60" r="3.5"/><circle cx="134" cy="53" r="3"/><circle cx="40" cy="88" r="4"/><circle cx="60" cy="86" r="3"/><circle cx="85" cy="90" r="4.5"/><circle cx="110" cy="85" r="3"/><circle cx="135" cy="89" r="4"/><circle cx="160" cy="86" r="3"/></g>
+<path class="c" d="M150 40 L185 95" stroke-dasharray="4 4"/>
+<path class="c" d="M120 40 Q150 80 196 108" stroke-width="2.2"/>
+<g class="line" opacity=".8"><path d="M270 30 L320 18 M270 30 L320 48 M270 30 L320 78 M270 62 L320 18 M270 62 L320 48 M270 62 L320 78 M270 94 L320 48 M270 94 L320 78 M270 94 L320 18 M320 18 L370 48 M320 48 L370 48 M320 78 L370 48"/></g>
+<g class="cf"><circle cx="270" cy="30" r="7"/><circle cx="270" cy="62" r="7"/><circle cx="270" cy="94" r="7"/><circle cx="370" cy="48" r="8"/></g>
+<g class="w"><circle cx="320" cy="18" r="7"/><circle cx="320" cy="48" r="7"/><circle cx="320" cy="78" r="7"/></g>
+<g class="c"><circle cx="320" cy="18" r="7"/><circle cx="320" cy="48" r="7"/><circle cx="320" cy="78" r="7"/></g>
+<path class="c" d="M200 62 Q230 62 255 62" marker-end=""/><path class="c" d="M248 56 L256 62 L248 68"/>
+</svg></div>
+        <div class="body">
+        <div class="num">01</div>
         <h4>Physics-informed digital twins</h4>
         <p>Coupling granular mechanics with physics-informed neural networks to predict stability of coastal bluffs, foundations, bridge piers, and road and rail embankments under extreme loading, scour, and erosion, validated with new laboratory experiments.</p>
       </div>
+      </div>
       <div class="theme">
-        <div class="ico"><svg viewBox="0 0 24 24"><path d="M13 7 9 3 5 7l4 4"/><path d="m17 11 4 4-4 4-4-4"/><path d="m8 12 4 4 6-6-4-4-6 6z"/><path d="M5 21a4 4 0 0 0 4-4"/></svg></div>
+        <div class="art"><svg viewBox="0 0 400 150" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+<g class="muted" opacity=".5"><circle cx="40" cy="20" r="1.2"/><circle cx="90" cy="35" r="1"/><circle cx="350" cy="18" r="1.3"/><circle cx="380" cy="45" r="1"/><circle cx="20" cy="60" r="1"/></g>
+<path class="cf" d="M120 38 L245 118 L135 128Z" opacity=".14"/>
+<g transform="translate(108 22) rotate(-15)">
+<rect class="cf" x="-6" y="-8" width="16" height="16" rx="2"/>
+<rect class="w" x="-40" y="-6" width="30" height="12" rx="1"/><rect class="c" x="-40" y="-6" width="30" height="12" rx="1" stroke-width="1.6"/>
+<path class="line" d="M-30 -6 V6 M-20 -6 V6"/>
+<rect class="w" x="14" y="-6" width="30" height="12" rx="1"/><rect class="c" x="14" y="-6" width="30" height="12" rx="1" stroke-width="1.6"/>
+<path class="line" d="M24 -6 V6 M34 -6 V6"/>
+</g>
+<path class="water" d="M0 122 H400 V150 H0Z"/><path class="soil" d="M0 112 Q60 104 120 110 Q170 116 210 106 Q240 98 262 114 Q272 124 290 150 L0 150Z"/>
+<path class="water" d="M262 114 Q285 106 310 112 T370 110 T400 110 L400 150 L290 150 Q272 124 262 114Z"/>
+<path class="c" d="M140 118 Q175 120 205 110 Q230 102 255 113" stroke-dasharray="3 4" opacity=".9"/>
+<g transform="translate(300 54)">
+<path class="c" d="M-22 0 H22 M-14 0 V-6 M14 0 V-6"/><ellipse class="cf" cx="-14" cy="-8" rx="10" ry="2.5"/><ellipse class="cf" cx="14" cy="-8" rx="10" ry="2.5"/>
+<rect class="cf" x="-8" y="-3" width="16" height="9" rx="3"/>
+</g>
+<path class="c" d="M292 64 L276 104 M308 64 L324 104" stroke-dasharray="2 5" opacity=".8"/>
+<path class="line" d="M280 104 H322" stroke-width="2"/>
+</svg></div>
+        <div class="body">
+        <div class="num">02</div>
         <h4>Remote &amp; robotic sensing</h4>
         <p>Integrating NISAR/InSAR, satellite soil-moisture products, UAV, LiDAR, and autonomous robotic platforms for early detection of infrastructure failure and post-storm reconnaissance.</p>
       </div>
+      </div>
       <div class="theme">
-        <div class="ico"><svg viewBox="0 0 24 24"><path d="M2 12c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M2 17c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M2 7c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/></svg></div>
+        <div class="art"><svg viewBox="0 0 400 150" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+<g class="muted" opacity=".55"><ellipse cx="300" cy="26" rx="44" ry="15"/><ellipse cx="335" cy="20" rx="34" ry="14"/><ellipse cx="268" cy="30" rx="26" ry="11"/></g>
+<g class="line" stroke-width="1.6" opacity=".8"><path d="M262 46 L256 60 M282 48 L276 62 M302 46 L296 60 M322 48 L316 62 M342 46 L336 60 M362 44 L356 58"/></g>
+<path class="cf" d="M318 40 L310 56 L318 56 L311 72 L328 50 L320 50 L326 40Z" opacity=".9"/>
+<path class="soil" d="M0 92 L60 92 L130 60 L175 60 L240 106 L250 112 L0 112Z"/>
+<path class="soil2" d="M0 112 L250 112 L270 118 L400 118 L400 150 L0 150Z"/>
+<path class="w" d="M138 60 V42 L152 32 L166 42 V60Z"/><path class="c" d="M138 60 V42 L152 32 L166 42 V60" stroke-width="1.8"/><rect class="cf" x="148" y="48" width="8" height="12"/>
+<path class="water" d="M190 92 Q215 82 240 92 T290 90 T340 92 T400 90 L400 118 L270 118 L250 112 L215 92Z"/>
+<path class="water2" d="M215 86 Q235 74 258 84 T300 82" opacity=".5"/>
+<path class="w" d="M224 106 Q238 116 252 112 L250 112Z" opacity=".9"/>
+<path class="c" d="M226 104 Q240 118 256 112" stroke-width="2.2"/>
+<path class="dash" d="M0 128 Q120 122 230 126 T400 124"/>
+<path class="c" d="M60 30 C70 40 90 40 100 30" opacity=".0"/>
+
+</svg></div>
+        <div class="body">
+        <div class="num">03</div>
         <h4>Compound coastal hazards &amp; adaptation</h4>
         <p>Hydrologic change during erosion and scour under storm surge, extreme rainfall, groundwater rise, and freeze–thaw; nature-based solutions and beneficial use of dredged material.</p>
       </div>
+      </div>
       <div class="theme">
-        <div class="ico"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="10" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M15 20c0-2.5 1-4 3.5-4S22 17.5 22 20"/></svg></div>
+        <div class="art"><svg viewBox="0 0 400 150" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+<path class="water" d="M250 0 Q230 30 255 55 Q280 80 250 105 Q228 128 250 150 L400 150 L400 0Z" opacity=".55"/>
+<path class="c" d="M250 0 Q230 30 255 55 Q280 80 250 105 Q228 128 250 150" opacity=".6"/>
+<g class="line" opacity=".35"><path d="M0 50 H240 M0 100 H240 M80 0 V150 M160 0 V150"/></g>
+<g class="cf">
+<path d="M200 30 a9 9 0 1 1 18 0 c0 8 -9 18 -9 18 s-9 -10 -9 -18z"/>
+<path d="M222 82 a9 9 0 1 1 18 0 c0 8 -9 18 -9 18 s-9 -10 -9 -18z"/>
+<path d="M196 116 a9 9 0 1 1 18 0 c0 8 -9 18 -9 18 s-9 -10 -9 -18z"/>
+</g>
+<g class="w"><circle cx="209" cy="30" r="3.2"/><circle cx="231" cy="82" r="3.2"/><circle cx="205" cy="116" r="3.2"/></g>
+<path class="c" d="M150 40 Q175 35 198 34 M150 75 Q190 80 220 86 M150 110 Q170 118 194 120" stroke-dasharray="3 5" opacity=".75"/>
+<g transform="translate(60 0)">
+<g class="cf"><circle cx="40" cy="34" r="9"/><path d="M24 62 a16 14 0 0 1 32 0Z"/></g>
+<g class="muted"><circle cx="78" cy="70" r="9"/><path d="M62 98 a16 14 0 0 1 32 0Z"/></g>
+<g class="cf" opacity=".65"><circle cx="40" cy="104" r="9"/><path d="M24 132 a16 14 0 0 1 32 0Z"/></g>
+</g>
+<path class="line" d="M108 52 L130 66 M108 116 L130 98" stroke-width="1.6"/>
+</svg></div>
+        <div class="body">
+        <div class="num">04</div>
         <h4>Community-based coastal resilience</h4>
         <p>Co-developing research and decision tools with local communities, regional planning agencies, tribal governments, and state agencies.</p>
+      </div>
       </div>
     </div>
     <p class="muted" style="margin-top:18px">Other ongoing work: dynamic behavior of mine tailings, and remote-sensing-based prediction of earthquake-induced excess pore-water pressure. Earlier work centered on sustainable ground improvement of expansive and sulfate-rich soils, geosynthetics for pavements, and low-carbon stabilizers.</p>
