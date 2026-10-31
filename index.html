@@ -86,13 +86,72 @@
   .muted{color:var(--muted)}
 
   footer{padding:36px 0 60px;font-size:14px;color:var(--muted)}
+
+  /* ---------- visual refresh ---------- */
+  :root{--deep:#0b3d4a;--deep2:#0f5c6e;--sand:#f3ede2}
+  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--deep:#0a2a33;--deep2:#0d4250;--sand:#1b2327}}
+  nav{background:color-mix(in srgb,var(--bg) 88%,transparent)}
+  nav .brand{display:flex;align-items:center;gap:10px}
+  nav .brand i{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:8px;
+     background:var(--deep2);color:#fff;font-style:normal;font-size:13px;letter-spacing:.02em}
+  header.hero{position:relative;overflow:hidden;color:#eef6f7;border-bottom:none;padding:84px 0 120px;
+     background:
+       url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='420' viewBox='0 0 1200 420'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='0.09' stroke-width='1.2'%3E%3Cpath d='M0 300 C200 260 350 340 600 290 S1000 240 1200 280'/%3E%3Cpath d='M0 325 C200 285 350 365 600 315 S1000 265 1200 305'/%3E%3Cpath d='M0 350 C200 310 350 390 600 340 S1000 290 1200 330'/%3E%3Cpath d='M0 375 C200 335 350 415 600 365 S1000 315 1200 355'/%3E%3Cpath d='M0 400 C200 360 350 440 600 390 S1000 340 1200 380'/%3E%3Cpath d='M0 60 C250 110 450 20 700 70 S1050 120 1200 80'/%3E%3Cpath d='M0 85 C250 135 450 45 700 95 S1050 145 1200 105'/%3E%3Cpath d='M0 110 C250 160 450 70 700 120 S1050 170 1200 130'/%3E%3Cpath d='M0 135 C250 185 450 95 700 145 S1050 195 1200 155'/%3E%3C/g%3E%3C/svg%3E") center/cover no-repeat,
+       radial-gradient(1000px 500px at 85% 0%, #1a7f93 0%, transparent 60%),
+       linear-gradient(160deg,var(--deep2),var(--deep));}
+  header.hero .eyebrow{display:inline-block;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+     color:#9fd8e3;border:1px solid rgba(159,216,227,.35);border-radius:999px;padding:5px 12px;margin-bottom:22px}
+  header.hero h1{color:#fff}
+  header.hero .role{color:#bcd9de}
+  header.hero .lede{color:#e4f1f3}
+  header.hero .btn{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.22);color:#fff}
+  header.hero .btn:hover{background:#fff;color:var(--deep);border-color:#fff}
+  header.hero .btn.primary{background:#fff;color:var(--deep);border-color:#fff}
+  header.hero .btn.primary:hover{background:#d8eef2}
+  .statband{position:relative;margin-top:-64px;z-index:2}
+  .statband .stats{margin-top:0;background:var(--surface);border:1px solid var(--line);border-radius:14px;
+     box-shadow:0 12px 30px rgba(11,61,74,.10);padding:8px;gap:0}
+  .statband .stat{border:none;background:transparent;text-align:center;padding:16px 10px;border-radius:0}
+  .statband .stat + .stat{border-left:1px solid var(--line)}
+  @media (max-width:640px){.statband .stat + .stat{border-left:none}}
+  .statband .note{font-size:12px;color:var(--muted);text-align:right;margin:8px 4px 0}
+  .kicker{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 6px}
+  section h2{position:relative}
+  section.alt{background:var(--sand)}
+  .theme{border-left:none;border-top:3px solid var(--accent);padding:22px;transition:transform .15s,box-shadow .15s}
+  .theme:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(11,61,74,.10)}
+  .theme .ico{width:42px;height:42px;border-radius:10px;background:var(--accent-soft);display:grid;place-items:center;margin-bottom:12px}
+  .theme .ico svg{width:22px;height:22px;stroke:var(--accent);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .theme:nth-child(2){border-top-color:#2f8f7a} .theme:nth-child(3){border-top-color:#b5651d} .theme:nth-child(4){border-top-color:#6a5acd}
+  .featured{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-bottom:10px}
+  .fp{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px 20px;color:var(--ink)}
+  .fp:hover{border-color:var(--accent);text-decoration:none;box-shadow:0 8px 20px rgba(11,61,74,.08)}
+  .fp .v{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+  .fp .t{font-family:var(--serif);font-size:17px;line-height:1.4;margin-bottom:10px;flex:1}
+  .fp .a{font-size:13px;color:var(--muted)}
+  .fp .a b{color:var(--ink);font-weight:600}
+  .fp .go{font-size:13px;font-weight:600;color:var(--accent);margin-top:10px}
+  section#contact .card{background:linear-gradient(160deg,var(--deep2),var(--deep));color:#e4f1f3;border-radius:14px;padding:30px 32px}
+  section#contact .card a{color:#fff;text-decoration:underline}
+  section#contact .card .muted{color:#bcd9de}
+  footer{border-top:1px solid var(--line)}
+  .stat span{display:block;line-height:1.35}
+  .themes,.featured{grid-template-columns:repeat(2,1fr)}
+  @media (max-width:700px){.themes,.featured{grid-template-columns:1fr}}
+  @media (max-width:640px){
+    nav .wrap{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}
+    nav .wrap::-webkit-scrollbar{display:none}
+    nav a.l{white-space:nowrap}
+    nav .brand{margin-right:8px;white-space:nowrap}
+    nav .brand span{display:none}
+  }
 </style>
 </head>
 <body>
 
 <nav>
   <div class="wrap">
-    <a class="brand" href="#top">N. Biswas</a>
+    <a class="brand" href="#top"><i>NB</i><span>Nripojyoti Biswas</span></a>
     <a class="l" href="#research">Research</a>
     <a class="l" href="#publications">Publications</a>
     <a class="l" href="#funding">Funding</a>
@@ -104,12 +163,13 @@
 
 <header class="hero" id="top">
   <div class="wrap">
+    <span class="eyebrow">Coastal Geotechnics · Physics-Informed ML · Remote Sensing</span>
     <h1>Nripojyoti Biswas, Ph.D.</h1>
     <p class="role">Assistant Professor, Civil &amp; Environmental Engineering · University of Massachusetts Lowell</p>
     <p class="lede">I study how coastal geo-infrastructure fails under storms, erosion, and changing hydrology, and how to see it coming. My group couples granular mechanics with physics-informed machine learning, satellite and robotic sensing, and laboratory experiments to build digital twins for bluffs, foundations, bridges, and embankments.</p>
     <div class="links">
       <!-- LINK: Google Scholar profile -->
-      <a class="btn" href="https://scholar.google.com/citations?user=0a7NCGIAAAAJ&amp;hl=en" target="_blank" rel="noopener">
+      <a class="btn primary" href="https://scholar.google.com/citations?user=0a7NCGIAAAAJ&amp;hl=en" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.84 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.16 4.44L24 9.5z"/></svg>Google Scholar</a>
       <!-- LINK: ORCID profile -->
       <a class="btn" href="https://orcid.org/0000-0001-5548-1292" target="_blank" rel="noopener">
@@ -121,36 +181,44 @@
         <svg viewBox="0 0 24 24"><path d="M2 4h20v16H2zm10 8.5L4 7v11h16V7z"/></svg>Email</a>
     </div>
 
+  </div>
+</header>
+
+<div class="statband"><div class="wrap">
     <div class="stats">
-      <div class="stat"><b>21</b><span>Journal articles</span></div>
+      <div class="stat"><b>22</b><span>Journal articles</span></div>
       <div class="stat"><b>36</b><span>GSP &amp; conference papers</span></div>
       <div class="stat"><b>666</b><span>Citations</span></div>
       <div class="stat"><b>15</b><span>h-index</span></div>
       <div class="stat"><b>1</b><span>US patent application</span></div>
     </div>
-    <p class="muted" style="font-size:13px;margin:10px 0 0">Citation metrics as of October 2026.</p>
-  </div>
-</header>
+    <p class="note">Citation metrics from Google Scholar, October 2026</p>
+</div></div>
 
 <main>
 
 <section id="research">
   <div class="wrap">
+    <p class="kicker">What I work on</p>
     <h2>Research</h2>
     <div class="themes">
       <div class="theme">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3 3 8l9 5 9-5-9-5z"/><path d="m3 13 9 5 9-5"/><path d="m3 18 9 5 9-5" opacity=".5"/></svg></div>
         <h4>Physics-informed digital twins</h4>
         <p>Coupling granular mechanics with physics-informed neural networks to predict stability of coastal bluffs, foundations, bridge piers, and road and rail embankments under extreme loading, scour, and erosion, validated with new laboratory experiments.</p>
       </div>
       <div class="theme">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M13 7 9 3 5 7l4 4"/><path d="m17 11 4 4-4 4-4-4"/><path d="m8 12 4 4 6-6-4-4-6 6z"/><path d="M5 21a4 4 0 0 0 4-4"/></svg></div>
         <h4>Remote &amp; robotic sensing</h4>
         <p>Integrating NISAR/InSAR, satellite soil-moisture products, UAV, LiDAR, and autonomous robotic platforms for early detection of infrastructure failure and post-storm reconnaissance.</p>
       </div>
       <div class="theme">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M2 12c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M2 17c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M2 7c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/></svg></div>
         <h4>Compound coastal hazards &amp; adaptation</h4>
         <p>Hydrologic change during erosion and scour under storm surge, extreme rainfall, groundwater rise, and freeze–thaw; nature-based solutions and beneficial use of dredged material.</p>
       </div>
       <div class="theme">
+        <div class="ico"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="10" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M15 20c0-2.5 1-4 3.5-4S22 17.5 22 20"/></svg></div>
         <h4>Community-based coastal resilience</h4>
         <p>Co-developing research and decision tools with local communities, regional planning agencies, tribal governments, and state agencies.</p>
       </div>
@@ -189,9 +257,18 @@
   </div>
 </section>
 
-<section id="publications">
+<section id="publications" class="alt">
   <div class="wrap">
+    <p class="kicker">Scholarship</p>
     <h2>Publications</h2>
+
+    <h3 style="margin-top:0">Selected publications</h3>
+    <div class="featured">
+      <a class="fp" href="https://doi.org/10.1139/cgj-2025-0118" target="_blank" rel="noopener"><span class="v">Canadian Geotechnical Journal · 2025</span><span class="t">Deep learning based surrogate model to estimate scour around slab-on-grade foundations subjected to flooding conditions</span><span class="a">Raj Chimauriya, H., <b>Biswas, N.</b>, Puppala, A.J., Gajurel, A.</span><span class="go">Read paper →</span></a>
+      <a class="fp" href="https://doi.org/10.1061/JGGEFK.GTENG-10999" target="_blank" rel="noopener"><span class="v">J. Geotech. Geoenviron. Eng. · 2023</span><span class="t">Role of nano- and crystalline silica to accelerate chemical treatment of problematic soil</span><span class="a"><b>Biswas, N.</b>, Puppala, A.J., Chakraborty, S.</span><span class="go">Read paper →</span></a>
+      <a class="fp" href="https://doi.org/10.1139/cgj-2023-0051" target="_blank" rel="noopener"><span class="v">Canadian Geotechnical Journal · 2024</span><span class="t">Micro-mechanical behavior of nano-silica in suppressing ettringite-induced heave</span><span class="a"><b>Biswas, N.</b>, Puppala, A.J., Chakraborty, S., Little, D.</span><span class="go">Read paper →</span></a>
+      <a class="fp" href="https://doi.org/10.1177/0361198124123053" target="_blank" rel="noopener"><span class="v">Transportation Research Record · 2024</span><span class="t">Application of satellite-based remote sensing for the management of pavement infrastructure assets</span><span class="a">Gajurel, A., Puppala, A.J., <b>Biswas, N.</b>, Chimauriya, H.</span><span class="go">Read paper →</span></a>
+    </div>
 
     <h3>Patent</h3>
     <ul class="plain">
@@ -336,6 +413,7 @@
 
 <section id="funding">
   <div class="wrap">
+    <p class="kicker">Support</p>
     <h2>Funding</h2>
     <h3 style="margin-top:0">Awarded</h3>
     <ul class="plain">
@@ -349,8 +427,9 @@
   </div>
 </section>
 
-<section id="teaching">
+<section id="teaching" class="alt">
   <div class="wrap">
+    <p class="kicker">Students &amp; classroom</p>
     <h2>Teaching &amp; Mentoring</h2>
     <div class="grid2">
       <div>
@@ -383,6 +462,7 @@
 
 <section id="service">
   <div class="wrap">
+    <p class="kicker">Profession &amp; community</p>
     <h2>Service</h2>
     <div class="grid2">
       <div>
@@ -420,10 +500,13 @@
 
 <section id="contact" style="border-bottom:none">
   <div class="wrap">
+    <p class="kicker">Get in touch</p>
     <h2>Contact</h2>
+    <div class="card">
     <p style="margin:0">Department of Civil and Environmental Engineering<br>University of Massachusetts Lowell<br>
     <a href="mailto:Nripojyoti_Biswas@uml.edu">Nripojyoti_Biswas@uml.edu</a></p>
     <p class="muted" style="margin-top:14px">Prospective students interested in coastal geotechnics, physics-informed machine learning, or remote sensing are welcome to get in touch.</p>
+    </div>
   </div>
 </section>
 
