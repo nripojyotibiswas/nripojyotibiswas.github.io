@@ -1,31 +1,437 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dr. Biswas's Research Group</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nripojyoti Biswas, Ph.D. | Coastal Geotechnics &amp; Geosystems</title>
+<meta name="description" content="Nripojyoti Biswas, Assistant Professor of Civil and Environmental Engineering at UMass Lowell. Research on physics-informed digital twins, remote sensing, and resilience of coastal geo-infrastructure.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* ============================================================
+     EDIT YOUR LINKS HERE: search this file for "LINK:" comments.
+     ============================================================ */
+  :root{
+    --bg:#fbfaf7; --surface:#ffffff; --ink:#1c2328; --muted:#5b6670; --line:#e3e0d8;
+    --accent:#0f5c6e; --accent-soft:#e3eff1; --mark:#b5651d;
+    --serif:"Source Serif 4", Georgia, serif; --sans:"Inter", system-ui, -apple-system, sans-serif;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#12171a; --surface:#182024; --ink:#e6eaec; --muted:#9aa7ae; --line:#2a3439;
+      --accent:#6cc0d1; --accent-soft:#1d3238; --mark:#e0a060;
+    }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth; scroll-padding-top:72px}
+  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 var(--sans)}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:920px;margin:0 auto;padding:0 20px}
+
+  nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 92%,transparent);
+      backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;gap:4px 18px;align-items:center;flex-wrap:wrap;padding-top:12px;padding-bottom:12px}
+  nav .brand{font-family:var(--serif);font-weight:700;color:var(--ink);margin-right:auto}
+  nav a.l{font-size:14px;color:var(--muted)}
+  nav a.l:hover{color:var(--accent);text-decoration:none}
+
+  header.hero{padding:64px 0 40px;border-bottom:1px solid var(--line)}
+  h1{font-family:var(--serif);font-size:clamp(32px,5vw,46px);line-height:1.15;margin:0 0 8px;letter-spacing:-.01em}
+  .role{font-size:18px;color:var(--muted);margin:0 0 22px}
+  .lede{font-family:var(--serif);font-size:20px;line-height:1.6;max-width:720px;margin:0 0 26px}
+  .links{display:flex;flex-wrap:wrap;gap:10px}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border:1px solid var(--line);
+       border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;font-weight:500}
+  .btn:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+  .btn svg{width:16px;height:16px;fill:currentColor}
+
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin-top:34px}
+  .stat{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+  .stat b{display:block;font-family:var(--serif);font-size:26px;color:var(--accent)}
+  .stat span{font-size:13px;color:var(--muted)}
+
+  section{padding:52px 0;border-bottom:1px solid var(--line)}
+  h2{font-family:var(--serif);font-size:28px;margin:0 0 22px}
+  h3{font-family:var(--sans);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:30px 0 12px}
+
+  .themes{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+  .theme{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:8px;padding:18px 20px}
+  .theme h4{font-family:var(--serif);font-size:18px;margin:0 0 6px}
+  .theme p{margin:0;font-size:15px;color:var(--muted)}
+
+  .timeline{list-style:none;margin:0;padding:0}
+  .timeline li{display:grid;grid-template-columns:120px 1fr;gap:16px;padding:8px 0}
+  .timeline .yr{color:var(--muted);font-variant-numeric:tabular-nums;font-size:15px}
+  @media (max-width:560px){.timeline li{grid-template-columns:1fr;gap:0}}
+
+  ol.pubs{margin:0;padding-left:1.6em}
+  ol.pubs li{margin:0 0 12px;padding-left:4px}
+  .me{font-weight:600}
+  .venue{font-style:italic}
+  .doi{font-size:13px;white-space:nowrap}
+  .tag{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;
+       padding:1px 7px;border-radius:4px;background:var(--accent-soft);color:var(--accent);margin-left:6px;vertical-align:1px}
+  .tag.p{background:transparent;border:1px solid var(--mark);color:var(--mark)}
+
+  details{border:1px solid var(--line);border-radius:8px;background:var(--surface);margin:14px 0}
+  summary{cursor:pointer;padding:14px 18px;font-weight:600}
+  details > div{padding:4px 18px 16px}
+
+  ul.plain{margin:0;padding-left:1.2em}
+  ul.plain li{margin-bottom:6px}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+  @media (max-width:700px){.grid2{grid-template-columns:1fr}}
+  .muted{color:var(--muted)}
+
+  footer{padding:36px 0 60px;font-size:14px;color:var(--muted)}
+</style>
 </head>
 <body>
-  <h1>About Me</h1>
 
-    <p>I am currently working as an Assistant Professor in the Department of Civil and Environmental Engineering at The University of Massachusetts Lowell (UMass-L). </p>
-    <p>My doctoral research was primarily focused on the application of novel materials to improve the performance of inferior geomaterials and expansive soils in particular. 
-    During his doctoral studies, I was also extensively involved in several other projects related to the in-situ application of other 
-    novel construction materials such as geosynthetics and geopolymers. During my M.Tech, I worked on numerical and analytical
-    modeling for improving the bearing capacity of shallow foundations using geotextile reinforcement. My current research interest 
-    includes soil stabilization, ground improvement, application of geosynthetics, and the development of sustainable and resilient infrastructures.</p>
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top">N. Biswas</a>
+    <a class="l" href="#research">Research</a>
+    <a class="l" href="#publications">Publications</a>
+    <a class="l" href="#funding">Funding</a>
+    <a class="l" href="#teaching">Teaching &amp; Mentoring</a>
+    <a class="l" href="#service">Service</a>
+    <a class="l" href="#contact">Contact</a>
+  </div>
+</nav>
 
-<h1>Education and Qualification</h1>
- <p> Updating soon </p> 
-<h1>Professional Experience</h1>
-<p> Updating soon </p> 
-<h1>Honors & Awards </h1>
-<p> Updating soon </p> 
-<h1>Honors & Awards </h1>
-<p> Updating soon </p>
-<h1>List of Publications</h1>
-<p> Updating soon </p>
-<h1>Ongoing Research </h1>
-<p> Updating soon </p> 
+<header class="hero" id="top">
+  <div class="wrap">
+    <h1>Nripojyoti Biswas, Ph.D.</h1>
+    <p class="role">Assistant Professor, Civil &amp; Environmental Engineering · University of Massachusetts Lowell</p>
+    <p class="lede">I study how coastal geo-infrastructure fails under storms, erosion, and changing hydrology, and how to see it coming. My group couples granular mechanics with physics-informed machine learning, satellite and robotic sensing, and laboratory experiments to build digital twins for bluffs, foundations, bridges, and embankments.</p>
+    <div class="links">
+      <!-- LINK: Google Scholar profile -->
+      <a class="btn" href="https://scholar.google.com/citations?user=0a7NCGIAAAAJ&amp;hl=en" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.84 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.16 4.44L24 9.5z"/></svg>Google Scholar</a>
+      <!-- LINK: ORCID profile -->
+      <a class="btn" href="https://orcid.org/0000-0001-5548-1292" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24zM7.4 17.6H5.9V7.4h1.5zm-.75-11.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2zM18.3 12.5c0 2.9-2 5.1-5.3 5.1H9.3V7.4H13c3.4 0 5.3 2.3 5.3 5.1zm-1.6 0c0-1.9-1.2-3.7-3.8-3.7h-2.1v7.4h2.1c2.4 0 3.8-1.6 3.8-3.7z"/></svg>ORCID</a>
+      <!-- LINK: University profile -->
+      <a class="btn" href="https://www.uml.edu/research/biswas-geosystems-research-group/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M12 2 1 7l11 5 9-4.1V15h2V7zM5 13.2V17c0 1.7 3.1 3 7 3s7-1.3 7-3v-3.8l-7 3.2z"/></svg>Research Group (UML)</a>
+      <a class="btn" href="mailto:Nripojyoti_Biswas@uml.edu">
+        <svg viewBox="0 0 24 24"><path d="M2 4h20v16H2zm10 8.5L4 7v11h16V7z"/></svg>Email</a>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><b>21</b><span>Journal articles</span></div>
+      <div class="stat"><b>36</b><span>GSP &amp; conference papers</span></div>
+      <div class="stat"><b>666</b><span>Citations</span></div>
+      <div class="stat"><b>15</b><span>h-index</span></div>
+      <div class="stat"><b>1</b><span>US patent application</span></div>
+    </div>
+    <p class="muted" style="font-size:13px;margin:10px 0 0">Citation metrics as of October 2026.</p>
+  </div>
+</header>
+
+<main>
+
+<section id="research">
+  <div class="wrap">
+    <h2>Research</h2>
+    <div class="themes">
+      <div class="theme">
+        <h4>Physics-informed digital twins</h4>
+        <p>Coupling granular mechanics with physics-informed neural networks to predict stability of coastal bluffs, foundations, bridge piers, and road and rail embankments under extreme loading, scour, and erosion, validated with new laboratory experiments.</p>
+      </div>
+      <div class="theme">
+        <h4>Remote &amp; robotic sensing</h4>
+        <p>Integrating NISAR/InSAR, satellite soil-moisture products, UAV, LiDAR, and autonomous robotic platforms for early detection of infrastructure failure and post-storm reconnaissance.</p>
+      </div>
+      <div class="theme">
+        <h4>Compound coastal hazards &amp; adaptation</h4>
+        <p>Hydrologic change during erosion and scour under storm surge, extreme rainfall, groundwater rise, and freeze–thaw; nature-based solutions and beneficial use of dredged material.</p>
+      </div>
+      <div class="theme">
+        <h4>Community-based coastal resilience</h4>
+        <p>Co-developing research and decision tools with local communities, regional planning agencies, tribal governments, and state agencies.</p>
+      </div>
+    </div>
+    <p class="muted" style="margin-top:18px">Other ongoing work: dynamic behavior of mine tailings, and remote-sensing-based prediction of earthquake-induced excess pore-water pressure. Earlier work centered on sustainable ground improvement of expansive and sulfate-rich soils, geosynthetics for pavements, and low-carbon stabilizers.</p>
+
+    <div class="grid2">
+      <div>
+        <h3>Appointments</h3>
+        <ul class="timeline">
+          <li><span class="yr">2024 – present</span><span>Assistant Professor, Civil &amp; Environmental Engineering, UMass Lowell</span></li>
+          <li><span class="yr">2023 – 2024</span><span>Senior Research Engineer I &amp; Instructional Lecturer, Texas A&amp;M University</span></li>
+          <li><span class="yr">2022 – 2023</span><span>Postdoctoral Researcher &amp; Alternate Instructor, Texas A&amp;M University</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Education</h3>
+        <ul class="timeline">
+          <li><span class="yr">2022</span><span>Ph.D., Civil Engineering, Texas A&amp;M University</span></li>
+          <li><span class="yr">2017</span><span>M.Tech., Civil Engineering, IIT Kanpur</span></li>
+          <li><span class="yr">2013</span><span>B.E., Civil Engineering, IIEST Shibpur</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Honors &amp; Awards</h3>
+    <ul class="timeline">
+      <li><span class="yr">2025</span><span>USUCGER Early Career Workshop Awardee</span></li>
+      <li><span class="yr">2025</span><span>ASCE ExCEEd (Excellence in Civil Engineering Education) Fellow</span></li>
+      <li><span class="yr">2021</span><span>Terracon Endowed Fellowship in Geotechnical Engineering</span></li>
+      <li><span class="yr">2020</span><span>Hooper Fellowship in Geotechnical Engineering</span></li>
+      <li><span class="yr">2020</span><span>Geo-Institute Travel Award (Geo-Congress)</span></li>
+      <li><span class="yr">2020</span><span>Zachry Department of Civil &amp; Environmental Engineering Travel Award (TRB)</span></li>
+      <li><span class="yr">2019</span><span>Academic Excellence Award, Outstanding Civil Engineering Ph.D. Student, UT Arlington</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="publications">
+  <div class="wrap">
+    <h2>Publications</h2>
+
+    <h3>Patent</h3>
+    <ul class="plain">
+      <li>Method of Testing Infrastructure Materials Encompassing All Seasonal Cycles. US 2026/0057126 A1. <span class="tag p">Under review</span></li>
+    </ul>
+
+    <h3>Journal Articles</h3>
+    <ol class="pubs" reversed>
+      <li>Samridh, Chakraborty, S., <span class="me">Biswas, N.</span> Systematic investigations on autogenous healing of chemically treated soils. <span class="venue">Canadian Geotechnical Journal</span>. <span class="tag p">Under review</span></li>
+      <li>Gonnabathula, S.S.A., <span class="me">Biswas, N.</span>, Rameneni, K., Sadiq, M.F., Velasquez, R., Puppala, A.J. (2026). Evaluating the drainage performance of wicking geotextile under freeze–thaw conditions below pavement infrastructure. <span class="venue">Transportation Research Record</span>. <a class="doi" href="https://doi.org/10.1177/03611981261427737">DOI</a></li>
+      <li>Raj Chimauriya, H., <span class="me">Biswas, N.</span>, Puppala, A.J., Gajurel, A. (2025). Deep learning based surrogate model to estimate scour around slab-on-grade foundations subjected to flooding conditions. <span class="venue">Canadian Geotechnical Journal</span>, 62, 1–17. <a class="doi" href="https://doi.org/10.1139/cgj-2025-0118">DOI</a></li>
+      <li>Puppala, A.J., <span class="me">Biswas, N.</span>, Khan, M.A., Congress, S.S.C. (2025). Experimental investigations and sustainability assessments of ground improvement studies of expansive soils. <span class="venue">Soils and Foundations</span>, 65(4), 101637. <a class="doi" href="https://doi.org/10.1016/j.sandf.2025.101637">DOI</a></li>
+      <li>Sanei, M., <span class="me">Biswas, N.</span>, Chou, S., Puppala, A.J. (2025). Utilizing recycled concrete aggregate fines as co-additives in low-carbon cement for problematic soil stabilization. <span class="venue">Transportation Research Record</span>. <a class="doi" href="https://doi.org/10.1177/03611981251347627">DOI</a></li>
+      <li>Chou, S., Puppala, A.J., <span class="me">Biswas, N.</span>, Huang, O., Radovic, M. (2025). Role of calcined-clay-based geopolymers for effective stabilization of expansive soils. <span class="venue">Canadian Geotechnical Journal</span>. <a class="doi" href="https://doi.org/10.1139/cgj-2024-0577">DOI</a></li>
+      <li>Kumar, A., <span class="me">Biswas, N.</span>, Puppala, A.J., Mebarkia, B. (2025). Forensic investigation and chemical remediation of a collapsed highway embankment slope in Houston, Texas. <span class="venue">Transportation Geotechnics</span>, 51, 101503. <a class="doi" href="https://doi.org/10.1016/j.trgeo.2025.101503">DOI</a></li>
+      <li><span class="me">Biswas, N.</span>, Puppala, A.J., Chakraborty, S., et al. (2024). Ground improvement studies on problematic soils: Innovative materials with sustainable applications. <span class="venue">Indian Geotechnical Journal</span>. <a class="doi" href="https://doi.org/10.1007/s40098-024-01085-3">DOI</a></li>
+      <li><span class="me">Biswas, N.</span>, Puppala, A.J., Chakraborty, S., Little, D. (2024). Micro-mechanical behavior of nano-silica in suppressing ettringite-induced heave. <span class="venue">Canadian Geotechnical Journal</span>. <a class="doi" href="https://doi.org/10.1139/cgj-2023-0051">DOI</a></li>
+      <li><span class="me">Biswas, N.</span>, Puppala, A.J., Chakraborty, S. (2024). Experimental studies and sustainability assessments of quarry dust for chemical treatment of expansive soils. <span class="venue">Geotechnical Testing Journal</span>, 47(1), 20220243. <a class="doi" href="https://doi.org/10.1520/GTJ20220243">DOI</a></li>
+      <li>Gajurel, A., Puppala, A.J., <span class="me">Biswas, N.</span>, Chimauriya, H. (2024). Application of satellite-based remote sensing for the management of pavement infrastructure assets. <span class="venue">Transportation Research Record</span>. <a class="doi" href="https://doi.org/10.1177/0361198124123053">DOI</a></li>
+      <li>Chou, S., <span class="me">Biswas, N.</span>, Puppala, A.J., Huang, O., Radovic, M. (2024). Evaluation of locally available calcined clay-based geopolymer for stabilization of expansive soils. <span class="venue">Transportation Research Record</span>. <a class="doi" href="https://doi.org/10.1177/03611981241235189">DOI</a></li>
+      <li>Kumar, P., Puppala, A.J., <span class="me">Biswas, N.</span>, Congress, S.S.C., Tingle, J.S., Little, D.N. (2024). Assessment of durability of chemically stabilized soils using different moisture-susceptible methods. <span class="venue">Transportation Research Record</span>, 2678, 1454–1467. <a class="doi" href="https://doi.org/10.1177/03611981241244795">DOI</a></li>
+      <li><span class="me">Biswas, N.</span>, Puppala, A.J., Chakraborty, S. (2023). Role of nano- and crystalline silica to accelerate chemical treatment of problematic soil. <span class="venue">Journal of Geotechnical and Geoenvironmental Engineering</span>, 149(7). <a class="doi" href="https://doi.org/10.1061/JGGEFK.GTENG-10999">DOI</a></li>
+      <li><span class="me">Biswas, N.</span>, Puppala, A.J., Ramineni, K. (2023). Durability and permanency studies in sulfate-laden soils treated with nano- and crystalline silica-based admixtures. <span class="venue">Journal of Materials in Civil Engineering</span>. <a class="doi" href="https://doi.org/10.1061/JMCEE7.MTENG-16456">DOI</a></li>
+      <li>Khan, M.A., Puppala, A.J., <span class="me">Biswas, N.</span>, Congress, S.S.C. (2023). Evaluation of structural performance of the geocell reinforced flexible pavement. <span class="venue">Transportation Geotechnics</span>. <a class="doi" href="https://doi.org/10.1016/j.trgeo.2023.101021">DOI</a></li>
+      <li>Chakraborty, S., Puppala, A.J., <span class="me">Biswas, N.</span> (2022). Role of crystalline silica admixture in mitigating ettringite-induced heave in lime-treated sulfate-rich soils. <span class="venue">Géotechnique</span>, 1–17. <a class="doi" href="https://doi.org/10.1680/jgeot.20.p.154">DOI</a></li>
+      <li>Congress, S.S.C., Puppala, A.J., Khan, M.A., <span class="me">Biswas, N.</span>, Kumar, P. (2022). Application of unmanned aerial technologies for inspecting pavement and bridge infrastructure asset condition. <span class="venue">Transportation Research Record</span>. <a class="doi" href="https://doi.org/10.1177/03611981221105273">DOI</a></li>
+      <li>Jang, J., <span class="me">Biswas, N.</span>, Puppala, A.J., Congress, S.S.C., Radovic, M., Huang, O. (2022). Evaluation of geopolymer for stabilization of sulfate-rich expansive soils for supporting pavement infrastructure. <span class="venue">Transportation Research Record</span>. <a class="doi" href="https://doi.org/10.1177/03611981221086650">DOI</a></li>
+      <li><span class="me">Biswas, N.</span>, Puppala, A.J., Khan, M.A., Congress, S.S.C., Banerjee, A., Chakraborty, S. (2021). Evaluating the performance of wicking geotextile in providing drainage for flexible pavements built over expansive soils. <span class="venue">Transportation Research Record</span>. <a class="doi" href="https://doi.org/10.1177/03611981211001381">DOI</a></li>
+      <li>Khan, M.A., <span class="me">Biswas, N.</span>, Banerjee, A., Puppala, A.J. (2020). Field performance of geocell reinforced recycled asphalt pavement base layer. <span class="venue">Transportation Research Record</span>, 2674(3), 69–80. <a class="doi" href="https://doi.org/10.1177/0361198120908861">DOI</a></li>
+      <li><span class="me">Biswas, N.</span>, Ghosh, P. (2019). Bearing capacity factors for isolated surface strip footing resting on multi-layered reinforced soil bed. <span class="venue">Indian Geotechnical Journal</span>, 49(1). <a class="doi" href="https://doi.org/10.1007/s40098-017-0293-z">DOI</a></li>
+      <li><span class="me">Biswas, N.</span>, Ghosh, P. (2018). Interaction of adjacent strip footings on reinforced soil using upper-bound limit analysis. <span class="venue">Geosynthetics International</span>, 25(6), 599–611. <a class="doi" href="https://doi.org/10.1680/jgein.18.00020">DOI</a></li>
+    </ol>
+
+    <details>
+      <summary>Geotechnical Special Publications (28)</summary>
+      <div>
+        <ol class="pubs" reversed>
+          <li>Machado, J.A.R., <span class="me">Biswas, N.</span>, Apostolov, A. (2026). Utilization of bauxite ore residue as a sustainable material for pavement infrastructure. <span class="venue">Airfield and Highway Pavements 2026</span>, ASCE. <a class="doi" href="https://doi.org/10.1061/9780784487037.050">DOI</a></li>
+          <li>Sanei, M., Lakshminarayanan, V., Huang, J., <span class="me">Biswas, N.</span>, Puppala, A.J. (2026). Efficacy and sustainability benefits of innovative materials for stabilization of problematic pavement subgrades. <span class="venue">Airfield and Highway Pavements 2026</span>, ASCE. <a class="doi" href="https://doi.org/10.1061/9780784487037.041">DOI</a></li>
+          <li><span class="me">Biswas, N.</span>, Chou, S., Rameneni, K., Chakraborty, S., Puppala, A.J. (2026). Enhancing durability and permanency of problematic soils using silica-based co-additives with calcium-based stabilizers. <span class="venue">Geo-Congress 2026</span>, ASCE. <a class="doi" href="https://doi.org/10.1061/9780784486764.036">DOI</a></li>
+          <li>Raj Chimauriya, H., <span class="me">Biswas, N.</span>, Puppala, A.J., Gajurel, A. (2026). Development of deep learning based model for estimating erosion rates in cohesive soils. <span class="venue">Geo-Congress 2026</span>, ASCE. <a class="doi" href="https://doi.org/10.1061/9780784486719.009">DOI</a></li>
+          <li>Sanei, M., <span class="me">Biswas, N.</span>, Huang, J., Puppala, A.J. (2026). Sustainability benefits assessment of cement and recycled concrete aggregate fines in subgrade stabilization application. <span class="venue">Geo-Congress 2026</span>, ASCE. <a class="doi" href="https://doi.org/10.1061/9780784486757.053">DOI</a></li>
+          <li>Mukherjee, A., Kotha, V., Chakraborty, S., Suresh, S., <span class="me">Biswas, N.</span>, Roy, S. (2026). Effect of clay mineralogy on the extent of ettringite-induced heaving in lime-treated sulfate-rich soils. <span class="venue">Geo-Congress 2026</span>, ASCE. <a class="doi" href="https://doi.org/10.1061/9780784486764.033">DOI</a></li>
+          <li><span class="me">Biswas, N.</span>, Sanei, M., Puppala, A.J., Mallick, R., Nazarian, S. (2025). Application of low-carbon cement with recycled concrete aggregate fines for enhancing sustainability and durability of transportation infrastructure. <span class="venue">Geotechnical Frontiers 2025</span>, ASCE, 1–10. <a class="doi" href="https://doi.org/10.1061/9780784486009.001">DOI</a></li>
+          <li>Chou, S., Parr, K., <span class="me">Biswas, N.</span>, Puppala, A.J. (2025). Use of laser-based method for measuring small strains in geomaterials under repetitive loads in triaxial environment. <span class="venue">Geotechnical Frontiers 2025</span>, ASCE, 248–257. <a class="doi" href="https://doi.org/10.1061/9780784485965.022">DOI</a></li>
+          <li>Raj Chimauriya, H., <span class="me">Biswas, N.</span>, Gajurel, A., Puppala, A.J. (2025). Development of machine learning based surrogate models using fully coupled 3D numerical analysis of scour around slab-on-grade foundations. <span class="venue">Geotechnical Frontiers 2025</span>, ASCE, 21–29. <a class="doi" href="https://doi.org/10.1061/9780784485989.003">DOI</a></li>
+          <li>Raj Chimauriya, H., <span class="me">Biswas, N.</span>, Puppala, A.J., Gajurel, A. (2025). Effect of storm surge-induced scour on the bearing capacity of shallow foundations for coastal residential buildings. <span class="venue">Geo-EnvironMeet 2025</span>, ASCE, 10–19. <a class="doi" href="https://doi.org/10.1061/9780784485705.002">DOI</a></li>
+          <li>Samridh, Chakraborty, S., <span class="me">Biswas, N.</span>, Puppala, A.J., Ramineni, K., Banerjee, A. (2025). Micro-mechanical analyses to understand the durability of chemically stabilized geomaterials against moisture-induced damage. <span class="venue">Geotechnical Frontiers 2025</span>, ASCE, 346–356. <a class="doi" href="https://doi.org/10.1061/9780784486016.035">DOI</a></li>
+          <li>Kumar, A., <span class="me">Biswas, N.</span>, Puppala, A.J. (2025). Case histories of two recent slope failures: Lessons learned and future recommendations. <span class="venue">Geotechnical Frontiers 2025</span>, ASCE, 69–83. <a class="doi" href="https://doi.org/10.1061/9780784485965.007">DOI</a></li>
+          <li>Ramineni, K., Congress, S.S.C., <span class="me">Biswas, N.</span>, Puppala, A.J., Kriegstein, S. (2025). An experimental study to evaluate the performance of fiber-based cement mixture bags as alternative flood and erosion barriers. <span class="venue">Geo-EnvironMeet 2025</span>, ASCE, 89–98. <a class="doi" href="https://doi.org/10.1061/9780784485682.011">DOI</a></li>
+          <li>Chimauriya, H., Caldwell, C., Puppala, A.J., <span class="me">Biswas, N.</span>, Congress, S.S.C. (2024). Role of EPS geofoams in reducing thermal losses from slab-on-grade foundations under freezing conditions. <span class="venue">Geo-Congress 2024</span>. <a class="doi" href="https://doi.org/10.1061/9780784485330.067">DOI</a></li>
+          <li>Chou, S., <span class="me">Biswas, N.</span>, Puppala, A.J., Jafari, N. (2024). Stabilization of coastal soils to improve resiliency of transportation infrastructure after storm surge events. <span class="venue">Geo-Congress 2024</span>. <a class="doi" href="https://doi.org/10.1061/9780784485330.027">DOI</a></li>
+          <li>Kumar, A., <span class="me">Biswas, N.</span>, Puppala, A.J., Khan, M.A. (2024). Investigations on fully-softened strength of lime-treated slopes built with expansive soils under future extreme precipitation. <span class="venue">Geo-Congress 2024</span>. <a class="doi" href="https://doi.org/10.1061/9780784485354.014">DOI</a></li>
+          <li>Gajurel, A., Puppala, A.J., <span class="me">Biswas, N.</span>, Chimauriya, H. (2024). Use of orbital synthetic aperture radar data in monitoring geotechnical and transportation infrastructure assets. <span class="venue">Geo-Congress 2024</span>. <a class="doi" href="https://doi.org/10.1061/9780784485347.052">DOI</a></li>
+          <li>Mukherjee, A., Justin, A., Chakraborty, S., <span class="me">Biswas, N.</span>, Puppala, A.J., Roy, S. (2024). Utilization of quarry fines as a sustainable admixture for suppressing ettringite-induced heaving. <span class="venue">Geo-Congress 2024</span>. <a class="doi" href="https://doi.org/10.1061/9780784485330.035">DOI</a></li>
+          <li>Jang, J., <span class="me">Biswas, N.</span>, Puppala, A.J., Congress, S.S.C., Radovic, M., Huang, O. (2024). Application of metakaolin-based geopolymer for eco-friendly stabilization of coastal soils. <span class="venue">Geo-Congress 2024</span>. <a class="doi" href="https://doi.org/10.1061/9780784485330.052">DOI</a></li>
+          <li>Gajurel, A., Chimauriya, H., <span class="me">Biswas, N.</span>, Boluk, B., Congress, S.S.C., Puppala, A.J. (2023). Post-construction monitoring of rehabilitated highway embankment slope in Texas. <span class="venue">Geo-Congress 2023</span>, ASCE, 116–125.</li>
+          <li>Khan, M.A., <span class="me">Biswas, N.</span>, Banerjee, A., Puppala, A.J. (2023). Effects of traffic loading magnitude and frequency on the performance of geocell-reinforced flexible pavements. <span class="venue">Geo-Congress 2023</span>, ASCE, 517–525.</li>
+          <li>Samridh, Jain, A., Chakraborty, S., <span class="me">Biswas, N.</span>, Puppala, A.J., Ramineni, K. (2023). Durability and recuperative properties of lime stabilized soils. <span class="venue">Geo-Congress 2023</span>, ASCE, 440–451.</li>
+          <li>Jang, J., Puppala, A.J., <span class="me">Biswas, N.</span>, Chakraborty, S., Radovic, M. (2022). Utilization of metakaolin-based geopolymers for stabilization of sulfate-rich expansive soils. <span class="venue">Geo-Congress 2022</span>, ASCE, 222–231.</li>
+          <li>Khan, M.A., Puppala, A.J., <span class="me">Biswas, N.</span>, Congress, S.S.C., Jafari, K.H. (2022). An analytical approach to estimate the load-bearing capacity of subgrade soil with a geocell-reinforced base layer. <span class="venue">Geo-Congress 2022</span>, ASCE, 380–389.</li>
+          <li><span class="me">Biswas, N.</span>, Puppala, A.J., Chakraborty, S., Khan, M.A. (2021). Utilization of silica-based admixture to improve the durability of lime-treated expansive soil. <span class="venue">IFCEE 2021</span>, 233–242.</li>
+          <li><span class="me">Biswas, N.</span>, Chakraborty, S., Mosadegh, L., Puppala, A.J., Corcoran, M. (2020). Influence of anisotropic permeability on slope stability analysis of an earthen dam during rapid drawdown. <span class="venue">Geo-Congress 2020</span>, ASCE, 29–39.</li>
+          <li>Khan, M.A., <span class="me">Biswas, N.</span>, Banerjee, A., Puppala, A.J. (2020). Performance of geocell-reinforced recycled asphalt pavement (RAP) bases in flexible pavements built on expansive soils. <span class="venue">Geo-Congress 2020</span>, ASCE, 488–497.</li>
+          <li>Mosadegh, L., Chakraborty, S., <span class="me">Biswas, N.</span>, Bhaskar, P., Puppala, A.J. (2020). Comparison of earthquake-induced pore water pressure and deformations in earthen dams using non-linear and equivalent linear analyses. <span class="venue">Geo-Congress 2020</span>, ASCE, 151–160.</li>
+        </ol>
+      </div>
+    </details>
+
+    <details>
+      <summary>Conference Proceedings (8)</summary>
+      <div>
+        <ol class="pubs" reversed>
+          <li>Lakkimsetti, B., Sanei, M., Chou, S., Huang, J., Gonnabathula, A., Puppala, A.J., <span class="me">Biswas, N.</span> (2026). Relative effectiveness and sustainability assessment of low-carbon cement and geopolymer based soil stabilization methods. <span class="venue">21st ICSMGE</span>, Salzburg, Austria. <a class="doi" href="https://doi.org/10.53243/ICSMGE2026-773">DOI</a></li>
+          <li>Chou, S., <span class="me">Biswas, N.</span>, Puppala, A.J. (2024). Machine learning methods to predict resilient moduli behavior of subgrade soils. <span class="venue">5th International Conference on Transportation Geotechnics</span>, Sydney.</li>
+          <li>Rameneni, K., <span class="me">Biswas, N.</span>, Puppala, A.J., Khan, M.A. (2024). Experimental investigation of geogrid reinforced unpaved sections under repeated loads. <span class="venue">5th International Conference on Transportation Geotechnics</span>, Sydney.</li>
+          <li>Rameneni, K., Puppala, A.J., Khan, M.A., <span class="me">Biswas, N.</span>, Kumar, P. (2023). Role of high-modulus geogrids in improving base layer properties. <span class="venue">Geosynthetics Conference 2023</span>, Kansas City.</li>
+          <li>Rameneni, K., Khan, M.A., <span class="me">Biswas, N.</span>, Puppala, A.J. (2023). Evaluation of the performance of geocell and geogrid reinforced pavement sections constructed over weaker subgrade conditions based on large-scale repeated load tests. <span class="venue">TRB Annual Meeting 2023</span>.</li>
+          <li><span class="me">Biswas, N.</span>, Chakraborty, S., Puppala, A.J. (2022). Mitigating ettringite-induced heaving in lime-treated sulfate-rich soils using crystalline silica admixture. <span class="venue">20th ICSMGE</span>, Sydney.</li>
+          <li><span class="me">Biswas, N.</span>, Puppala, A.J., Khan, M.A., Congress, S.S.C., Chakraborty, S. (2021). Depth of influence of a wicking geotextile below the flexible pavement constructed over expansive subgrade. <span class="venue">Geosynthetics Conference 2021</span>, 583–594.</li>
+          <li>Jang, J., Puppala, A.J., Chakraborty, S., <span class="me">Biswas, N.</span>, Huang, O., Radovic, M. (2021). Eco-friendly stabilization of sulfate-rich expansive soils using geopolymers for transportation infrastructure. <span class="venue">Tran-SET 2021</span>, ASCE, 223–231.</li>
+        </ol>
+      </div>
+    </details>
+
+    <details>
+      <summary>Book Chapters &amp; Magazine Articles</summary>
+      <div>
+        <ol class="pubs" reversed>
+          <li>Huang, J., Puppala, A.J., <span class="me">Biswas, N.</span> (2026). Carbon-friendly construction materials in transportation infrastructure applications in the United States: Current practices and guidelines. In <span class="venue">Transportation Geotechnics for Green, Digital, and Modern Infrastructures</span>. <a class="doi" href="https://doi.org/10.1201/9781003530220">DOI</a></li>
+          <li>Gajurel, A., Puppala, A.J., Bhaskar, P., <span class="me">Biswas, N.</span> (2026). Satellite-based health monitoring of transportation infrastructure. In <span class="venue">Condition Monitoring and Structural Health Monitoring of Infrastructure Systems</span>, Woodhead, 827–848. <a class="doi" href="https://doi.org/10.1016/B978-0-443-38315-1.00011-8">DOI</a></li>
+          <li>Zhang, X., <span class="me">Biswas, N.</span>, Lostumbo, J.M., Laprade, R. (2025). From Alaska to Texas: Unsaturated moisture management transforms pavement performance. <span class="venue">GEOSTRATA</span>.</li>
+          <li>Gajurel, A., <span class="me">Biswas, N.</span>, Boluk, B., Puppala, A.J. (2024). From collapse to cutting-edge. <span class="venue">GEOSTRATA</span>, 28, 50–56. <a class="doi" href="https://doi.org/10.1061/geosek.0000542">DOI</a></li>
+          <li>Puppala, A.J., <span class="me">Biswas, N.</span>, Khan, M.A., Congress, S.S.C. (2024). Sustainable ground improvement practices and comprehensive assessments for problematic expansive soils. In <span class="venue">Geotechnics and Sustainable Development</span>, Lecture Notes in Civil Engineering, Springer.</li>
+          <li><span class="me">Biswas, N.</span>, Khan, M.A., Rameneni, K., Puppala, A.J. (2023). Performance of low-volume roads built over expansive soils reinforced with wicking geotextiles. <span class="venue">TR Circular E-C283</span>, 33–41.</li>
+          <li><span class="me">Biswas, N.</span>, Khan, M.A., Banerjee, A., Puppala, A.J., Chakraborty, S. (2022). Application of wicking geotextile for pavement infrastructure on expansive soil. In <span class="venue">Advances in Transportation Geotechnics IV</span>, Springer, 533–544.</li>
+          <li>Khan, M.A., <span class="me">Biswas, N.</span>, Banerjee, A., Congress, S.S.C., Puppala, A.J. (2022). Effectiveness of double-layer HDPE geocell system to reinforce reclaimed asphalt pavement (RAP) base layer. In <span class="venue">Advances in Transportation Geotechnics IV</span>, Springer, 593–604.</li>
+          <li><span class="me">Biswas, N.</span>, Chakraborty, S., Puppala, A.J., Banerjee, A. (2021). A novel method to improve the durability of lime-treated expansive soil. In <span class="venue">Proceedings of IGC 2019</span>, Lecture Notes in Civil Engineering, Springer, 227–238.</li>
+        </ol>
+      </div>
+    </details>
+
+    <details>
+      <summary>Technical Reports (6)</summary>
+      <div>
+        <ol class="pubs" reversed>
+          <li><span class="me">Biswas, N.</span>, Mallick, R., Puppala, A.J., Nazarian, S., Sanei, M., Khallaghi, F. (2025). Impacts reduction and durability of pavement recycling and stabilization using novel materials. Southern Plains Transportation Center (Region 6).</li>
+          <li>Puppala, A.J., Radovic, M., <span class="me">Biswas, N.</span>, Chou, S., Huang, O. (2023). Stabilization of expansive soil using geopolymers from locally available resources. Tran-SET UTC, Region 6.</li>
+          <li>Puppala, A.J., <span class="me">Biswas, N.</span>, Gajurel, A. (2023). Monitoring of transportation system assets using synthetic aperture radar (SAR) satellite data. Tran-SET UTC, Region 6.</li>
+          <li><span class="me">Biswas, N.</span>, Puppala, A.J., Khan, M.A. (2023). Application of wicking geotextile for improving performance of pavement built over expansive soil. TenCate Geosynthetics.</li>
+          <li>Puppala, A.J., Jafari, N., <span class="me">Biswas, N.</span>, Chou, S., Gallegos, D. (2023). Resiliency of transportation infrastructure and the environment after hurricanes. Tran-SET UTC, Region 6.</li>
+          <li>Chakraborty, S., <span class="me">Biswas, N.</span>, Puppala, A.J., Little, D. (2020). Longevity of admixture treatment of soils. CERGEP Report No. 11, Texas A&amp;M University.</li>
+        </ol>
+      </div>
+    </details>
+
+    <details>
+      <summary>Keynotes, Invited Talks &amp; Workshops</summary>
+      <div>
+        <h3 style="margin-top:6px">Keynote lectures</h3>
+        <ul class="plain">
+          <li>Role of silica-based admixtures for effective stabilization of problematic soils. Young Researcher Special Speaker, 2nd Int'l Conference on Construction Resources for Environmentally Sustainable Technologies, Fukuoka, Japan, 2023.</li>
+          <li>Chemical stabilization of problematic soils with traditional calcium-based and non-traditional stabilizers. Cement Stabilization &amp; RCC Conference, Arlington, TX, 2022.</li>
+        </ul>
+        <h3>Invited webinars</h3>
+        <ul class="plain">
+          <li>Use of wicking geotextile for improving performance of pavements on weak subgrade soils: A field study. BITS, India, 2025.</li>
+          <li>Utilizing recycled concrete aggregate fines as co-additives in low-carbon cement for problematic soil stabilization. Oregon State University, 2025.</li>
+          <li>Role of wicking geotextiles for improving resiliency of pavement infrastructure: From laboratory to practice. Southern Illinois University Carbondale, 2024.</li>
+        </ul>
+        <h3>Workshops &amp; symposia</h3>
+        <ul class="plain">
+          <li>Composite mangroves for reducing soil erosion near transportation infrastructure. CREATE USDOT Tier-1 UTC Symposium (virtual), 2024.</li>
+          <li>Integrated approach for geotechnical and hydrodynamic analyses in coastal residential built infrastructure. CREATE UTC, San Marcos, TX, 2024.</li>
+          <li>Opportunities, challenges, and perspectives on base and subgrade stabilization with nontraditional stabilizers. TRB Annual Meeting, 2024.</li>
+          <li>Application of wicking geotextile for pavement infrastructures on expansive soils. TRB Annual Meeting, 2023.</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+</section>
+
+<section id="funding">
+  <div class="wrap">
+    <h2>Funding</h2>
+    <h3 style="margin-top:0">Awarded</h3>
+    <ul class="plain">
+      <li><strong>Bridging Physics and Machine Learning for Erosion Resilience in Coastal Geotechnical Systems</strong>. UML Researchers and Scholars Investment Fund, FY26. PI.</li>
+    </ul>
+    <h3>Pending</h3>
+    <ul class="plain">
+      <li><strong>Path-Dependent Coastal-Bluff Stability: Coupling Hydrologic Memory, Toe Erosion, and NISAR Observations through Physics-Informed Neural Networks</strong>. NSF GEO/EAR, $400,000 (3 years). Sole PI.</li>
+      <li><strong>Application of Scientific Machine Learning for Understanding the Fundamentals of Using Clay Liners for Nuclear Fuel Storage</strong>. Powe Award, 2026. PI.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="teaching">
+  <div class="wrap">
+    <h2>Teaching &amp; Mentoring</h2>
+    <div class="grid2">
+      <div>
+        <h3 style="margin-top:0">Courses taught</h3>
+        <ul class="plain">
+          <li>Advanced Soil Mechanics (CIVE.5310), UML, Fall 2024, Fall 2025</li>
+          <li>Soil Behavior (CIVE.5380), UML, Spring 2025</li>
+          <li>Soil Engineering (CIVE.5360), UML, Spring 2026</li>
+          <li>Design with Geosynthetics (CVEN 720), Texas A&amp;M, Fall 2023</li>
+          <li>Ground Improvement (CVEN 689), Texas A&amp;M</li>
+        </ul>
+        <p class="muted" style="font-size:14px;margin-top:12px">ASCE ExCEEd Fellow (2025), trained in evidence-based civil engineering pedagogy.</p>
+      </div>
+      <div>
+        <h3 style="margin-top:0">Research group</h3>
+        <ul class="plain">
+          <li><strong>João Alves Ribeiro Machado</strong>, Ph.D. (2024–). Behavior of mine tailings residue under dynamic loads</li>
+          <li><strong>Uday Yadav</strong>, Ph.D. (2025–). Satellite remote sensing for natural hazards and slope stability</li>
+          <li><strong>Fatemeh Karbalaee</strong>, Ph.D. (2025–). Deep learning for granular soil behavior and coastal resilience</li>
+        </ul>
+        <h3>Alumni</h3>
+        <ul class="plain">
+          <li>Muddassir Sanei, M.S., Texas A&amp;M (2023–2024)</li>
+          <li>Nicole Arackal and Gustavo Hernandez Martin, undergraduate researchers, Texas A&amp;M (2023–2024)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="service">
+  <div class="wrap">
+    <h2>Service</h2>
+    <div class="grid2">
+      <div>
+        <h3 style="margin-top:0">Editorial &amp; leadership</h3>
+        <ul class="plain">
+          <li>Handling Editor, <em>Transportation Research Record</em> (2026–)</li>
+          <li>Secretary, ASCE G-I Committee on Sustainability in Geotechnical Engineering (2025–)</li>
+          <li>Session Chair, Soil Improvement, ASCE Geo-Congress 2026</li>
+          <li>Presiding Officer, poster session, TRB Annual Meeting 2026</li>
+          <li>Paper Review Coordinator, Geo-Congress 2026 (Soil Improvement) and 2024 (Pavements)</li>
+          <li>Technical Committee, ICGESI-2026, NIT Hamirpur</li>
+          <li>Proposal reviewer, National Center for Infrastructure Transformation (UTC)</li>
+          <li>Reviewer for ~50 journal papers in the past two years, including <em>Géotechnique</em>, <em>JGGE</em>, <em>Canadian Geotechnical Journal</em>, <em>Geotextiles and Geomembranes</em>, and <em>Transportation Geotechnics</em></li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="margin-top:0">Memberships</h3>
+        <ul class="plain">
+          <li>ASCE Geo-Institute</li>
+          <li>TRB Committee on Geomaterials Behavior and Properties (AKH19)</li>
+          <li>USUCGER · ISSMGE · U.S. Permafrost Association</li>
+          <li>Past TRB committees: AKG80, AKG90, AKG30</li>
+          <li>Engineer-in-Training (EIT), Texas</li>
+        </ul>
+        <h3>University</h3>
+        <ul class="plain">
+          <li>CEE Undergraduate Curriculum Committee</li>
+          <li>CEE Outreach Committee</li>
+          <li>Undergraduate Academic Advisor</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" style="border-bottom:none">
+  <div class="wrap">
+    <h2>Contact</h2>
+    <p style="margin:0">Department of Civil and Environmental Engineering<br>University of Massachusetts Lowell<br>
+    <a href="mailto:Nripojyoti_Biswas@uml.edu">Nripojyoti_Biswas@uml.edu</a></p>
+    <p class="muted" style="margin-top:14px">Prospective students interested in coastal geotechnics, physics-informed machine learning, or remote sensing are welcome to get in touch.</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Nripojyoti Biswas · Last updated October 2026</div>
+</footer>
+
 </body>
 </html>
