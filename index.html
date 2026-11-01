@@ -7,7 +7,7 @@
 <meta name="description" content="Nripojyoti Biswas, Assistant Professor of Civil and Environmental Engineering at UMass Lowell. Research on physics-informed digital twins, remote sensing, and resilience of coastal geo-infrastructure.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,400..700,0..100&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   /* ============================================================
      EDIT YOUR LINKS HERE: search this file for "LINK:" comments.
@@ -245,6 +245,84 @@
     .site-pop{position:relative;left:auto;top:auto;width:auto;border-radius:0;border:0;border-top:1px solid var(--line);box-shadow:none}
   }
   @media (prefers-reduced-motion:reduce){.pin.on .halo{animation:none;opacity:.3}}
+
+  /* =========================================================
+     COASTAL EDITORIAL THEME
+     Harbor navy · sea-glass teal · warm sand · bluff clay
+     ========================================================= */
+  :root{
+    --bg:#f6f1e8; --surface:#fffdf9; --ink:#12283a; --muted:#5a6772; --line:#e5dccb;
+    --accent:#1f6f6b; --accent-soft:#e0ede9; --mark:#c0612b;
+    --deep:#0d2233; --deep2:#163a4f; --sand:#efe6d5;
+    --c-teal:#1f6f6b; --c-blue:#2d6487; --c-clay:#c0612b; --c-sandd:#96764a;
+    --serif:"Fraunces", Georgia, serif;
+    --shadow:rgba(13,34,51,.10);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0d1a24; --surface:#13232f; --ink:#e9eef1; --muted:#9db0bb; --line:#243846;
+      --accent:#72c4b9; --accent-soft:#16302d; --mark:#e88b56;
+      --deep:#08141d; --deep2:#0f2737; --sand:#102029;
+      --c-teal:#72c4b9; --c-blue:#86b6da; --c-clay:#e88b56; --c-sandd:#d4b27c;
+      --shadow:rgba(0,0,0,.35);
+    }
+  }
+  body{font-feature-settings:"cv11","ss01"}
+  /* headings: Fraunces, soft and slightly sculpted */
+  h1,h2,.theme h4,.fp .t,.site-pop h4,nav .brand,.lede,.stat b{font-family:var(--serif);font-variation-settings:"SOFT" 60}
+  h1{font-size:clamp(38px,6vw,60px);font-weight:600;line-height:1.05;letter-spacing:-.025em}
+  h2{font-size:clamp(28px,3.6vw,38px);font-weight:600;letter-spacing:-.02em;line-height:1.15}
+  .lede{font-weight:380;font-size:21px;line-height:1.55}
+  .theme h4{font-size:20px;font-weight:600;letter-spacing:-.01em}
+  .fp .t{font-size:18px;font-weight:500}
+  .kicker,h3{letter-spacing:.16em}
+  .kicker{color:var(--mark)}
+  /* numbers line up */
+  .stat b{font-weight:600;font-size:32px;font-variant-numeric:tabular-nums lining-nums;color:var(--ink)}
+  .stat span{letter-spacing:.01em}
+  /* nav */
+  nav .brand i{background:var(--deep);font-family:var(--serif);font-weight:600;border-radius:50%}
+  nav a.l:hover,nav a.l.on{color:var(--ink)}
+  /* hero: harbor night with a teal glow and a clay horizon */
+  header.hero{
+     background:
+       url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='420' viewBox='0 0 1200 420'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='0.07' stroke-width='1.2'%3E%3Cpath d='M0 300 C200 260 350 340 600 290 S1000 240 1200 280'/%3E%3Cpath d='M0 325 C200 285 350 365 600 315 S1000 265 1200 305'/%3E%3Cpath d='M0 350 C200 310 350 390 600 340 S1000 290 1200 330'/%3E%3Cpath d='M0 375 C200 335 350 415 600 365 S1000 315 1200 355'/%3E%3C/g%3E%3C/svg%3E") center bottom/1200px auto repeat-x,
+       radial-gradient(900px 420px at 88% -5%, rgba(31,111,107,.55) 0%, transparent 62%),
+       radial-gradient(700px 260px at 10% 110%, rgba(192,97,43,.22) 0%, transparent 70%),
+       linear-gradient(165deg,var(--deep2),var(--deep));}
+  header.hero .eyebrow{color:#f0bf98;border-color:rgba(240,191,152,.35)}
+  header.hero .role{color:#c3d2db}
+  header.hero .lede{color:#eef2f4}
+  header.hero .btn.primary{color:var(--deep)}
+  header.hero .btn.primary:hover{background:#f3e9da}
+  .statband .stats,.news,.sites-map{box-shadow:0 14px 34px var(--shadow)}
+  .statband .stats{border-radius:16px}
+  section.alt{background:var(--sand)}
+  /* research cards: one coastal family instead of four unrelated hues */
+  .theme{--c:var(--c-teal);--art-bg:#e3eeea}
+  .theme:nth-child(2){--c:var(--c-blue);--art-bg:#e2eaf1}
+  .theme:nth-child(3){--c:var(--c-clay);--art-bg:#f5e6da}
+  .theme:nth-child(4){--c:var(--c-sandd);--art-bg:#f0e7d6}
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]) .theme{--art-bg:#16302d}
+    :root:not([data-theme="light"]) .theme:nth-child(2){--art-bg:#152a3a}
+    :root:not([data-theme="light"]) .theme:nth-child(3){--art-bg:#2e2119}
+    :root:not([data-theme="light"]) .theme:nth-child(4){--art-bg:#29241a}}
+  .theme:hover,.fp:hover{box-shadow:0 12px 28px var(--shadow)}
+  .art .water{fill:#5f9fb4}.art .water2{fill:#2d6487}.art .dash{stroke:#2d6487}
+  /* map pins and ticker tags use the same family */
+  .t-coast{--pc:var(--c-teal)}.t-slope{--pc:var(--c-clay)}.t-pave{--pc:var(--c-sandd)}.t-test{--pc:var(--c-blue)}
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]) .t-coast{--pc:var(--c-teal)}:root:not([data-theme="light"]) .t-slope{--pc:var(--c-clay)}
+    :root:not([data-theme="light"]) .t-pave{--pc:var(--c-sandd)}:root:not([data-theme="light"]) .t-test{--pc:var(--c-blue)}}
+  .sites-map .land{fill:#e8e0d0}
+  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .sites-map .land{fill:#1b2f3c}}
+  .news-head .dot{background:var(--mark)}
+  section#contact .card{background:
+       radial-gradient(500px 200px at 100% 0%, rgba(31,111,107,.45), transparent 70%),
+       linear-gradient(160deg,var(--deep2),var(--deep))}
+  ::selection{background:#f0bf98;color:#12283a}
+  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) nav .brand i{background:#1f6f6b}}
 </style>
 </head>
 <body>
