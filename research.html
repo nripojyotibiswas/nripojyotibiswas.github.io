@@ -1,0 +1,35 @@
+---
+layout: page
+title: Research
+permalink: /research/
+kicker: Research
+heading: From shoreline to <em>subsurface</em>
+description: Research themes, field sites and funded projects of the Biswas Geosystems Research Group at UMass Lowell.
+---
+<section class="block" aria-labelledby="rt-h">
+  <div class="wrap">
+    <div class="sub-h" style="margin-bottom:clamp(48px,6vw,80px)">
+      <div><p class="mono">Research statement</p><h2 id="rt-h">Five connected <em>themes</em></h2></div>
+      <p class="lede-big" style="font:300 clamp(20px,1.9vw,26px)/1.5 var(--display);max-width:52ch">{{ site.data.profile.lede }}</p>
+    </div>
+    <div class="tgrid">
+      {% for t in site.data.themes %}
+      <article class="trow">
+        <div class="tart">{% include {{ t.scene }} %}</div>
+        <div>
+          <p class="mono">{{ t.label }}</p>
+          <h3>{{ t.title }}</h3>
+          <p>{{ t.text }}</p>
+          <ul>{% for g in t.tags %}<li>{{ g }}</li>{% endfor %}</ul>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+    <div class="note-box">
+      <p class="mono">Other work</p>
+      <p>Other ongoing work: dynamic behavior of mine tailings, and remote-sensing-based prediction of earthquake-induced excess pore-water pressure. Earlier work centered on sustainable ground improvement of expansive and sulfate-rich soils, geosynthetics for pavements, and low-carbon stabilizers.</p>
+    </div>
+  </div>
+</section>
+
+{% include field.html %}

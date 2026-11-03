@@ -1,0 +1,33 @@
+{% assign P = site.data.profile %}
+<a class="skip" href="#main">Skip to content</a>
+<nav class="nav" id="nav" aria-label="Main">
+  <div class="bar">
+    <a class="brand" href="/" aria-label="{{ P.group_long }}, home">
+      <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><rect x=".5" y=".5" width="33" height="33" rx="9" fill="#0F3A3A" stroke="#7FD1C3" stroke-opacity=".5"/><path d="M4 20c4-2 6 1 10-1l5-6c2-2 5-2 11-2v18H4z" fill="#D2B48A"/><path d="M4 25c7-2 14 0 26-3v7H4z" fill="#8E7150"/><path d="M4 20c3-1 5 1 8 0" stroke="#7FD1C3" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+      <span><b>{{ P.group_name }}</b><small>Research Group · UMass Lowell</small></span>
+    </a>
+    <ul class="links" id="links">
+      <li><a href="/research/">Research</a></li>
+      <li><a href="/publications/">Publications</a></li>
+      <li><a href="/group/">Group</a></li>
+      <li><a href="/teaching/">Teaching</a></li>
+      <li><a href="/news/">News</a></li>
+      <li><a href="/about/">About</a></li>
+    </ul>
+    <a class="cta" href="/group/#join">Join Us<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    <button class="ib" type="button" id="theme-btn" aria-label="Switch between light and dark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg></button>
+    <button class="ib menu-btn" type="button" id="menu-btn" aria-expanded="false" aria-controls="overlay" aria-label="Open menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg></button>
+  </div>
+</nav>
+<div class="overlay" id="overlay" hidden>
+  <button class="ib overlay-close" type="button" id="menu-close" aria-label="Close menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <ol>
+    <li><a href="/research/"><span>01</span>Research</a></li>
+    <li><a href="/publications/"><span>02</span>Publications</a></li>
+    <li><a href="/group/"><span>03</span>Group</a></li>
+    <li><a href="/teaching/"><span>04</span>Teaching</a></li>
+    <li><a href="/news/"><span>05</span>News</a></li>
+    <li><a href="/about/"><span>06</span>About</a></li>
+  </ol>
+  <a class="cta" href="/group/#join">Join Us</a>
+</div>

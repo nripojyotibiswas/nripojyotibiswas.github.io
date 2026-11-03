@@ -1,0 +1,37 @@
+<section class="field sec dark-sec" id="field" aria-labelledby="fd-h">
+  <div class="wrap">
+    <div class="head">
+      <div><p class="mono">Field sites &amp; projects</p><h2 id="fd-h">From Boston Harbor to the <em>Gulf Coast</em></h2></div>
+      <p>{{ site.data.sites | size }} sites where the group's work meets real infrastructure. Select a site to read about it.</p>
+    </div>
+    <div class="f-grid">
+      <div class="mapbox">
+        <div class="chips" id="chips" role="group" aria-label="Filter sites">
+          <button type="button" data-f="all" aria-pressed="true">All sites</button>
+          <button type="button" data-f="coast" class="t-coast" aria-pressed="false"><i></i>Coastal</button>
+          <button type="button" data-f="slope" class="t-slope" aria-pressed="false"><i></i>Slopes &amp; embankments</button>
+          <button type="button" data-f="pave" class="t-pave" aria-pressed="false"><i></i>Pavements</button>
+          <button type="button" data-f="test" class="t-test" aria-pressed="false"><i></i>Testing &amp; patent</button>
+        </div>
+        {% include us-map.svg %}
+      </div>
+      {% assign s0 = site.data.sites | first %}
+      <aside class="detail t-{{ s0.group }}" id="detail" aria-live="polite">
+        <p class="k mono" id="d-k">{{ s0.group_label }}</p>
+        <h3 id="d-t">{{ s0.title }}</h3>
+        <p class="loc" id="d-l">{{ s0.place }}</p>
+        <p id="d-x">{{ s0.text }}</p>
+        <ul class="siteidx" id="siteidx"></ul>
+      </aside>
+    </div>
+    <div class="funding" id="funding">
+      {% for f in site.data.funding %}
+      <article class="fund-main">
+        <span class="tag ok">Funded · {{ f.year }} · {{ f.role }}</span>
+        <h3>{{ f.title }}</h3>
+        <p>{{ f.sponsor }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

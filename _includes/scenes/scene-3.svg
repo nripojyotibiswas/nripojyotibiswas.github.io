@@ -1,0 +1,18 @@
+<svg class="sv" viewBox="0 0 600 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <rect width="600" height="600" fill="#0A1824"/>
+  <rect x="0" y="150" width="600" height="56" fill="#1E2A33"/>
+  <path d="M0,150 H600" stroke="#3A4852" stroke-width="2"/>
+  <rect x="0" y="206" width="600" height="104" fill="#9A8466"/>
+  <g id="base3"></g>
+  <rect x="0" y="310" width="600" height="290" fill="#B8996E"/>
+  <g id="grains3"></g>
+  <path class="gl" d="M0,312 H600" stroke-width="3"/>
+  <path class="gl dash" d="M0,312 H600" stroke="#EAF0F2" stroke-width="1.2" opacity=".6"/>
+  <g class="glf"><circle r="5" class="travel" style="offset-path:path('M0,312 H600');animation-duration:5s"/><circle r="5" class="travel" style="offset-path:path('M0,312 H600');animation-duration:5s;animation-delay:-1.7s"/><circle r="5" class="travel" style="offset-path:path('M0,312 H600');animation-duration:5s;animation-delay:-3.4s"/></g>
+  <text class="lbl" x="24" y="184" style="fill:#C9D3D9">ASPHALT</text>
+  <text class="lbl" x="24" y="240" style="fill:#2A1E12">BASE</text>
+  <text class="lbl" x="24" y="300" style="fill:var(--glow)">WICKING GEOTEXTILE</text>
+  <text class="lbl" x="24" y="350" style="fill:#2A1E12">EXPANSIVE SUBGRADE</text>
+  <g transform="translate(470 70)"><circle r="34" class="ink2"/><path class="gl" d="M-20,-6 A22,22 0 0 1 18,-12 M18,-12 l2,-10 M18,-12 l-10,-2"/><path class="cl" d="M20,6 A22,22 0 0 1 -18,12 M-18,12 l-2,10 M-18,12 l10,2"/></g>
+  <text class="lbl" x="356" y="78">LOW-CARBON</text>
+</svg>

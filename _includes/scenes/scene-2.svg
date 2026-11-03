@@ -1,0 +1,15 @@
+<svg class="sv" viewBox="0 0 600 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <defs><linearGradient id="bm" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EBCB9F" stop-opacity=".5"/><stop offset="1" stop-color="#EBCB9F" stop-opacity="0"/></linearGradient></defs>
+  <rect width="600" height="600" fill="#0A1824"/>
+  <path class="ink2" d="M-40,160 C160,40 440,40 640,160" stroke-dasharray="2 8" opacity=".7"/>
+  <g class="sweep"><path d="M450,96 L330,470 L520,470 Z" fill="url(#bm)"/></g>
+  <g transform="translate(450 96) rotate(-20)"><rect x="-12" y="-9" width="24" height="18" rx="3" fill="#EAF0F2"/><rect x="-60" y="-7" width="42" height="14" class="ink"/><rect x="18" y="-7" width="42" height="14" class="ink"/><path class="ink" d="M-39,-7v14M39,-7v14"/></g>
+  <text class="lbl" x="390" y="150">NISAR · InSAR</text>
+  <path fill="#D2B48A" d="M0,470 C80,456 140,476 220,462 S380,440 450,452 S560,470 600,462 V600 H0Z"/>
+  <path fill="#8B6E4D" d="M0,540 C160,520 320,530 600,516 V600 H0Z"/>
+  <g class="bob"><path class="ink" d="M110,214 H190 M118,206 V222 M182,206 V222"/><rect x="138" y="208" width="24" height="14" rx="4" fill="#EAF0F2"/>
+  <path d="M150,226 L96,452 L206,452 Z" fill="rgba(127,209,195,.08)" stroke="rgba(127,209,195,.5)" stroke-dasharray="4 6"/></g>
+  <text class="lbl" x="84" y="190">UAV · LiDAR</text>
+  <g class="glf"><circle cx="110" cy="460" r="3" class="pulse"/><circle cx="150" cy="466" r="3" class="pulse" style="animation-delay:.4s"/><circle cx="190" cy="463" r="3" class="pulse" style="animation-delay:.8s"/><circle cx="360" cy="449" r="4" class="pulse" style="animation-delay:.2s"/><circle cx="420" cy="450" r="4" class="pulse" style="animation-delay:1s"/><circle cx="480" cy="456" r="4" class="pulse" style="animation-delay:1.6s"/></g>
+  <text class="lbl" x="330" y="510" style="fill:#2A1E12">SURFACE DEFORMATION</text>
+</svg>

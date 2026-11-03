@@ -1,0 +1,100 @@
+# FIELD SITES — shown on the interactive map.
+#   group: coast | slope | pave | test
+#   x, y and label_* are positions on the 960 x 600 map drawing (copy a nearby site's numbers to start)
+
+- id: lovell
+  group: coast
+  group_label: Coastal
+  title: Coastal bluff erosion
+  place: Lovell Island, Boston Harbor, Massachusetts
+  short: Lovell Island
+  text: Field site on the Boston Harbor Islands for studying how coastal bluffs erode, linking field observations with physics-informed models.
+  x: 897
+  y: 164.3
+  label_x: 881.0
+  label_y: 154.3
+  label_anchor: end
+- id: louisiana
+  group: coast
+  group_label: Coastal
+  title: Coastal resilience on the Gulf Coast
+  place: Louisiana coast
+  short: Louisiana coast
+  text: Geotechnical work on coastal erosion and the resilience of geo-infrastructure along the Louisiana coast.
+  x: 596.5
+  y: 507.3
+  label_x: 612.5
+  label_y: 525.3
+  label_anchor: start
+- id: galveston
+  group: coast
+  group_label: Coastal
+  title: Coastal erosion monitoring
+  place: Galveston, Texas
+  short: Galveston
+  text: Monitoring coastal erosion along Galveston Island on the Texas Gulf Coast.
+  x: 518
+  y: 516
+  label_x: 532.0
+  label_y: 537.0
+  label_anchor: start
+- id: houston
+  group: slope
+  group_label: Slopes & embankments
+  title: Collapsed highway embankment slope
+  place: Houston, Texas
+  short: Houston
+  text: Forensic investigation and remediation of a failed highway embankment slope, with field monitoring after rehabilitation.
+  x: 502.6
+  y: 501.1
+  label_x: 486.6
+  label_y: 517.1
+  label_anchor: end
+- id: paris
+  group: slope
+  group_label: Slopes & embankments
+  title: Highway embankment slope
+  place: Paris, Texas
+  short: Paris
+  text: Field instrumentation and performance monitoring of a rehabilitated highway embankment slope.
+  x: 498.6
+  y: 413.6
+  label_x: 512.6
+  label_y: 403.6
+  label_anchor: start
+- id: fortworth
+  group: pave
+  group_label: Pavements
+  title: Wicking geotextile pavements
+  place: Fort Worth, Texas
+  short: Fort Worth
+  text: Field test sections using wicking geotextiles to drain flexible pavements built over expansive clay subgrades.
+  x: 465.5
+  y: 433.8
+  label_x: 449.5
+  label_y: 437.8
+  label_anchor: end
+- id: minneapolis
+  group: pave
+  group_label: Pavements
+  title: Pavements under freeze–thaw
+  place: Minneapolis, Minnesota
+  short: Minneapolis
+  text: Evaluating how wicking geotextiles drain pavement layers through freeze–thaw cycles in a cold climate.
+  x: 533.5
+  y: 158.2
+  label_x: 549.5
+  label_y: 164.2
+  label_anchor: start
+- id: vicksburg
+  group: test
+  group_label: Testing & patent
+  title: Seasonal-cycle materials testing
+  place: Vicksburg, Mississippi
+  short: Vicksburg
+  text: "With the U.S. Army Corps of Engineers: a method for testing infrastructure materials across all seasonal cycles (U.S. Patent Application 2026/0057126 A1)."
+  x: 586.5
+  y: 440.4
+  label_x: 602.5
+  label_y: 444.4
+  label_anchor: start

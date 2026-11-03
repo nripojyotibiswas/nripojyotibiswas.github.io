@@ -1,0 +1,22 @@
+<svg class="sv" viewBox="0 0 600 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <defs><linearGradient id="sk0" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0A1824"/><stop offset="1" stop-color="#173A52"/></linearGradient>
+  <linearGradient id="wt0" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2E7383"/><stop offset="1" stop-color="#0B2433"/></linearGradient>
+  <clipPath id="cp0"><rect width="600" height="600"/></clipPath></defs>
+  <rect width="600" height="600" fill="url(#sk0)"/>
+  <g clip-path="url(#cp0)" opacity=".5"><g class="rain">
+    <path class="ink2" d="M60,-40 l-14,40 M140,10 l-14,40 M220,-30 l-14,40 M300,20 l-14,40 M380,-20 l-14,40 M460,0 l-14,40 M540,-40 l-14,40 M100,80 l-14,40 M180,120 l-14,40 M260,90 l-14,40 M340,140 l-14,40 M420,100 l-14,40 M500,130 l-14,40 M580,90 l-14,40 M40,190 l-14,40 M120,220 l-14,40 M200,180 l-14,40 M280,230 l-14,40 M360,200 l-14,40 M440,240 l-14,40 M520,200 l-14,40 M600,240 l-14,40"/>
+  </g></g>
+  <rect x="0" y="352" width="360" height="248" fill="url(#wt0)"/>
+  <path class="gl" d="M0,312 H600" stroke-dasharray="4 8" opacity=".6"/>
+  <text class="lbl" x="22" y="300">STORM SURGE</text>
+  <g class="drift"><path class="gl" d="M0,352 q30,-14 60,0 t60,0 t60,0 t60,0 t60,0 t60,0 t60,0 t60,0 t60,0 t60,0" /></g>
+  <g class="drift" style="animation-duration:11s"><path class="ink2" d="M0,378 q30,-9 60,0 t60,0 t60,0 t60,0 t60,0 t60,0 t60,0 t60,0 t60,0 t60,0" opacity=".5"/></g>
+  <path fill="#D2B48A" d="M0,520 C120,500 250,470 330,420 L352,356 C372,300 382,250 404,214 C418,192 440,184 478,182 L600,178 V600 H0Z"/>
+  <path fill="#B0926A" d="M0,560 C140,540 300,500 380,430 C440,380 520,370 600,366 V600 H0Z"/>
+  <path fill="#8B6E4D" d="M0,600 C200,590 340,560 420,510 C480,474 540,468 600,466 V600Z"/>
+  <path class="cl" d="M392,240 C400,280 398,320 380,352" stroke-dasharray="3 6"/>
+  <path class="gl dash" d="M600,262 C520,268 440,300 370,350"/>
+  <text class="lbl" x="440" y="250">GROUNDWATER</text>
+  <circle cx="356" cy="358" r="5" class="clf pulse"/>
+  <text class="lbl" x="250" y="410" style="fill:#2A1E12">TOE SCOUR</text>
+</svg>

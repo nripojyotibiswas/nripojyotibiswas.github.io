@@ -1,0 +1,452 @@
+# PUBLICATIONS — one entry per item. Newest at the top of each group is easiest to maintain.
+# To add a paper, copy an existing entry, paste it, and edit the fields.
+#   type:     journal | gsp | conference | chapter | report | review
+#   year:     publication year (leave out for manuscripts under review)
+#   authors:  exactly as you want them shown; "Biswas, N." is bolded automatically
+#   title:    paper title, no final period
+#   venue:    journal / proceedings / publisher, with volume and pages if you like
+#   doi:      full link, e.g. https://doi.org/10.xxxx (optional)
+#   status:   Accepted | Under review (optional)
+#   featured: true  -> shows on the home page (keep this to about 3 papers)
+#   direction: short label shown on the home-page card for featured papers
+
+- type: review
+  year: null
+  authors: Samridh, Chakraborty, S., Biswas, N.
+  title: Systematic investigations on autogenous healing of chemically treated soils
+  venue: Acta Geotechnica
+  status: Under review
+- type: review
+  year: null
+  authors: Karbalaee, F., Biswas, N.
+  title: A physics-guided Gaussian process framework for wave-driven wetting in partially saturated coastal bluffs
+  venue: 9th International Conference on Unsaturated Soils (UNSAT 2027), Boston, MA
+  status: Under review
+- type: journal
+  year: 2026
+  authors: Gonnabathula, S.S.A., Biswas, N., Rameneni, K., Sadiq, M.F., Velasquez, R., Puppala, A.J.
+  title: Evaluating the drainage performance of wicking geotextile under freeze–thaw conditions below pavement infrastructure
+  venue: Transportation Research Record
+  doi: "https://doi.org/10.1177/03611981261427737"
+- type: journal
+  year: 2025
+  authors: Raj Chimauriya, H., Biswas, N., Puppala, A.J., Gajurel, A.
+  title: Deep learning based surrogate model to estimate scour around slab-on-grade foundations subjected to flooding conditions
+  venue: Canadian Geotechnical Journal, 62, 1–17
+  doi: "https://doi.org/10.1139/cgj-2025-0118"
+  featured: true
+  direction: Physics-informed ML
+- type: journal
+  year: 2025
+  authors: Puppala, A.J., Biswas, N., Khan, M.A., Congress, S.S.C.
+  title: Experimental investigations and sustainability assessments of ground improvement studies of expansive soils
+  venue: Soils and Foundations, 65(4), 101637
+  doi: "https://doi.org/10.1016/j.sandf.2025.101637"
+- type: journal
+  year: 2025
+  authors: Sanei, M., Biswas, N., Chou, S., Puppala, A.J.
+  title: Utilizing recycled concrete aggregate fines as co-additives in low-carbon cement for problematic soil stabilization
+  venue: Transportation Research Record
+  doi: "https://doi.org/10.1177/03611981251347627"
+- type: journal
+  year: 2025
+  authors: Chou, S., Puppala, A.J., Biswas, N., Huang, O., Radovic, M.
+  title: Role of calcined-clay-based geopolymers for effective stabilization of expansive soils
+  venue: Canadian Geotechnical Journal
+  doi: "https://doi.org/10.1139/cgj-2024-0577"
+- type: journal
+  year: 2025
+  authors: Kumar, A., Biswas, N., Puppala, A.J., Mebarkia, B.
+  title: Forensic investigation and chemical remediation of a collapsed highway embankment slope in Houston, Texas
+  venue: Transportation Geotechnics, 51, 101503
+  doi: "https://doi.org/10.1016/j.trgeo.2025.101503"
+- type: journal
+  year: 2024
+  authors: Biswas, N., Puppala, A.J., Chakraborty, S., et al.
+  title: "Ground improvement studies on problematic soils: Innovative materials with sustainable applications"
+  venue: Indian Geotechnical Journal
+  doi: "https://doi.org/10.1007/s40098-024-01085-3"
+- type: journal
+  year: 2024
+  authors: Biswas, N., Puppala, A.J., Chakraborty, S., Little, D.
+  title: Micro-mechanical behavior of nano-silica in suppressing ettringite-induced heave
+  venue: Canadian Geotechnical Journal
+  doi: "https://doi.org/10.1139/cgj-2023-0051"
+- type: journal
+  year: 2024
+  authors: Biswas, N., Puppala, A.J., Chakraborty, S.
+  title: Experimental studies and sustainability assessments of quarry dust for chemical treatment of expansive soils
+  venue: Geotechnical Testing Journal, 47(1), 20220243
+  doi: "https://doi.org/10.1520/GTJ20220243"
+- type: journal
+  year: 2024
+  authors: Gajurel, A., Puppala, A.J., Biswas, N., Chimauriya, H.
+  title: Application of satellite-based remote sensing for the management of pavement infrastructure assets
+  venue: Transportation Research Record
+  doi: "https://doi.org/10.1177/0361198124123053"
+  featured: true
+  direction: Remote sensing
+- type: journal
+  year: 2024
+  authors: Chou, S., Biswas, N., Puppala, A.J., Huang, O., Radovic, M.
+  title: Evaluation of locally available calcined clay-based geopolymer for stabilization of expansive soils
+  venue: Transportation Research Record
+  doi: "https://doi.org/10.1177/03611981241235189"
+- type: journal
+  year: 2024
+  authors: Kumar, P., Puppala, A.J., Biswas, N., Congress, S.S.C., Tingle, J.S., Little, D.N.
+  title: Assessment of durability of chemically stabilized soils using different moisture-susceptible methods
+  venue: Transportation Research Record, 2678, 1454–1467
+  doi: "https://doi.org/10.1177/03611981241244795"
+- type: journal
+  year: 2023
+  authors: Biswas, N., Puppala, A.J., Chakraborty, S.
+  title: Role of nano- and crystalline silica to accelerate chemical treatment of problematic soil
+  venue: Journal of Geotechnical and Geoenvironmental Engineering, 149(7)
+  doi: "https://doi.org/10.1061/JGGEFK.GTENG-10999"
+- type: journal
+  year: 2023
+  authors: Biswas, N., Puppala, A.J., Ramineni, K.
+  title: Durability and permanency studies in sulfate-laden soils treated with nano- and crystalline silica-based admixtures
+  venue: Journal of Materials in Civil Engineering
+  doi: "https://doi.org/10.1061/JMCEE7.MTENG-16456"
+- type: journal
+  year: 2023
+  authors: Khan, M.A., Puppala, A.J., Biswas, N., Congress, S.S.C.
+  title: Evaluation of structural performance of the geocell reinforced flexible pavement
+  venue: Transportation Geotechnics
+  doi: "https://doi.org/10.1016/j.trgeo.2023.101021"
+- type: journal
+  year: 2022
+  authors: Chakraborty, S., Puppala, A.J., Biswas, N.
+  title: Role of crystalline silica admixture in mitigating ettringite-induced heave in lime-treated sulfate-rich soils
+  venue: Géotechnique, 1–17
+  doi: "https://doi.org/10.1680/jgeot.20.p.154"
+- type: journal
+  year: 2022
+  authors: Congress, S.S.C., Puppala, A.J., Khan, M.A., Biswas, N., Kumar, P.
+  title: Application of unmanned aerial technologies for inspecting pavement and bridge infrastructure asset condition
+  venue: Transportation Research Record
+  doi: "https://doi.org/10.1177/03611981221105273"
+- type: journal
+  year: 2022
+  authors: Jang, J., Biswas, N., Puppala, A.J., Congress, S.S.C., Radovic, M., Huang, O.
+  title: Evaluation of geopolymer for stabilization of sulfate-rich expansive soils for supporting pavement infrastructure
+  venue: Transportation Research Record
+  doi: "https://doi.org/10.1177/03611981221086650"
+- type: journal
+  year: 2021
+  authors: Biswas, N., Puppala, A.J., Khan, M.A., Congress, S.S.C., Banerjee, A., Chakraborty, S.
+  title: Evaluating the performance of wicking geotextile in providing drainage for flexible pavements built over expansive soils
+  venue: Transportation Research Record
+  doi: "https://doi.org/10.1177/03611981211001381"
+- type: journal
+  year: 2020
+  authors: Khan, M.A., Biswas, N., Banerjee, A., Puppala, A.J.
+  title: Field performance of geocell reinforced recycled asphalt pavement base layer
+  venue: Transportation Research Record, 2674(3), 69–80
+  doi: "https://doi.org/10.1177/0361198120908861"
+- type: journal
+  year: 2019
+  authors: Biswas, N., Ghosh, P.
+  title: Bearing capacity factors for isolated surface strip footing resting on multi-layered reinforced soil bed
+  venue: Indian Geotechnical Journal, 49(1)
+  doi: "https://doi.org/10.1007/s40098-017-0293-z"
+- type: journal
+  year: 2018
+  authors: Biswas, N., Ghosh, P.
+  title: Interaction of adjacent strip footings on reinforced soil using upper-bound limit analysis
+  venue: Geosynthetics International, 25(6), 599–611
+  doi: "https://doi.org/10.1680/jgein.18.00020"
+- type: gsp
+  year: 2027
+  authors: Yadav, U.K., Biswas, N.
+  title: Satellite-based interferometry for monitoring and predicting slope instability under climate-induced seasonal variability
+  venue: ASCE 2027, ASCE, Reston, VA
+  status: Accepted
+- type: gsp
+  year: 2027
+  authors: Machado, J.A.R., Biswas, N.
+  title: Post-cyclic monotonic strength degradation of bauxite residue
+  venue: ASCE 2027, ASCE, Reston, VA
+  status: Accepted
+- type: gsp
+  year: 2026
+  authors: Machado, J.A.R., Biswas, N., Apostolov, A.
+  title: Utilization of bauxite ore residue as a sustainable material for pavement infrastructure
+  venue: Airfield and Highway Pavements 2026, ASCE
+  doi: "https://doi.org/10.1061/9780784487037.050"
+- type: gsp
+  year: 2026
+  authors: Sanei, M., Lakshminarayanan, V., Huang, J., Biswas, N., Puppala, A.J.
+  title: Efficacy and sustainability benefits of innovative materials for stabilization of problematic pavement subgrades
+  venue: Airfield and Highway Pavements 2026, ASCE
+  doi: "https://doi.org/10.1061/9780784487037.041"
+- type: gsp
+  year: 2026
+  authors: Biswas, N., Chou, S., Rameneni, K., Chakraborty, S., Puppala, A.J.
+  title: Enhancing durability and permanency of problematic soils using silica-based co-additives with calcium-based stabilizers
+  venue: Geo-Congress 2026, ASCE
+  doi: "https://doi.org/10.1061/9780784486764.036"
+- type: gsp
+  year: 2026
+  authors: Raj Chimauriya, H., Biswas, N., Puppala, A.J., Gajurel, A.
+  title: Development of deep learning based model for estimating erosion rates in cohesive soils
+  venue: Geo-Congress 2026, ASCE
+  doi: "https://doi.org/10.1061/9780784486719.009"
+- type: gsp
+  year: 2026
+  authors: Sanei, M., Biswas, N., Huang, J., Puppala, A.J.
+  title: Sustainability benefits assessment of cement and recycled concrete aggregate fines in subgrade stabilization application
+  venue: Geo-Congress 2026, ASCE
+  doi: "https://doi.org/10.1061/9780784486757.053"
+- type: gsp
+  year: 2026
+  authors: Mukherjee, A., Kotha, V., Chakraborty, S., Suresh, S., Biswas, N., Roy, S.
+  title: Effect of clay mineralogy on the extent of ettringite-induced heaving in lime-treated sulfate-rich soils
+  venue: Geo-Congress 2026, ASCE
+  doi: "https://doi.org/10.1061/9780784486764.033"
+- type: gsp
+  year: 2025
+  authors: Biswas, N., Sanei, M., Puppala, A.J., Mallick, R., Nazarian, S.
+  title: Application of low-carbon cement with recycled concrete aggregate fines for enhancing sustainability and durability of transportation infrastructure
+  venue: Geotechnical Frontiers 2025, ASCE, 1–10
+  doi: "https://doi.org/10.1061/9780784486009.001"
+- type: gsp
+  year: 2025
+  authors: Chou, S., Parr, K., Biswas, N., Puppala, A.J.
+  title: Use of laser-based method for measuring small strains in geomaterials under repetitive loads in triaxial environment
+  venue: Geotechnical Frontiers 2025, ASCE, 248–257
+  doi: "https://doi.org/10.1061/9780784485965.022"
+- type: gsp
+  year: 2025
+  authors: Raj Chimauriya, H., Biswas, N., Gajurel, A., Puppala, A.J.
+  title: Development of machine learning based surrogate models using fully coupled 3D numerical analysis of scour around slab-on-grade foundations
+  venue: Geotechnical Frontiers 2025, ASCE, 21–29
+  doi: "https://doi.org/10.1061/9780784485989.003"
+- type: gsp
+  year: 2025
+  authors: Raj Chimauriya, H., Biswas, N., Puppala, A.J., Gajurel, A.
+  title: Effect of storm surge-induced scour on the bearing capacity of shallow foundations for coastal residential buildings
+  venue: Geo-EnvironMeet 2025, ASCE, 10–19
+  doi: "https://doi.org/10.1061/9780784485705.002"
+  featured: true
+  direction: Coastal hazards
+- type: gsp
+  year: 2025
+  authors: Samridh, Chakraborty, S., Biswas, N., Puppala, A.J., Ramineni, K., Banerjee, A.
+  title: Micro-mechanical analyses to understand the durability of chemically stabilized geomaterials against moisture-induced damage
+  venue: Geotechnical Frontiers 2025, ASCE, 346–356
+  doi: "https://doi.org/10.1061/9780784486016.035"
+- type: gsp
+  year: 2025
+  authors: Kumar, A., Biswas, N., Puppala, A.J.
+  title: "Case histories of two recent slope failures: Lessons learned and future recommendations"
+  venue: Geotechnical Frontiers 2025, ASCE, 69–83
+  doi: "https://doi.org/10.1061/9780784485965.007"
+- type: gsp
+  year: 2025
+  authors: Ramineni, K., Congress, S.S.C., Biswas, N., Puppala, A.J., Kriegstein, S.
+  title: An experimental study to evaluate the performance of fiber-based cement mixture bags as alternative flood and erosion barriers
+  venue: Geo-EnvironMeet 2025, ASCE, 89–98
+  doi: "https://doi.org/10.1061/9780784485682.011"
+- type: gsp
+  year: 2024
+  authors: Chimauriya, H., Caldwell, C., Puppala, A.J., Biswas, N., Congress, S.S.C.
+  title: Role of EPS geofoams in reducing thermal losses from slab-on-grade foundations under freezing conditions
+  venue: Geo-Congress 2024
+  doi: "https://doi.org/10.1061/9780784485330.067"
+- type: gsp
+  year: 2024
+  authors: Chou, S., Biswas, N., Puppala, A.J., Jafari, N.
+  title: Stabilization of coastal soils to improve resiliency of transportation infrastructure after storm surge events
+  venue: Geo-Congress 2024
+  doi: "https://doi.org/10.1061/9780784485330.027"
+- type: gsp
+  year: 2024
+  authors: Kumar, A., Biswas, N., Puppala, A.J., Khan, M.A.
+  title: Investigations on fully-softened strength of lime-treated slopes built with expansive soils under future extreme precipitation
+  venue: Geo-Congress 2024
+  doi: "https://doi.org/10.1061/9780784485354.014"
+- type: gsp
+  year: 2024
+  authors: Gajurel, A., Puppala, A.J., Biswas, N., Chimauriya, H.
+  title: Use of orbital synthetic aperture radar data in monitoring geotechnical and transportation infrastructure assets
+  venue: Geo-Congress 2024
+  doi: "https://doi.org/10.1061/9780784485347.052"
+- type: gsp
+  year: 2024
+  authors: Mukherjee, A., Justin, A., Chakraborty, S., Biswas, N., Puppala, A.J., Roy, S.
+  title: Utilization of quarry fines as a sustainable admixture for suppressing ettringite-induced heaving
+  venue: Geo-Congress 2024
+  doi: "https://doi.org/10.1061/9780784485330.035"
+- type: gsp
+  year: 2024
+  authors: Jang, J., Biswas, N., Puppala, A.J., Congress, S.S.C., Radovic, M., Huang, O.
+  title: Application of metakaolin-based geopolymer for eco-friendly stabilization of coastal soils
+  venue: Geo-Congress 2024
+  doi: "https://doi.org/10.1061/9780784485330.052"
+- type: gsp
+  year: 2023
+  authors: Gajurel, A., Chimauriya, H., Biswas, N., Boluk, B., Congress, S.S.C., Puppala, A.J.
+  title: Post-construction monitoring of rehabilitated highway embankment slope in Texas
+  venue: Geo-Congress 2023, ASCE, 116–125
+- type: gsp
+  year: 2023
+  authors: Khan, M.A., Biswas, N., Banerjee, A., Puppala, A.J.
+  title: Effects of traffic loading magnitude and frequency on the performance of geocell-reinforced flexible pavements
+  venue: Geo-Congress 2023, ASCE, 517–525
+- type: gsp
+  year: 2023
+  authors: Samridh, Jain, A., Chakraborty, S., Biswas, N., Puppala, A.J., Ramineni, K.
+  title: Durability and recuperative properties of lime stabilized soils
+  venue: Geo-Congress 2023, ASCE, 440–451
+- type: gsp
+  year: 2022
+  authors: Jang, J., Puppala, A.J., Biswas, N., Chakraborty, S., Radovic, M.
+  title: Utilization of metakaolin-based geopolymers for stabilization of sulfate-rich expansive soils
+  venue: Geo-Congress 2022, ASCE, 222–231
+- type: gsp
+  year: 2022
+  authors: Khan, M.A., Puppala, A.J., Biswas, N., Congress, S.S.C., Jafari, K.H.
+  title: An analytical approach to estimate the load-bearing capacity of subgrade soil with a geocell-reinforced base layer
+  venue: Geo-Congress 2022, ASCE, 380–389
+- type: gsp
+  year: 2021
+  authors: Biswas, N., Puppala, A.J., Chakraborty, S., Khan, M.A.
+  title: Utilization of silica-based admixture to improve the durability of lime-treated expansive soil
+  venue: IFCEE 2021, 233–242
+- type: gsp
+  year: 2020
+  authors: Biswas, N., Chakraborty, S., Mosadegh, L., Puppala, A.J., Corcoran, M.
+  title: Influence of anisotropic permeability on slope stability analysis of an earthen dam during rapid drawdown
+  venue: Geo-Congress 2020, ASCE, 29–39
+- type: gsp
+  year: 2020
+  authors: Khan, M.A., Biswas, N., Banerjee, A., Puppala, A.J.
+  title: Performance of geocell-reinforced recycled asphalt pavement (RAP) bases in flexible pavements built on expansive soils
+  venue: Geo-Congress 2020, ASCE, 488–497
+- type: gsp
+  year: 2020
+  authors: Mosadegh, L., Chakraborty, S., Biswas, N., Bhaskar, P., Puppala, A.J.
+  title: Comparison of earthquake-induced pore water pressure and deformations in earthen dams using non-linear and equivalent linear analyses
+  venue: Geo-Congress 2020, ASCE, 151–160
+- type: conference
+  year: 2026
+  authors: Lakkimsetti, B., Sanei, M., Chou, S., Huang, J., Gonnabathula, A., Puppala, A.J., Biswas, N.
+  title: Relative effectiveness and sustainability assessment of low-carbon cement and geopolymer based soil stabilization methods
+  venue: 21st ICSMGE, Salzburg, Austria
+  doi: "https://doi.org/10.53243/ICSMGE2026-773"
+- type: conference
+  year: 2024
+  authors: Chou, S., Biswas, N., Puppala, A.J.
+  title: Machine learning methods to predict resilient moduli behavior of subgrade soils
+  venue: 5th International Conference on Transportation Geotechnics, Sydney
+- type: conference
+  year: 2024
+  authors: Rameneni, K., Biswas, N., Puppala, A.J., Khan, M.A.
+  title: Experimental investigation of geogrid reinforced unpaved sections under repeated loads
+  venue: 5th International Conference on Transportation Geotechnics, Sydney
+- type: conference
+  year: 2023
+  authors: Rameneni, K., Puppala, A.J., Khan, M.A., Biswas, N., Kumar, P.
+  title: Role of high-modulus geogrids in improving base layer properties
+  venue: Geosynthetics Conference 2023, Kansas City
+- type: conference
+  year: 2023
+  authors: Rameneni, K., Khan, M.A., Biswas, N., Puppala, A.J.
+  title: Evaluation of the performance of geocell and geogrid reinforced pavement sections constructed over weaker subgrade conditions based on large-scale repeated load tests
+  venue: TRB Annual Meeting 2023
+- type: conference
+  year: 2022
+  authors: Biswas, N., Chakraborty, S., Puppala, A.J.
+  title: Mitigating ettringite-induced heaving in lime-treated sulfate-rich soils using crystalline silica admixture
+  venue: 20th ICSMGE, Sydney
+- type: conference
+  year: 2021
+  authors: Biswas, N., Puppala, A.J., Khan, M.A., Congress, S.S.C., Chakraborty, S.
+  title: Depth of influence of a wicking geotextile below the flexible pavement constructed over expansive subgrade
+  venue: Geosynthetics Conference 2021, 583–594
+- type: conference
+  year: 2021
+  authors: Jang, J., Puppala, A.J., Chakraborty, S., Biswas, N., Huang, O., Radovic, M.
+  title: Eco-friendly stabilization of sulfate-rich expansive soils using geopolymers for transportation infrastructure
+  venue: Tran-SET 2021, ASCE, 223–231
+- type: chapter
+  year: 2026
+  authors: Huang, J., Puppala, A.J., Biswas, N.
+  title: "Carbon-friendly construction materials in transportation infrastructure applications in the United States: Current practices and guidelines"
+  venue: In Transportation Geotechnics for Green, Digital, and Modern Infrastructures
+  doi: "https://doi.org/10.1201/9781003530220"
+- type: chapter
+  year: 2026
+  authors: Gajurel, A., Puppala, A.J., Bhaskar, P., Biswas, N.
+  title: Satellite-based health monitoring of transportation infrastructure
+  venue: In Condition Monitoring and Structural Health Monitoring of Infrastructure Systems, Woodhead, 827–848
+  doi: "https://doi.org/10.1016/B978-0-443-38315-1.00011-8"
+- type: chapter
+  year: 2025
+  authors: Zhang, X., Biswas, N., Lostumbo, J.M., Laprade, R.
+  title: "From Alaska to Texas: Unsaturated moisture management transforms pavement performance"
+  venue: GEOSTRATA
+- type: chapter
+  year: 2024
+  authors: Gajurel, A., Biswas, N., Boluk, B., Puppala, A.J.
+  title: From collapse to cutting-edge
+  venue: GEOSTRATA, 28, 50–56
+  doi: "https://doi.org/10.1061/geosek.0000542"
+- type: chapter
+  year: 2024
+  authors: Puppala, A.J., Biswas, N., Khan, M.A., Congress, S.S.C.
+  title: Sustainable ground improvement practices and comprehensive assessments for problematic expansive soils
+  venue: In Geotechnics and Sustainable Development, Lecture Notes in Civil Engineering, Springer
+- type: chapter
+  year: 2023
+  authors: Biswas, N., Khan, M.A., Rameneni, K., Puppala, A.J.
+  title: Performance of low-volume roads built over expansive soils reinforced with wicking geotextiles
+  venue: TR Circular E-C283, 33–41
+- type: chapter
+  year: 2022
+  authors: Biswas, N., Khan, M.A., Banerjee, A., Puppala, A.J., Chakraborty, S.
+  title: Application of wicking geotextile for pavement infrastructure on expansive soil
+  venue: In Advances in Transportation Geotechnics IV, Springer, 533–544
+- type: chapter
+  year: 2022
+  authors: Khan, M.A., Biswas, N., Banerjee, A., Congress, S.S.C., Puppala, A.J.
+  title: Effectiveness of double-layer HDPE geocell system to reinforce reclaimed asphalt pavement (RAP) base layer
+  venue: In Advances in Transportation Geotechnics IV, Springer, 593–604
+- type: chapter
+  year: 2021
+  authors: Biswas, N., Chakraborty, S., Puppala, A.J., Banerjee, A.
+  title: A novel method to improve the durability of lime-treated expansive soil
+  venue: In Proceedings of IGC 2019, Lecture Notes in Civil Engineering, Springer, 227–238
+- type: report
+  year: 2025
+  authors: Biswas, N., Mallick, R., Puppala, A.J., Nazarian, S., Sanei, M., Khallaghi, F.
+  title: Impacts reduction and durability of pavement recycling and stabilization using novel materials
+  venue: Southern Plains Transportation Center (Region 6)
+- type: report
+  year: 2023
+  authors: Puppala, A.J., Radovic, M., Biswas, N., Chou, S., Huang, O.
+  title: Stabilization of expansive soil using geopolymers from locally available resources
+  venue: Tran-SET UTC, Region 6
+- type: report
+  year: 2023
+  authors: Puppala, A.J., Biswas, N., Gajurel, A.
+  title: Monitoring of transportation system assets using synthetic aperture radar (SAR) satellite data
+  venue: Tran-SET UTC, Region 6
+- type: report
+  year: 2023
+  authors: Biswas, N., Puppala, A.J., Khan, M.A.
+  title: Application of wicking geotextile for improving performance of pavement built over expansive soil
+  venue: TenCate Geosynthetics
+- type: report
+  year: 2023
+  authors: Puppala, A.J., Jafari, N., Biswas, N., Chou, S., Gallegos, D.
+  title: Resiliency of transportation infrastructure and the environment after hurricanes
+  venue: Tran-SET UTC, Region 6
+- type: report
+  year: 2020
+  authors: Chakraborty, S., Biswas, N., Puppala, A.J., Little, D.
+  title: Longevity of admixture treatment of soils
+  venue: CERGEP Report No. 11, Texas A&M University

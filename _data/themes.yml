@@ -1,0 +1,27 @@
+# RESEARCH THEMES — shown on the home page and the Research page.
+#   scene: the illustration file in _includes/scenes/ (leave as is)
+- label: Coast & hazards
+  title: Compound coastal hazards & adaptation
+  text: Hydrologic change during erosion and scour under storm surge, extreme rainfall, groundwater rise, and freeze–thaw; nature-based solutions and beneficial use of dredged material.
+  tags: [Storm surge, Scour, Groundwater rise, Dredged material]
+  scene: scenes/scene-0.svg
+- label: Computation
+  title: Physics-informed digital twins
+  text: Coupling granular mechanics with physics-informed neural networks to predict stability of coastal bluffs, foundations, bridge piers, and road and rail embankments under extreme loading, scour, and erosion, validated with new laboratory experiments.
+  tags: [PINNs, Granular mechanics, Surrogate models]
+  scene: scenes/scene-1.svg
+- label: Observation
+  title: Remote & robotic sensing
+  text: Integrating NISAR/InSAR, satellite soil-moisture products, UAV, LiDAR, and autonomous robotic platforms for early detection of infrastructure failure and post-storm reconnaissance.
+  tags: [NISAR / InSAR, UAV & LiDAR, Robotic platforms]
+  scene: scenes/scene-2.svg
+- label: Materials
+  title: Sustainable infrastructure & geosystems
+  text: Sustainable ground improvement of expansive and sulfate-rich soils, geosynthetics for pavements, and low-carbon stabilizers, with ongoing work on the dynamic behavior of mine tailings.
+  tags: [Low-carbon stabilizers, Wicking geotextiles, Mine tailings]
+  scene: scenes/scene-3.svg
+- label: People
+  title: Community-based coastal resilience
+  text: Co-developing research and decision tools with local communities, regional planning agencies, tribal governments, and state agencies.
+  tags: [Local communities, Tribal governments, State agencies]
+  scene: scenes/scene-4.svg

@@ -1,0 +1,12 @@
+---
+layout: default
+---
+<header class="phead">
+  <div class="wrap">
+    <p class="mono">{{ page.kicker }}</p>
+    <h1>{{ page.heading }}</h1>
+    {% if page.intro %}<p class="intro">{{ page.intro }}</p>{% endif %}
+  </div>
+  {% include strip.svg %}
+</header>
+{{ content }}

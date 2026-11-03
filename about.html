@@ -1,0 +1,51 @@
+---
+layout: page
+title: About
+permalink: /about/
+kicker: About
+heading: Nripojyoti <em>Biswas</em>
+description: Biography, appointments, education, honors, professional service and contact details for Nripojyoti Biswas, Ph.D.
+---
+{% assign P = site.data.profile %}
+<section class="block" aria-labelledby="bio-h">
+  <div class="wrap sub-h">
+    <div><p class="mono">{{ P.position }}</p><h2 id="bio-h">{{ P.university }}</h2></div>
+    <p style="font:300 clamp(20px,1.9vw,26px)/1.5 var(--display);max-width:52ch">{{ P.lede }}</p>
+  </div>
+</section>
+<section class="block alt" aria-labelledby="ap-h">
+  <div class="wrap">
+    <div class="cols2">
+      <div><h2 id="ap-h" class="mono" style="color:var(--clay);margin-bottom:18px">Appointments</h2><ul class="rows">{% for x in site.data.cv.appointments %}<li><span class="when">{{ x.years }}</span><span class="what">{{ x.text }}</span><span></span></li>{% endfor %}</ul></div>
+      <div><h2 class="mono" style="color:var(--clay);margin-bottom:18px">Education</h2><ul class="rows">{% for x in site.data.cv.education %}<li><span class="when">{{ x.years }}</span><span class="what">{{ x.text }}</span><span></span></li>{% endfor %}</ul></div>
+    </div>
+  </div>
+</section>
+<section class="block" aria-labelledby="hn-h">
+  <div class="wrap sub-h">
+    <div><p class="mono">Recognition</p><h2 id="hn-h">Honors &amp; <em>awards</em></h2></div>
+    <ul class="rows">{% for x in site.data.cv.honors %}<li><span class="when">{{ x.years }}</span><span class="what">{{ x.text }}</span><span></span></li>{% endfor %}</ul>
+  </div>
+</section>
+<section class="block alt" id="service" aria-labelledby="sv-h">
+  <div class="wrap sub-h">
+    <div><p class="mono">Profession &amp; community</p><h2 id="sv-h">Service</h2></div>
+    <div class="cols2" style="grid-template-columns:1fr">
+      <div><h3>Editorial &amp; leadership</h3><ul class="bullets">{% for x in site.data.service.editorial %}<li>{{ x }}</li>{% endfor %}</ul></div>
+      <div class="cols2">
+        <div><h3>Memberships</h3><ul class="bullets">{% for x in site.data.service.memberships %}<li>{{ x }}</li>{% endfor %}</ul></div>
+        <div><h3>University</h3><ul class="bullets">{% for x in site.data.service.university %}<li>{{ x }}</li>{% endfor %}</ul></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="block" id="contact" aria-labelledby="co-h">
+  <div class="wrap sub-h">
+    <div><p class="mono">Get in touch</p><h2 id="co-h">Contact</h2></div>
+    <div>
+      <p style="font:300 clamp(20px,1.8vw,24px)/1.5 var(--display)">{{ P.department }}<br>{{ P.university }}</p>
+      <div class="mail" style="margin-top:22px"><span class="addr" id="addr" style="color:var(--ink);background:var(--surface);border-color:var(--line)">{{ P.email }}</span><button type="button" id="copy">Copy email</button></div>
+      <p style="margin-top:22px;color:var(--muted)">{{ P.join_text }}</p>
+    </div>
+  </div>
+</section>
