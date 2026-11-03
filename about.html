@@ -9,7 +9,15 @@ description: "About the Principal Investigator, Nripojyoti Biswas, Ph.D.: resear
 {% assign P = site.data.profile %}
 <section class="block" aria-labelledby="bio-h">
   <div class="wrap sub-h">
-    <div><p class="mono">{{ P.position }}</p><h2 id="bio-h">{{ P.university }}</h2></div>
+    <div>
+      <figure class="pi-photo">
+        <picture>
+          <source type="image/webp" srcset="/assets/img/pi-headshot-480.webp 480w, /assets/img/pi-headshot-960.webp 960w" sizes="(max-width:900px) 320px, 360px">
+          <img src="/assets/img/pi-headshot-480.jpg" srcset="/assets/img/pi-headshot-480.jpg 480w, /assets/img/pi-headshot-960.jpg 960w" sizes="(max-width:900px) 320px, 360px" width="480" height="600" alt="Portrait of {{ P.name }}, {{ P.credentials }}" fetchpriority="high">
+        </picture>
+      </figure>
+      <p class="mono">{{ P.position }}</p><h2 id="bio-h">{{ P.university }}</h2>
+    </div>
     <p style="font:300 clamp(20px,1.9vw,26px)/1.5 var(--display);max-width:52ch">{{ P.lede }}</p>
   </div>
 </section>
