@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>{{ page.title }} moved</title>
+<meta name="robots" content="noindex">
+<link rel="canonical" href="{{ site.url }}{{ page.redirect_to }}">
+<meta http-equiv="refresh" content="0; url={{ page.redirect_to }}">
+<script>location.replace("{{ page.redirect_to }}")</script>
+</head>
+<body><p>This page moved to <a href="{{ page.redirect_to }}">{{ site.url }}{{ page.redirect_to }}</a>.</p></body>
+</html>

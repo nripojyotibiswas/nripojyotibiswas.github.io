@@ -1,9 +1,9 @@
 # Site settings. GitHub Pages builds the site from these files automatically.
-title: Nripojyoti Biswas
+title: Biswas Geosystems Research Group
 email: Nripojyoti_Biswas@uml.edu
 description: >-
-  Nripojyoti Biswas, Assistant Professor of Civil and Environmental Engineering at UMass Lowell.
-  Research on coastal geotechnics, geohazards, sustainable geosystems, remote sensing, and physics-informed machine learning.
+  The Biswas Geosystems Research Group at UMass Lowell: coastal geotechnics, geohazards, sustainable geosystems,
+  remote sensing, and physics-informed machine learning. Principal Investigator Nripojyoti Biswas, Ph.D.
 url: "https://nripojyotibiswas.github.io"
 baseurl: ""
 markdown: kramdown

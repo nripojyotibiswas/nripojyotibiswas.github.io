@@ -1,24 +1,6 @@
 ---
-layout: page
-title: Teaching
+layout: redirect
 permalink: /teaching/
-kicker: Teaching &amp; mentoring
-heading: In the <em>classroom</em>
-intro: Graduate and undergraduate courses in soil mechanics, geosynthetics, ground improvement and engineering materials.
-description: Courses taught by Nripojyoti Biswas at UMass Lowell and Texas A&M University.
+title: Teaching
+redirect_to: /about/#teaching
 ---
-<section class="block" aria-labelledby="ct-h">
-  <div class="wrap sub-h">
-    <div><p class="mono">Courses</p><h2 id="ct-h">Courses <em>taught</em></h2><p class="lead">ASCE ExCEEd Fellow (2025), trained in evidence-based civil engineering pedagogy.</p></div>
-    <div>
-      {% assign insts = site.data.courses | map: "institution" | uniq %}
-      {% for inst in insts %}
-      <p class="course-inst">{{ inst }}</p>
-      <ul class="rows">
-        {% for c in site.data.courses %}{% if c.institution == inst %}<li><span class="when">{{ c.code }}</span><span class="what">{{ c.title }}<small>{{ c.terms }}</small></span>{% if c.upcoming %}<span class="tagx">Upcoming</span>{% else %}<span></span>{% endif %}</li>
-        {% endif %}{% endfor %}
-      </ul>
-      {% endfor %}
-    </div>
-  </div>
-</section>
