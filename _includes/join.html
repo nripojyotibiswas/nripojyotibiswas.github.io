@@ -1,0 +1,24 @@
+{% assign P = site.data.profile %}
+<section class="join sec" id="join" aria-labelledby="jn-h">
+  <canvas id="contour" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <div class="j-grid">
+      <div>
+        <p class="mono lab">Prospective graduate students</p>
+        <h2 class="jh" id="jn-h">Join <span class="o">the</span><br><em>group</em></h2>
+        <p class="j-intro">{{ P.join_text }}</p>
+        <ul class="areas">{% for a in P.join_areas %}<li>{{ a }}</li>{% endfor %}</ul>
+        <div class="mail"><span class="addr" id="addr">{{ P.email }}</span><button type="button" id="copy">Copy email</button><a class="pillbtn" href="{{ P.group_url }}" target="_blank" rel="noopener">Group at UML ↗</a></div>
+      </div>
+      <aside class="roster" aria-labelledby="gr-h">
+        <h3 id="gr-h">The research group</h3>
+        <p class="sub">Current doctoral researchers</p>
+        <ul>
+          {% for m in site.data.people.current %}<li><span class="av" aria-hidden="true">{{ m.initials }}</span><div><b>{{ m.name }}</b><small>{{ m.degree | upcase }} · {{ m.since }}</small><span>{{ m.topic }}</span></div></li>
+          {% endfor %}
+        </ul>
+        <p class="alum"><b>Alumni</b>{% for a in site.data.people.alumni %} · {{ a.name }}, {{ a.detail }}{% endfor %}</p>
+      </aside>
+    </div>
+  </div>
+</section>

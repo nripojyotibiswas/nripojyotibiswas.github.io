@@ -1,0 +1,31 @@
+# APPOINTMENTS, EDUCATION AND HONORS — shown on the About page.
+
+appointments:
+- years: 2024 – present
+  text: Assistant Professor, Civil & Environmental Engineering, UMass Lowell
+- years: 2023 – 2024
+  text: Senior Research Engineer I & Instructional Lecturer, Texas A&M University
+- years: 2022 – 2023
+  text: Postdoctoral Researcher & Alternate Instructor, Texas A&M University
+education:
+- years: '2022'
+  text: Ph.D., Civil Engineering, Texas A&M University
+- years: '2017'
+  text: M.Tech., Civil Engineering, IIT Kanpur
+- years: '2013'
+  text: B.E., Civil Engineering, IIEST Shibpur
+honors:
+- years: '2025'
+  text: USUCGER Early Career Workshop Awardee
+- years: '2025'
+  text: ASCE ExCEEd (Excellence in Civil Engineering Education) Fellow
+- years: '2021'
+  text: Terracon Endowed Fellowship in Geotechnical Engineering
+- years: '2020'
+  text: Hooper Fellowship in Geotechnical Engineering
+- years: '2020'
+  text: Geo-Institute Travel Award (Geo-Congress)
+- years: '2020'
+  text: Zachry Department of Civil & Environmental Engineering Travel Award (TRB)
+- years: '2019'
+  text: Academic Excellence Award, Outstanding Civil Engineering Ph.D. Student, UT Arlington

@@ -1,0 +1,16 @@
+<svg class="sv" viewBox="0 0 600 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <rect width="600" height="600" fill="#0A1824"/>
+  <rect x="0" y="420" width="230" height="180" fill="#2E7383" opacity=".75"/>
+  <g class="drift" style="animation-duration:9s"><path class="gl" d="M0,420 q30,-12 60,0 t60,0 t60,0 t60,0 t60,0 t60,0" /></g>
+  <path fill="#D2B48A" d="M0,600 V470 C100,460 180,440 230,420 C280,400 330,390 600,386 V600Z"/>
+  <path fill="#B0926A" d="M0,600 V540 C180,520 320,480 600,470 V600Z"/>
+  <g class="ink"><path d="M290,396 V360 L312,340 L334,360 V396"/><path d="M360,392 V350 L386,328 L412,350 V392"/><path d="M440,390 V364 L460,346 L480,364 V390"/><path d="M506,388 V356 L528,338 L550,356 V388"/></g>
+  <g fill="none" stroke="var(--glow)" stroke-width="1.6" stroke-dasharray="6 6" class="dash">
+    <path d="M150,170 C220,120 300,120 340,200"/><path d="M340,200 C400,130 470,130 500,180"/><path d="M150,170 C200,260 330,300 386,320"/><path d="M500,180 C520,240 500,300 460,340"/>
+  </g>
+  <g><circle cx="150" cy="170" r="22" fill="#0F3A3A" stroke="var(--glow)"/><circle cx="340" cy="200" r="22" fill="#0F3A3A" stroke="var(--glow)"/><circle cx="500" cy="180" r="22" fill="#0F3A3A" stroke="var(--glow)"/></g>
+  <g class="glf"><circle cx="150" cy="170" r="6" class="pulse"/><circle cx="340" cy="200" r="6" class="pulse" style="animation-delay:.8s"/><circle cx="500" cy="180" r="6" class="pulse" style="animation-delay:1.6s"/></g>
+  <text class="lbl" x="100" y="132">COMMUNITIES</text>
+  <text class="lbl" x="276" y="250">PLANNING AGENCIES</text>
+  <text class="lbl" x="420" y="140">TRIBAL &amp; STATE</text>
+</svg>

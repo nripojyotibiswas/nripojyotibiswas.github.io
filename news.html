@@ -1,0 +1,21 @@
+---
+layout: page
+title: News
+permalink: /news/
+kicker: Group news
+heading: Latest from the <em>group</em>
+intro: Conferences, awards, talks, and milestones from students and faculty.
+description: News from the Biswas Geosystems Research Group at UMass Lowell.
+---
+<section class="news block" aria-label="News by year">
+  <div class="wrap">
+    {% assign years = site.data.news | map: "year" | uniq %}
+    {% for y in years %}
+    <div class="ylist">
+      <h2>{{ y }}</h2>
+      <ul>{% for n in site.data.news %}{% if n.year == y %}<li>{% include news-card.html %}</li>{% endif %}{% endfor %}</ul>
+    </div>
+    {% endfor %}
+    <p style="margin-top:28px"><a class="tlink" href="{{ site.data.profile.group_news_url }}" target="_blank" rel="noopener">Group news page at UML ↗</a></p>
+  </div>
+</section>

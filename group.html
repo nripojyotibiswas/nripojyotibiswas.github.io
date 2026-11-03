@@ -1,0 +1,26 @@
+---
+layout: page
+title: Group
+permalink: /group/
+kicker: Research group
+heading: The <em>people</em>
+intro: Doctoral researchers working across coastal geotechnics, remote sensing, and machine learning for geosystems.
+description: Members and alumni of the Biswas Geosystems Research Group at UMass Lowell, and how prospective graduate students can get in touch.
+---
+<section class="block" aria-labelledby="cm-h">
+  <div class="wrap">
+    <div class="sub-h" style="margin-bottom:40px"><div><p class="mono">Current members</p><h2 id="cm-h">Doctoral <em>researchers</em></h2></div></div>
+    <div class="people">
+      {% for m in site.data.people.current %}
+      <article class="person"><span class="av" aria-hidden="true">{{ m.initials }}</span><p class="mono">{{ m.degree }} · {{ m.since }}</p><h3>{{ m.name }}</h3><p>{{ m.topic }}</p></article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<section class="block alt" aria-labelledby="al-h">
+  <div class="wrap sub-h">
+    <div><p class="mono">Alumni</p><h2 id="al-h">Former <em>members</em></h2></div>
+    <ul class="rows">{% for a in site.data.people.alumni %}<li><span class="when">Alumni</span><span class="what">{{ a.name }}<small>{{ a.detail }}</small></span><span></span></li>{% endfor %}</ul>
+  </div>
+</section>
+{% include join.html %}

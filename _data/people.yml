@@ -1,0 +1,24 @@
+# RESEARCH GROUP — current members and alumni.
+#   initials: two letters shown in the circle (until photos are added)
+
+current:
+- name: João Alves Ribeiro Machado
+  initials: JM
+  degree: Ph.D.
+  since: 2024–
+  topic: Behavior of mine tailings residue under dynamic loads
+- name: Uday Yadav
+  initials: UY
+  degree: Ph.D.
+  since: 2025–
+  topic: Satellite remote sensing for natural hazards and slope stability
+- name: Fatemeh Karbalaee
+  initials: FK
+  degree: Ph.D.
+  since: 2025–
+  topic: Deep learning for granular soil behavior and coastal resilience
+alumni:
+- name: Muddassir Sanei
+  detail: M.S., Texas A&M (2023–2024)
+- name: Nicole Arackal and Gustavo Hernandez Martin
+  detail: Undergraduate researchers, Texas A&M (2023–2024)

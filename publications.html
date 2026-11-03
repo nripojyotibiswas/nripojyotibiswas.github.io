@@ -1,0 +1,58 @@
+---
+layout: page
+title: Publications
+permalink: /publications/
+kicker: Scholarship
+heading: Publications, layer by <em>layer</em>
+intro: Every journal article, special publication, conference paper, chapter and report, stacked by year like a sediment core. Select a year or a type to filter the list, or search by title, author or venue.
+description: Full publication list of Nripojyoti Biswas, with journal articles, ASCE Geotechnical Special Publications, conference papers, book chapters, technical reports, the patent and invited talks.
+load_publications: true
+---
+{% assign P = site.data.profile %}
+<section class="pubs block" id="list" aria-label="Publication explorer">
+  <div class="wrap">
+    <div class="chartbox">
+      <div class="chart-top">
+        <div><h3>Output by year</h3><p>{{ site.data.publications | size }} entries, including manuscripts under review</p></div>
+        <div class="legend" id="legend" role="group" aria-label="Show or hide publication types"></div>
+      </div>
+      <div class="chart-scroll"><svg id="chart" viewBox="0 0 1000 340" role="img" aria-label="Stacked column chart of publications per year by type"></svg></div>
+    </div>
+    <div class="pub-ctrl">
+      <div class="tabs" role="tablist" aria-label="Publication list">
+        <button type="button" role="tab" id="tab-all" aria-selected="true">All entries</button>
+        <button type="button" role="tab" id="tab-sel" aria-selected="false">Featured</button>
+      </div>
+      <label class="search"><span class="sr">Search publications</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+        <input id="q" type="search" placeholder="Search titles, authors, venues">
+      </label>
+    </div>
+    <p class="status" id="pstatus"></p>
+    <ol class="plist" id="plist">
+      {% for p in site.data.publications %}<li><span class="y">{% if p.year %}{{ p.year }}{% else %}—{% endif %}</span><div><p class="c">{% include cite.html %}</p></div>{% if p.doi %}<a class="doi" href="{{ p.doi }}" target="_blank" rel="noopener">DOI ↗</a>{% else %}<span></span>{% endif %}</li>
+      {% endfor %}
+    </ol>
+    <div class="more-row"><button class="ghost" type="button" id="pmore" hidden>Show more</button></div>
+  </div>
+</section>
+
+<section class="block alt" aria-labelledby="pt-h">
+  <div class="wrap sub-h">
+    <div><p class="mono">Invention</p><h2 id="pt-h">Patent</h2></div>
+    <ul class="rows">
+      {% for x in site.data.patents %}<li><span class="when">{{ x.number }}</span><span class="what">{{ x.title }}</span><span class="tagx">{{ x.status }}</span></li>{% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="block" aria-labelledby="tk-h">
+  <div class="wrap sub-h">
+    <div><p class="mono">Speaking</p><h2 id="tk-h">Keynotes, invited talks <em>&amp; workshops</em></h2></div>
+    <div class="cols2" style="grid-template-columns:1fr">
+      <div><h3>Keynote lectures</h3><ul class="bullets">{% for x in site.data.talks.keynotes %}<li>{{ x }}</li>{% endfor %}</ul></div>
+      <div><h3>Invited webinars</h3><ul class="bullets">{% for x in site.data.talks.webinars %}<li>{{ x }}</li>{% endfor %}</ul></div>
+      <div><h3>Workshops &amp; symposia</h3><ul class="bullets">{% for x in site.data.talks.workshops %}<li>{{ x }}</li>{% endfor %}</ul></div>
+    </div>
+  </div>
+</section>

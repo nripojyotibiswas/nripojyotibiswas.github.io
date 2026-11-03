@@ -1,0 +1,1 @@
+{% assign last = p.authors | slice: -1, 1 %}{{ p.authors | replace: "Biswas, N.", "<b>Biswas, N.</b>" }}{% if p.year %} ({{ p.year }}).{% elsif last != "." %}.{% endif %} {{ p.title }}.{% if p.venue %} {{ p.venue }}.{% endif %}

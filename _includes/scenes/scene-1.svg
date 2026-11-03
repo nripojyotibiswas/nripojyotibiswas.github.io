@@ -1,0 +1,19 @@
+<svg class="sv" viewBox="0 0 600 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <defs><clipPath id="cpL"><rect width="300" height="600"/></clipPath><clipPath id="cpR"><rect x="300" width="300" height="600"/></clipPath></defs>
+  <rect width="600" height="600" fill="#0A1824"/>
+  <g clip-path="url(#cpL)">
+    <path fill="#D2B48A" d="M0,470 C60,462 110,450 150,430 L176,340 C196,270 212,226 250,208 C276,198 320,196 600,192 V600 H0Z"/>
+    <path fill="#B0926A" d="M0,520 C120,500 220,440 300,380 C400,320 500,316 600,314 V600 H0Z"/>
+    <path fill="#8B6E4D" d="M0,580 C160,560 260,520 340,480 C440,436 520,430 600,430 V600 H0Z"/>
+    <rect x="0" y="430" width="150" height="170" fill="#2E7383" opacity=".75"/>
+  </g>
+  <g clip-path="url(#cpR)" id="twinmesh"></g>
+  <path class="gl" d="M0,470 C60,462 110,450 150,430 L176,340 C196,270 212,226 250,208 C276,198 320,196 600,192" stroke-width="2.2"/>
+  <path class="ink2" d="M300,40 V560" stroke-dasharray="3 7" opacity=".6"/>
+  <text class="lbl" x="40" y="80">FIELD &amp; LAB</text>
+  <text class="lbl" x="330" y="80" style="fill:var(--glow)">DIGITAL TWIN</text>
+  <path id="twinpath" d="M330,250 L390,290 L450,270 L510,320 L560,300" fill="none"/>
+  <circle r="5" class="glf travel" style="offset-path:path('M330,250 L390,290 L450,270 L510,320 L560,300')"/>
+  <circle r="4" class="sd travel" style="offset-path:path('M340,380 L400,420 L470,400 L530,450');animation-delay:-1.4s"/>
+  <g transform="translate(360 470)"><rect width="200" height="80" rx="12" fill="rgba(5,13,20,.7)" stroke="rgba(127,209,195,.4)"/><text class="lbl" x="16" y="26">PREDICTED STABILITY</text><path class="gl" d="M16,60 C50,58 70,40 100,44 S150,62 184,36"/></g>
+</svg>

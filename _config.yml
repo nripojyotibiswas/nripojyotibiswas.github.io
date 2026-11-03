@@ -1,9 +1,14 @@
-
+# Site settings. GitHub Pages builds the site from these files automatically.
 title: Nripojyoti Biswas
 email: Nripojyoti_Biswas@uml.edu
 description: >-
   Nripojyoti Biswas, Assistant Professor of Civil and Environmental Engineering at UMass Lowell.
-  Research on physics-informed digital twins, remote sensing, and resilience of coastal geo-infrastructure.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://nripojyotibiswas.github.io" # the base hostname & protocol for your site
-theme: minima
+  Research on coastal geotechnics, geohazards, sustainable geosystems, remote sensing, and physics-informed machine learning.
+url: "https://nripojyotibiswas.github.io"
+baseurl: ""
+markdown: kramdown
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor

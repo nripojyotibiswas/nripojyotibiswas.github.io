@@ -1,0 +1,6 @@
+<svg class="strip" viewBox="0 0 1600 120" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0,40 C200,28 380,52 560,40 S920,24 1100,36 S1440,50 1600,38 V120 H0Z" fill="#1F4E63" opacity=".55"/>
+  <path d="M0,62 C260,48 520,74 800,60 S1300,44 1600,58 V120 H0Z" fill="#2E7383" opacity=".35"/>
+  <path d="M0,84 C300,72 600,94 900,82 S1350,70 1600,80 V120 H0Z" style="fill:var(--paper)"/>
+  <path d="M0,40 C200,28 380,52 560,40 S920,24 1100,36 S1440,50 1600,38" fill="none" stroke="#7FD1C3" stroke-opacity=".6" stroke-width="1.5"/>
+</svg>

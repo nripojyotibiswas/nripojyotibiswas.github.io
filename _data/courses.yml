@@ -1,0 +1,32 @@
+# COURSES — upcoming: true adds an "Upcoming" tag.
+
+- title: Engineering with Geosynthetics
+  code: CIVE.5290
+  institution: UMass Lowell
+  terms: Spring 2027
+  upcoming: true
+- title: Engineering Materials
+  code: CIVE.3100
+  institution: UMass Lowell
+  terms: Spring 2027
+  upcoming: true
+- title: Advanced Soil Mechanics
+  code: CIVE.5310
+  institution: UMass Lowell
+  terms: Fall 2024, Fall 2025, Fall 2026
+- title: Soil Behavior
+  code: CIVE.5380
+  institution: UMass Lowell
+  terms: Spring 2025
+- title: Soil Engineering
+  code: CIVE.5360
+  institution: UMass Lowell
+  terms: Spring 2026
+- title: Design with Geosynthetics
+  code: CVEN 720
+  institution: Texas A&M
+  terms: Fall 2023
+- title: Ground Improvement
+  code: CVEN 689
+  institution: Texas A&M
+  terms: Spring 2024

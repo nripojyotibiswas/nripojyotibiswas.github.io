@@ -1,0 +1,42 @@
+# NEWS — newest first. The home page shows these in order.
+#   year:     year of the item
+#   category: Symposium | Award | Conference | Group | Workshop | Talk | Welcome | Teaching (sets the small icon)
+#   title:    headline
+#   text:     one short line (optional, can be left as "")
+
+- year: 2026
+  category: Symposium
+  title: Uday Yadav presents at UML Student Research Symposium
+  text: Satellite remote sensing for geotechnical hazard assessment.
+- year: 2026
+  category: Award
+  title: Fatemeh Karbalaee wins 3rd place, GeoPoster at GeoCongress 2026
+  text: National competition in Salt Lake City, for coastal bluff erosion research.
+- year: 2026
+  category: Conference
+  title: Group presents at GeoCongress 2026
+  text: Deep-learning erosion rates in cohesive soils; tailings dam testing in Brazil.
+- year: 2026
+  category: Symposium
+  title: Poster at Tufts Geotechnical Symposium
+  text: Physics-driven modeling of erosion for coastal bluffs.
+- year: 2025
+  category: Group
+  title: First group meeting of the semester
+  text: Reviewing progress and setting research priorities.
+- year: 2025
+  category: Workshop
+  title: USUCGER Early Career Workshop, Georgia Tech
+  text: Dr. Biswas joins the national early-career geotechnical cohort.
+- year: 2025
+  category: Talk
+  title: Lightning talk at ASCE Geo-Connecticut
+  text: João Machado on bauxite residue for sustainable pavements.
+- year: 2025
+  category: Welcome
+  title: Two new Ph.D. students join the group
+  text: ''
+- year: 2025
+  category: Teaching
+  title: ASCE ExCEEd teaching workshop
+  text: Training in evidence-based civil engineering pedagogy.

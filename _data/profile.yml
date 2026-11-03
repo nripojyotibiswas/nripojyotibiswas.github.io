@@ -1,0 +1,41 @@
+# PROFILE — your name, title, links and headline numbers. Used on every page.
+name: Nripojyoti Biswas
+credentials: Ph.D.
+position: Assistant Professor, Civil & Environmental Engineering
+department: Department of Civil and Environmental Engineering
+university: University of Massachusetts Lowell
+email: Nripojyoti_Biswas@uml.edu
+group_name: Biswas Geosystems
+group_long: Biswas Geosystems Research Group
+scholar: https://scholar.google.com/citations?user=0a7NCGIAAAAJ&hl=en
+orcid: https://orcid.org/0000-0001-5548-1292
+group_url: https://www.uml.edu/research/biswas-geosystems-research-group/
+group_news_url: https://www.uml.edu/research/biswas-geosystems-research-group/news.aspx
+
+# Short line on the home page hero, and the full research statement used on Research and About.
+lede_short: I study how coastal geo-infrastructure fails under storms, erosion, and changing hydrology, and how to see it coming.
+lede: I study how coastal geo-infrastructure fails under storms, erosion, and changing hydrology, and how to see it coming. My group couples granular mechanics with physics-informed machine learning, satellite and robotic sensing, and laboratory experiments to build digital twins for bluffs, foundations, bridges, and embankments.
+
+# Join Us text (Group page and home page)
+join_text: Prospective students interested in coastal geotechnics, physics-informed machine learning, or remote sensing are welcome to get in touch.
+join_areas:
+  - Coastal geotechnics
+  - Physics-informed machine learning
+  - Remote sensing
+
+# Headline numbers. Update these from Google Scholar now and then, and change the date line.
+stats:
+  - value: 22
+    label: Journal articles
+  - value: 38
+    label: GSP & conference papers
+  - value: 666
+    label: Citations
+  - value: 15
+    label: h-index
+  - value: 1
+    label: US patent application
+stats_source: Citation metrics from Google Scholar, October 2026
+
+# Shown in the footer
+last_updated: October 2026

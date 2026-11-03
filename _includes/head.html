@@ -1,0 +1,20 @@
+{% assign P = site.data.profile %}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{% if page.title %}{{ page.title }} · {{ P.name }}{% else %}{{ P.name }}, {{ P.credentials }} · Coastal Geotechnics &amp; Geosystems{% endif %}</title>
+<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description | strip }}{% endif %}">
+<link rel="canonical" href="{{ site.url }}{{ page.url | replace: 'index.html', '' }}">
+<meta name="theme-color" content="#0A1824">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ P.group_long }}">
+<meta property="og:title" content="{% if page.title %}{{ page.title }} · {% endif %}{{ P.name }}, {{ P.credentials }}">
+<meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description | strip }}{% endif %}">
+<meta property="og:url" content="{{ site.url }}{{ page.url | replace: 'index.html', '' }}">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..600&family=Schibsted+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/assets/css/site.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"{{ P.name }}","honorificSuffix":"{{ P.credentials }}","jobTitle":"Assistant Professor","email":"mailto:{{ P.email }}","url":"{{ site.url }}/","worksFor":{"@type":"CollegeOrUniversity","name":"{{ P.university }}"},"sameAs":["{{ P.scholar }}","{{ P.orcid }}","{{ P.group_url }}"]}
+</script>

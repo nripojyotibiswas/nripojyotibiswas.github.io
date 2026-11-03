@@ -1,884 +1,146 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Nripojyoti Biswas, Ph.D. | Coastal Geotechnics &amp; Geosystems</title>
-<meta name="description" content="Nripojyoti Biswas, Assistant Professor of Civil and Environmental Engineering at UMass Lowell. Research on physics-informed digital twins, remote sensing, and resilience of coastal geo-infrastructure.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,400..700,0..100&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-  /* ============================================================
-     EDIT YOUR LINKS HERE: search this file for "LINK:" comments.
-     ============================================================ */
-  :root{
-    --bg:#fbfaf7; --surface:#ffffff; --ink:#1c2328; --muted:#5b6670; --line:#e3e0d8;
-    --accent:#0f5c6e; --accent-soft:#e3eff1; --mark:#b5651d;
-    --serif:"Source Serif 4", Georgia, serif; --sans:"Inter", system-ui, -apple-system, sans-serif;
-  }
-  @media (prefers-color-scheme: dark){
-    :root:not([data-theme="light"]){
-      --bg:#12171a; --surface:#182024; --ink:#e6eaec; --muted:#9aa7ae; --line:#2a3439;
-      --accent:#6cc0d1; --accent-soft:#1d3238; --mark:#e0a060;
-    }
-  }
-  *{box-sizing:border-box}
-  html{scroll-behavior:smooth; scroll-padding-top:72px}
-  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 var(--sans)}
-  a{color:var(--accent);text-decoration:none}
-  a:hover{text-decoration:underline}
-  .wrap{max-width:920px;margin:0 auto;padding:0 20px}
-
-  nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 92%,transparent);
-      backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
-  nav .wrap{display:flex;gap:4px 18px;align-items:center;flex-wrap:wrap;padding-top:12px;padding-bottom:12px}
-  nav .brand{font-family:var(--serif);font-weight:700;color:var(--ink);margin-right:auto}
-  nav a.l{font-size:14px;color:var(--muted)}
-  nav a.l:hover{color:var(--accent);text-decoration:none}
-
-  header.hero{padding:64px 0 40px;border-bottom:1px solid var(--line)}
-  h1{font-family:var(--serif);font-size:clamp(32px,5vw,46px);line-height:1.15;margin:0 0 8px;letter-spacing:-.01em}
-  .role{font-size:18px;color:var(--muted);margin:0 0 22px}
-  .lede{font-family:var(--serif);font-size:20px;line-height:1.6;max-width:720px;margin:0 0 26px}
-  .links{display:flex;flex-wrap:wrap;gap:10px}
-  .btn{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border:1px solid var(--line);
-       border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;font-weight:500}
-  .btn:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
-  .btn svg{width:16px;height:16px;fill:currentColor}
-
-  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin-top:34px}
-  .stat{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
-  .stat b{display:block;font-family:var(--serif);font-size:26px;color:var(--accent)}
-  .stat span{font-size:13px;color:var(--muted)}
-
-  section{padding:52px 0;border-bottom:1px solid var(--line)}
-  h2{font-family:var(--serif);font-size:28px;margin:0 0 22px}
-  h3{font-family:var(--sans);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:30px 0 12px}
-
-  .themes{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
-  .theme{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:8px;padding:18px 20px}
-  .theme h4{font-family:var(--serif);font-size:18px;margin:0 0 6px}
-  .theme p{margin:0;font-size:15px;color:var(--muted)}
-
-  .timeline{list-style:none;margin:0;padding:0}
-  .timeline li{display:grid;grid-template-columns:120px 1fr;gap:16px;padding:8px 0}
-  .timeline .yr{color:var(--muted);font-variant-numeric:tabular-nums;font-size:15px}
-  @media (max-width:560px){.timeline li{grid-template-columns:1fr;gap:0}}
-
-  ol.pubs{margin:0;padding-left:1.6em}
-  ol.pubs li{margin:0 0 12px;padding-left:4px}
-  .me{font-weight:600}
-  .venue{font-style:italic}
-  .doi{font-size:13px;white-space:nowrap}
-  .tag{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;
-       padding:1px 7px;border-radius:4px;background:var(--accent-soft);color:var(--accent);margin-left:6px;vertical-align:1px}
-  .tag.p{background:transparent;border:1px solid var(--mark);color:var(--mark)}
-
-  details{border:1px solid var(--line);border-radius:8px;background:var(--surface);margin:14px 0}
-  summary{cursor:pointer;padding:14px 18px;font-weight:600}
-  details > div{padding:4px 18px 16px}
-
-  ul.plain{margin:0;padding-left:1.2em}
-  ul.plain li{margin-bottom:6px}
-  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:28px}
-  @media (max-width:700px){.grid2{grid-template-columns:1fr}}
-  .muted{color:var(--muted)}
-
-  footer{padding:36px 0 60px;font-size:14px;color:var(--muted)}
-
-  /* ---------- visual refresh ---------- */
-  :root{--deep:#0b3d4a;--deep2:#0f5c6e;--sand:#f3ede2}
-  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--deep:#0a2a33;--deep2:#0d4250;--sand:#1b2327}}
-  nav{background:color-mix(in srgb,var(--bg) 88%,transparent)}
-  nav .brand{display:flex;align-items:center;gap:10px}
-  nav .brand i{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:8px;
-     background:var(--deep2);color:#fff;font-style:normal;font-size:13px;letter-spacing:.02em}
-  header.hero{position:relative;overflow:hidden;color:#eef6f7;border-bottom:none;padding:84px 0 120px;
-     background:
-       url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='420' viewBox='0 0 1200 420'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='0.09' stroke-width='1.2'%3E%3Cpath d='M0 300 C200 260 350 340 600 290 S1000 240 1200 280'/%3E%3Cpath d='M0 325 C200 285 350 365 600 315 S1000 265 1200 305'/%3E%3Cpath d='M0 350 C200 310 350 390 600 340 S1000 290 1200 330'/%3E%3Cpath d='M0 375 C200 335 350 415 600 365 S1000 315 1200 355'/%3E%3Cpath d='M0 400 C200 360 350 440 600 390 S1000 340 1200 380'/%3E%3Cpath d='M0 60 C250 110 450 20 700 70 S1050 120 1200 80'/%3E%3Cpath d='M0 85 C250 135 450 45 700 95 S1050 145 1200 105'/%3E%3Cpath d='M0 110 C250 160 450 70 700 120 S1050 170 1200 130'/%3E%3Cpath d='M0 135 C250 185 450 95 700 145 S1050 195 1200 155'/%3E%3C/g%3E%3C/svg%3E") center/cover no-repeat,
-       radial-gradient(1000px 500px at 85% 0%, #1a7f93 0%, transparent 60%),
-       linear-gradient(160deg,var(--deep2),var(--deep));}
-  header.hero .eyebrow{display:inline-block;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
-     color:#9fd8e3;border:1px solid rgba(159,216,227,.35);border-radius:999px;padding:5px 12px;margin-bottom:22px}
-  header.hero h1{color:#fff}
-  header.hero .role{color:#bcd9de}
-  header.hero .lede{color:#e4f1f3}
-  header.hero .btn{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.22);color:#fff}
-  header.hero .btn:hover{background:#fff;color:var(--deep);border-color:#fff}
-  header.hero .btn.primary{background:#fff;color:var(--deep);border-color:#fff}
-  header.hero .btn.primary:hover{background:#d8eef2}
-  .statband{position:relative;margin-top:-64px;z-index:2}
-  .statband .stats{margin-top:0;background:var(--surface);border:1px solid var(--line);border-radius:14px;
-     box-shadow:0 12px 30px rgba(11,61,74,.10);padding:8px;gap:0}
-  .statband .stat{border:none;background:transparent;text-align:center;padding:16px 10px;border-radius:0}
-  .statband .stat + .stat{border-left:1px solid var(--line)}
-  @media (max-width:640px){.statband .stat + .stat{border-left:none}}
-  .statband .note{font-size:12px;color:var(--muted);text-align:right;margin:8px 4px 0}
-  .kicker{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 6px}
-  section h2{position:relative}
-  section.alt{background:var(--sand)}
-  .theme{border-left:none;border-top:3px solid var(--accent);padding:22px;transition:transform .15s,box-shadow .15s}
-  .theme:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(11,61,74,.10)}
-  .theme .ico{width:42px;height:42px;border-radius:10px;background:var(--accent-soft);display:grid;place-items:center;margin-bottom:12px}
-  .theme .ico svg{width:22px;height:22px;stroke:var(--accent);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-  .theme:nth-child(2){border-top-color:#2f8f7a} .theme:nth-child(3){border-top-color:#b5651d} .theme:nth-child(4){border-top-color:#6a5acd}
-  .featured{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-bottom:10px}
-  .fp{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px 20px;color:var(--ink)}
-  .fp:hover{border-color:var(--accent);text-decoration:none;box-shadow:0 8px 20px rgba(11,61,74,.08)}
-  .fp .v{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
-  .fp .t{font-family:var(--serif);font-size:17px;line-height:1.4;margin-bottom:10px;flex:1}
-  .fp .a{font-size:13px;color:var(--muted)}
-  .fp .a b{color:var(--ink);font-weight:600}
-  .fp .go{font-size:13px;font-weight:600;color:var(--accent);margin-top:10px}
-  section#contact .card{background:linear-gradient(160deg,var(--deep2),var(--deep));color:#e4f1f3;border-radius:14px;padding:30px 32px}
-  section#contact .card a{color:#fff;text-decoration:underline}
-  section#contact .card .muted{color:#bcd9de}
-  footer{border-top:1px solid var(--line)}
-  .stat span{display:block;line-height:1.35}
-  .themes,.featured{grid-template-columns:repeat(2,1fr)}
-  @media (max-width:700px){.themes,.featured{grid-template-columns:1fr}}
-  @media (max-width:640px){
-    nav .wrap{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}
-    nav .wrap::-webkit-scrollbar{display:none}
-    nav a.l{white-space:nowrap}
-    nav .brand{margin-right:8px;white-space:nowrap}
-    nav .brand span{display:none}
-  }
-
-  /* research illustrations */
-  .theme{padding:0;overflow:hidden;border-top:none;display:flex;flex-direction:column}
-  .theme .art{height:150px;background:var(--art-bg);border-bottom:1px solid var(--line)}
-  .theme .art svg{width:100%;height:100%;display:block}
-  .theme .body{padding:18px 22px 22px}
-  .theme .num{font-size:12px;font-weight:600;letter-spacing:.12em;color:var(--c);margin-bottom:4px}
-  .theme{--c:#0f5c6e;--art-bg:#e6f1f3}
-  .theme:nth-child(2){--c:#2f8f7a;--art-bg:#e5f2ee}
-  .theme:nth-child(3){--c:#b5651d;--art-bg:#f6ece1}
-  .theme:nth-child(4){--c:#6a5acd;--art-bg:#ecebf8}
-  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .theme{--art-bg:#1d2b30}
-    :root:not([data-theme="light"]) .theme:nth-child(2){--art-bg:#1c2d2a}
-    :root:not([data-theme="light"]) .theme:nth-child(3){--art-bg:#2d251d}
-    :root:not([data-theme="light"]) .theme:nth-child(4){--art-bg:#24223a}}
-  .art .c{stroke:var(--c);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-  .art .cf{fill:var(--c)}
-  .art .soil{fill:#c9a97a}.art .soil2{fill:#b38f5f}.art .soil3{fill:#9c7a4e}
-  .art .water{fill:#5aa9c4;opacity:.75}.art .water2{fill:#3d8fae;opacity:.6}
-  .art .ink{fill:var(--ink)}.art .muted{fill:var(--muted)}
-  .art .w{fill:var(--surface)}
-  .art .line{stroke:var(--muted);fill:none;stroke-width:1.4}
-  .art .dash{stroke:#3d8fae;stroke-width:2;fill:none;stroke-dasharray:6 5}
-
-  /* ---------- rolling news strip (top ticker) ---------- */
-  .news-wrap{max-width:920px;margin:26px auto 0;padding:0 20px}
-  .news{display:flex;align-items:center;font-size:14px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:0 14px;box-shadow:0 4px 16px rgba(0,0,0,.04)}
-  .news-head{display:flex;align-items:center;gap:8px;padding:9px 14px 9px 0;margin-right:4px;white-space:nowrap;
-     border-right:1px solid var(--line);font:600 11.5px/1 var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
-  .news-head .dot{width:8px;height:8px;border-radius:50%;background:var(--mark);animation:pulse 2s infinite}
-  @keyframes pulse{50%{opacity:.35}}
-  .news-view{flex:1;min-width:0;overflow:hidden;
-     mask-image:linear-gradient(90deg,transparent,#000 28px,#000 calc(100% - 28px),transparent);
-     -webkit-mask-image:linear-gradient(90deg,transparent,#000 28px,#000 calc(100% - 28px),transparent)}
-  .news-track{list-style:none;margin:0;padding:0;display:flex;width:max-content}
-  .news-track li{display:flex;align-items:center;gap:8px;padding:9px 22px;white-space:nowrap;color:var(--ink)}
-  .news-track li::after{content:"";width:4px;height:4px;border-radius:50%;background:var(--line);margin-left:22px}
-  .news-track .tag{font:600 10px/1 var(--sans);letter-spacing:.06em;text-transform:uppercase;font-style:normal;
-     color:var(--accent);background:var(--accent-soft);padding:3px 6px;border-radius:4px}
-  .news-track li b{font-weight:500}
-  .news-track li span{display:none}
-  .news-all{white-space:nowrap;font-size:13px;font-weight:500;padding-left:14px;margin-left:4px;border-left:1px solid var(--line)}
-  .news-track.rolling{animation:rollX var(--dur,60s) linear infinite}
-  .news:hover .news-track,.news:focus-within .news-track{animation-play-state:paused}
-  @keyframes rollX{to{transform:translateX(-50%)}}
-  @media (max-width:640px){
-    .news-head{font-size:0;gap:0;padding-right:10px}
-    .news-all{display:none}
-    .news-track .tag{display:none}
-    .news-track li{padding:9px 16px}
-  }
-  @media (prefers-reduced-motion:reduce){
-    .news-track.rolling{animation:none}
-    .news-view{overflow-x:auto;mask-image:none;-webkit-mask-image:none}
-  }
-
-  /* ---------- field sites map ---------- */
-  .sites-map{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden}
-  .sites-map svg{display:block;width:100%;height:auto}
-  .sites-map .land{fill:var(--accent-soft);stroke:var(--line);stroke-width:1}
-  .sites-map .borders{fill:none;stroke:var(--surface);stroke-width:1.2}
-  .pin{cursor:pointer;outline:none}
-  .pin .dotp{stroke:var(--surface);stroke-width:3;transition:r .15s}
-  .pin .halo{opacity:0}
-  .pin:hover .dotp,.pin:focus-visible .dotp,.pin.on .dotp{r:11}
-  .pin.on .halo{opacity:.35;animation:halo 1.8s ease-out infinite}
-  @keyframes halo{from{r:10;opacity:.45}to{r:26;opacity:0}}
-  .pin text{font:600 15px var(--sans);fill:var(--ink);paint-order:stroke;stroke:var(--surface);stroke-width:4px;stroke-linejoin:round}
-  .pin.dim{opacity:.18}
-  .t-coast{--pc:#0f5c6e}.t-slope{--pc:#b5651d}.t-pave{--pc:#4f9a2f}.t-test{--pc:#6a5acd}
-  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .t-coast{--pc:#6cc0d1}
-    :root:not([data-theme="light"]) .t-slope{--pc:#e0a060}:root:not([data-theme="light"]) .t-pave{--pc:#8fcf6a}
-    :root:not([data-theme="light"]) .t-test{--pc:#a99cf0}}
-  .pin .dotp,.pin .halo{fill:var(--pc)}
-  .site-filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px}
-  .site-filters button{font:500 13px var(--sans);display:inline-flex;align-items:center;gap:7px;padding:6px 12px;border-radius:999px;
-     border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
-  .site-filters button i{width:9px;height:9px;border-radius:50%;background:var(--pc,var(--muted))}
-  .site-filters button[aria-pressed="true"]{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
-  .site-pop{position:absolute;left:2.5%;top:4%;width:300px;background:var(--surface);border:1px solid var(--line);border-radius:12px;
-     box-shadow:0 12px 32px rgba(0,0,0,.14);padding:14px 16px 14px;font-size:14px;line-height:1.5;pointer-events:auto}
-  .site-pop[hidden]{display:none}
-  .site-pop .k{display:inline-block;font:600 10.5px/1 var(--sans);letter-spacing:.07em;text-transform:uppercase;color:var(--pc);margin-bottom:6px}
-  .site-pop h4{font-family:var(--serif);font-size:17px;margin:0 0 4px;line-height:1.3}
-  .site-pop .loc{color:var(--muted);font-size:13px;margin:0 0 8px}
-  .site-pop p{margin:0}
-  .site-pop .x{position:absolute;top:8px;right:10px;border:0;background:none;color:var(--muted);font-size:20px;line-height:1;cursor:pointer}
-  .site-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px;margin-top:14px;list-style:none;padding:0}
-  .site-list button{width:100%;text-align:left;font:inherit;color:inherit;cursor:pointer;display:flex;gap:10px;align-items:flex-start;
-     background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--pc);border-radius:8px;padding:10px 12px}
-  .site-list button:hover,.site-list button.on{border-color:var(--pc)}
-  .site-list b{display:block;font-size:14px;font-weight:600}
-  .site-list span{font-size:13px;color:var(--muted)}
-  .site-list li.dim{display:none}
-  @media (max-width:640px){
-    .pin text{display:none}
-    .pin .dotp{r:12}
-    .site-pop{position:relative;left:auto;top:auto;width:auto;border-radius:0;border:0;border-top:1px solid var(--line);box-shadow:none}
-  }
-  @media (prefers-reduced-motion:reduce){.pin.on .halo{animation:none;opacity:.3}}
-
-  /* =========================================================
-     COASTAL EDITORIAL THEME
-     Harbor navy · sea-glass teal · warm sand · bluff clay
-     ========================================================= */
-  :root{
-    --bg:#f6f1e8; --surface:#fffdf9; --ink:#12283a; --muted:#5a6772; --line:#e5dccb;
-    --accent:#1f6f6b; --accent-soft:#e0ede9; --mark:#c0612b;
-    --deep:#0d2233; --deep2:#163a4f; --sand:#efe6d5;
-    --c-teal:#1f6f6b; --c-blue:#2d6487; --c-clay:#c0612b; --c-sandd:#96764a;
-    --serif:"Fraunces", Georgia, serif;
-    --shadow:rgba(13,34,51,.10);
-  }
-  @media (prefers-color-scheme: dark){
-    :root:not([data-theme="light"]){
-      --bg:#0d1a24; --surface:#13232f; --ink:#e9eef1; --muted:#9db0bb; --line:#243846;
-      --accent:#72c4b9; --accent-soft:#16302d; --mark:#e88b56;
-      --deep:#08141d; --deep2:#0f2737; --sand:#102029;
-      --c-teal:#72c4b9; --c-blue:#86b6da; --c-clay:#e88b56; --c-sandd:#d4b27c;
-      --shadow:rgba(0,0,0,.35);
-    }
-  }
-  body{font-feature-settings:"cv11","ss01"}
-  /* headings: Fraunces, soft and slightly sculpted */
-  h1,h2,.theme h4,.fp .t,.site-pop h4,nav .brand,.lede,.stat b{font-family:var(--serif);font-variation-settings:"SOFT" 60}
-  h1{font-size:clamp(38px,6vw,60px);font-weight:600;line-height:1.05;letter-spacing:-.025em}
-  h2{font-size:clamp(28px,3.6vw,38px);font-weight:600;letter-spacing:-.02em;line-height:1.15}
-  .lede{font-weight:380;font-size:21px;line-height:1.55}
-  .theme h4{font-size:20px;font-weight:600;letter-spacing:-.01em}
-  .fp .t{font-size:18px;font-weight:500}
-  .kicker,h3{letter-spacing:.16em}
-  .kicker{color:var(--mark)}
-  /* numbers line up */
-  .stat b{font-weight:600;font-size:32px;font-variant-numeric:tabular-nums lining-nums;color:var(--ink)}
-  .stat span{letter-spacing:.01em}
-  /* nav */
-  nav .brand i{background:var(--deep);font-family:var(--serif);font-weight:600;border-radius:50%}
-  nav a.l:hover,nav a.l.on{color:var(--ink)}
-  /* hero: harbor night with a teal glow and a clay horizon */
-  header.hero{
-     background:
-       url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='420' viewBox='0 0 1200 420'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='0.07' stroke-width='1.2'%3E%3Cpath d='M0 300 C200 260 350 340 600 290 S1000 240 1200 280'/%3E%3Cpath d='M0 325 C200 285 350 365 600 315 S1000 265 1200 305'/%3E%3Cpath d='M0 350 C200 310 350 390 600 340 S1000 290 1200 330'/%3E%3Cpath d='M0 375 C200 335 350 415 600 365 S1000 315 1200 355'/%3E%3C/g%3E%3C/svg%3E") center bottom/1200px auto repeat-x,
-       radial-gradient(900px 420px at 88% -5%, rgba(31,111,107,.55) 0%, transparent 62%),
-       radial-gradient(700px 260px at 10% 110%, rgba(192,97,43,.22) 0%, transparent 70%),
-       linear-gradient(165deg,var(--deep2),var(--deep));}
-  header.hero .eyebrow{color:#f0bf98;border-color:rgba(240,191,152,.35)}
-  header.hero .role{color:#c3d2db}
-  header.hero .lede{color:#eef2f4}
-  header.hero .btn.primary{color:var(--deep)}
-  header.hero .btn.primary:hover{background:#f3e9da}
-  .statband .stats,.news,.sites-map{box-shadow:0 14px 34px var(--shadow)}
-  .statband .stats{border-radius:16px}
-  section.alt{background:var(--sand)}
-  /* research cards: one coastal family instead of four unrelated hues */
-  .theme{--c:var(--c-teal);--art-bg:#e3eeea}
-  .theme:nth-child(2){--c:var(--c-blue);--art-bg:#e2eaf1}
-  .theme:nth-child(3){--c:var(--c-clay);--art-bg:#f5e6da}
-  .theme:nth-child(4){--c:var(--c-sandd);--art-bg:#f0e7d6}
-  @media (prefers-color-scheme: dark){
-    :root:not([data-theme="light"]) .theme{--art-bg:#16302d}
-    :root:not([data-theme="light"]) .theme:nth-child(2){--art-bg:#152a3a}
-    :root:not([data-theme="light"]) .theme:nth-child(3){--art-bg:#2e2119}
-    :root:not([data-theme="light"]) .theme:nth-child(4){--art-bg:#29241a}}
-  .theme:hover,.fp:hover{box-shadow:0 12px 28px var(--shadow)}
-  .art .water{fill:#5f9fb4}.art .water2{fill:#2d6487}.art .dash{stroke:#2d6487}
-  /* map pins and ticker tags use the same family */
-  .t-coast{--pc:var(--c-teal)}.t-slope{--pc:var(--c-clay)}.t-pave{--pc:var(--c-sandd)}.t-test{--pc:var(--c-blue)}
-  @media (prefers-color-scheme: dark){
-    :root:not([data-theme="light"]) .t-coast{--pc:var(--c-teal)}:root:not([data-theme="light"]) .t-slope{--pc:var(--c-clay)}
-    :root:not([data-theme="light"]) .t-pave{--pc:var(--c-sandd)}:root:not([data-theme="light"]) .t-test{--pc:var(--c-blue)}}
-  .sites-map .land{fill:#e8e0d0}
-  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .sites-map .land{fill:#1b2f3c}}
-  .news-head .dot{background:var(--mark)}
-  section#contact .card{background:
-       radial-gradient(500px 200px at 100% 0%, rgba(31,111,107,.45), transparent 70%),
-       linear-gradient(160deg,var(--deep2),var(--deep))}
-  ::selection{background:#f0bf98;color:#12283a}
-  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) nav .brand i{background:#1f6f6b}}
-</style>
-</head>
-<body>
-
-<nav>
-  <div class="wrap">
-    <a class="brand" href="#top"><i>NB</i><span>Nripojyoti Biswas</span></a>
-    <a class="l" href="#research">Research</a>
-    <a class="l" href="#publications">Publications</a>
-    <a class="l" href="#funding">Funding</a>
-    <a class="l" href="#teaching">Teaching &amp; Mentoring</a>
-    <a class="l" href="#service">Service</a>
-    <a class="l" href="#contact">Contact</a>
-  </div>
-</nav>
-
-
-<header class="hero" id="top">
-  <div class="wrap">
-    <span class="eyebrow">Coastal Geotechnics · Physics-Informed ML · Remote Sensing</span>
-    <h1>Nripojyoti Biswas, Ph.D.</h1>
-    <p class="role">Assistant Professor, Civil &amp; Environmental Engineering · University of Massachusetts Lowell</p>
-    <p class="lede">I study how coastal geo-infrastructure fails under storms, erosion, and changing hydrology, and how to see it coming. My group couples granular mechanics with physics-informed machine learning, satellite and robotic sensing, and laboratory experiments to build digital twins for bluffs, foundations, bridges, and embankments.</p>
-    <div class="links">
-      <!-- LINK: Google Scholar profile -->
-      <a class="btn primary" href="https://scholar.google.com/citations?user=0a7NCGIAAAAJ&amp;hl=en" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.84 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.16 4.44L24 9.5z"/></svg>Google Scholar</a>
-      <!-- LINK: ORCID profile -->
-      <a class="btn" href="https://orcid.org/0000-0001-5548-1292" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24"><path d="M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24zM7.4 17.6H5.9V7.4h1.5zm-.75-11.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2zM18.3 12.5c0 2.9-2 5.1-5.3 5.1H9.3V7.4H13c3.4 0 5.3 2.3 5.3 5.1zm-1.6 0c0-1.9-1.2-3.7-3.8-3.7h-2.1v7.4h2.1c2.4 0 3.8-1.6 3.8-3.7z"/></svg>ORCID</a>
-      <!-- LINK: University profile -->
-      <a class="btn" href="https://www.uml.edu/research/biswas-geosystems-research-group/" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24"><path d="M12 2 1 7l11 5 9-4.1V15h2V7zM5 13.2V17c0 1.7 3.1 3 7 3s7-1.3 7-3v-3.8l-7 3.2z"/></svg>Research Group (UML)</a>
-      <a class="btn" href="mailto:Nripojyoti_Biswas@uml.edu">
-        <svg viewBox="0 0 24 24"><path d="M2 4h20v16H2zm10 8.5L4 7v11h16V7z"/></svg>Email</a>
+---
+layout: default
+description: Nripojyoti Biswas, Assistant Professor of Civil and Environmental Engineering at UMass Lowell, and the Biswas Geosystems Research Group. Coastal geotechnics, geohazards, sustainable geosystems, remote sensing, and physics-informed machine learning.
+---
+{% assign P = site.data.profile %}
+<!-- =================== HERO: the descent =================== -->
+<div class="descent" id="top">
+  <div class="stage" id="stage">
+    <div class="scene">
+      <canvas id="sea" aria-hidden="true"></canvas>
+      <div class="c0" id="c0">
+        <div class="wrap"><div class="inner">
+          <p class="kicker mono fade-in"><span>Coastal geotechnics</span><span>Geohazards</span><span>Physics-informed ML</span></p>
+          <h1 class="name"><span class="ln"><span>Nripojyoti</span></span><span class="ln"><span>Biswas, <em>{{ P.credentials }}</em></span></span></h1>
+          <p class="role fade-in"><b>{{ P.position }}</b><span>{{ P.university }}</span></p>
+          <p class="lede fade-in">{{ P.lede_short }}</p>
+          <div class="hero-actions fade-in">
+            <a class="pillbtn solid" href="/research/">Explore the research</a>
+            <a class="pillbtn" href="{{ P.scholar | escape }}" target="_blank" rel="noopener">Google Scholar</a>
+            <a class="pillbtn" href="{{ P.orcid }}" target="_blank" rel="noopener">ORCID</a>
+          </div>
+        </div></div>
+      </div>
+      <div class="gauge" aria-hidden="true">
+        <ol id="gauge-l"><li class="on">Surface</li><li>Coast</li><li>Ground</li><li>Model</li></ol>
+        <div class="track"><i class="dot" id="gauge-dot"></i></div>
+      </div>
+      <div class="hud"><div class="wrap">
+        <div class="storm" id="storm"><span class="label-long">Storm surge</span><div class="meter"><i id="storm-bar"></i></div><b id="storm-val">Moderate</b></div>
+        <div class="hint mono" id="hint"><span>Scroll to descend</span><span class="line"></span></div>
+      </div></div>
     </div>
 
-  </div>
-</header>
-
-<div class="statband"><div class="wrap">
-    <div class="stats">
-      <div class="stat"><b>22</b><span>Journal articles</span></div>
-      <div class="stat"><b>38</b><span>GSP &amp; conference papers</span></div>
-      <div class="stat"><b>666</b><span>Citations</span></div>
-      <div class="stat"><b>15</b><span>h-index</span></div>
-      <div class="stat"><b>1</b><span>US patent application</span></div>
+    <div class="chapters" id="chapters">
+      <div class="chap" data-a=".2" data-b=".46"><div class="wrap"><div class="panel">
+        <p class="mono"><span>At the coast</span><i>Hazards</i></p>
+        <h2>Where waves meet <em>soil</em></h2>
+        <dl>
+          <div><dt>Coastal geotechnics</dt><dd>Stability of bluffs, foundations, bridge piers, and road and rail embankments under storms, scour, and erosion.</dd></div>
+          <div><dt>Geohazards</dt><dd>Storm surge, extreme rainfall, groundwater rise, and freeze–thaw, from scour to slope failure.</dd></div>
+        </dl>
+      </div></div></div>
+      <div class="chap" data-a=".48" data-b=".72"><div class="wrap"><div class="panel">
+        <p class="mono"><span>In the ground</span><i>Materials</i></p>
+        <h2>What holds the coast <em>together</em></h2>
+        <dl>
+          <div><dt>Geosystems</dt><dd>Granular mechanics, laboratory experiments, and the dynamic behavior of mine tailings.</dd></div>
+          <div><dt>Sustainable infrastructure</dt><dd>Low-carbon stabilizers, recycled materials, and geosynthetics for pavements and ground improvement.</dd></div>
+        </dl>
+      </div></div></div>
+      <div class="chap" data-a=".74" data-b="1.2"><div class="wrap"><div class="panel">
+        <p class="mono"><span>From above &amp; in silico</span><i>Methods</i></p>
+        <h2>Seeing failure <em>coming</em></h2>
+        <dl>
+          <div><dt>Remote sensing</dt><dd>NISAR/InSAR, satellite soil moisture, UAV, LiDAR, and autonomous robotic platforms.</dd></div>
+          <div><dt>Physics-informed ML</dt><dd>Physics-informed neural networks, deep-learning surrogates, and digital twins validated with experiments.</dd></div>
+        </dl>
+      </div></div></div>
     </div>
-    <p class="note">Citation metrics from Google Scholar, October 2026</p>
-</div></div>
-
-<!-- NEWS: edit items below; source is the UML group news page -->
-<div class="news-wrap"><aside class="news" aria-label="Group news">
-  <div class="news-head"><i class="dot"></i>Group News</div>
-  <div class="news-view" tabindex="0">
-    <ul class="news-track">
-      <li><i class="tag">Symposium</i><b>Uday Yadav presents at UML Student Research Symposium</b><span>Satellite remote sensing for geotechnical hazard assessment.</span></li>
-      <li><i class="tag">Award</i><b>Fatemeh Karbalaee wins 3rd place, GeoPoster at GeoCongress 2026</b><span>National competition in Salt Lake City, for coastal bluff erosion research.</span></li>
-      <li><i class="tag">Conference</i><b>Group presents at GeoCongress 2026</b><span>Deep-learning erosion rates in cohesive soils; tailings dam testing in Brazil.</span></li>
-      <li><i class="tag">Symposium</i><b>Poster at Tufts Geotechnical Symposium</b><span>Physics-driven modeling of erosion for coastal bluffs.</span></li>
-      <li><i class="tag">Group</i><b>First group meeting of the semester</b><span>Reviewing progress and setting research priorities.</span></li>
-      <li><i class="tag">Workshop</i><b>USUCGER Early Career Workshop, Georgia Tech</b><span>Dr. Biswas joins the national early-career geotechnical cohort.</span></li>
-      <li><i class="tag">Talk</i><b>Lightning talk at ASCE Geo-Connecticut</b><span>João Machado on bauxite residue for sustainable pavements.</span></li>
-      <li><i class="tag">Welcome</i><b>Two new Ph.D. students join the group</b></li>
-      <li><i class="tag">Teaching</i><b>ASCE ExCEEd teaching workshop</b><span>Training in evidence-based civil engineering pedagogy.</span></li>
-    </ul>
   </div>
-  <a class="news-all" href="https://www.uml.edu/research/biswas-geosystems-research-group/news.aspx" target="_blank" rel="noopener">All news →</a>
-</aside></div>
+</div>
 
-<main>
-
-<section id="research">
+<!-- =================== RECORD =================== -->
+<section class="record" aria-labelledby="rec-h">
   <div class="wrap">
-    <p class="kicker">What I work on</p>
-    <h2>Research</h2>
-    <div class="themes">
-      <div class="theme">
-        <div class="art"><svg viewBox="0 0 400 150" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-<path class="soil" d="M0 40 L150 40 L185 95 L200 118 L0 118Z"/>
-<path class="soil2" d="M0 75 L172 75 L185 95 L200 118 L0 118Z"/>
-<path class="soil3" d="M0 100 L196 100 L200 118 L0 118Z"/>
-<path class="water" d="M175 104 Q200 98 225 104 T275 104 T330 104 T400 104 L400 150 L0 150 L0 118 L200 118Z"/>
-
-<g class="w" opacity=".55"><circle cx="30" cy="55" r="4"/><circle cx="45" cy="60" r="3"/><circle cx="62" cy="52" r="4.5"/><circle cx="80" cy="58" r="3"/><circle cx="98" cy="52" r="4"/><circle cx="116" cy="60" r="3.5"/><circle cx="134" cy="53" r="3"/><circle cx="40" cy="88" r="4"/><circle cx="60" cy="86" r="3"/><circle cx="85" cy="90" r="4.5"/><circle cx="110" cy="85" r="3"/><circle cx="135" cy="89" r="4"/><circle cx="160" cy="86" r="3"/></g>
-<path class="c" d="M150 40 L185 95" stroke-dasharray="4 4"/>
-<path class="c" d="M120 40 Q150 80 196 108" stroke-width="2.2"/>
-<g class="line" opacity=".8"><path d="M270 30 L320 18 M270 30 L320 48 M270 30 L320 78 M270 62 L320 18 M270 62 L320 48 M270 62 L320 78 M270 94 L320 48 M270 94 L320 78 M270 94 L320 18 M320 18 L370 48 M320 48 L370 48 M320 78 L370 48"/></g>
-<g class="cf"><circle cx="270" cy="30" r="7"/><circle cx="270" cy="62" r="7"/><circle cx="270" cy="94" r="7"/><circle cx="370" cy="48" r="8"/></g>
-<g class="w"><circle cx="320" cy="18" r="7"/><circle cx="320" cy="48" r="7"/><circle cx="320" cy="78" r="7"/></g>
-<g class="c"><circle cx="320" cy="18" r="7"/><circle cx="320" cy="48" r="7"/><circle cx="320" cy="78" r="7"/></g>
-<path class="c" d="M200 62 Q230 62 255 62" marker-end=""/><path class="c" d="M248 56 L256 62 L248 68"/>
-</svg></div>
-        <div class="body">
-        <div class="num">01</div>
-        <h4>Physics-informed digital twins</h4>
-        <p>Coupling granular mechanics with physics-informed neural networks to predict stability of coastal bluffs, foundations, bridge piers, and road and rail embankments under extreme loading, scour, and erosion, validated with new laboratory experiments.</p>
-      </div>
-      </div>
-      <div class="theme">
-        <div class="art"><svg viewBox="0 0 400 150" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-<g class="muted" opacity=".5"><circle cx="40" cy="20" r="1.2"/><circle cx="90" cy="35" r="1"/><circle cx="350" cy="18" r="1.3"/><circle cx="380" cy="45" r="1"/><circle cx="20" cy="60" r="1"/></g>
-<path class="cf" d="M120 38 L245 118 L135 128Z" opacity=".14"/>
-<g transform="translate(108 22) rotate(-15)">
-<rect class="cf" x="-6" y="-8" width="16" height="16" rx="2"/>
-<rect class="w" x="-40" y="-6" width="30" height="12" rx="1"/><rect class="c" x="-40" y="-6" width="30" height="12" rx="1" stroke-width="1.6"/>
-<path class="line" d="M-30 -6 V6 M-20 -6 V6"/>
-<rect class="w" x="14" y="-6" width="30" height="12" rx="1"/><rect class="c" x="14" y="-6" width="30" height="12" rx="1" stroke-width="1.6"/>
-<path class="line" d="M24 -6 V6 M34 -6 V6"/>
-</g>
-<path class="water" d="M0 122 H400 V150 H0Z"/><path class="soil" d="M0 112 Q60 104 120 110 Q170 116 210 106 Q240 98 262 114 Q272 124 290 150 L0 150Z"/>
-<path class="water" d="M262 114 Q285 106 310 112 T370 110 T400 110 L400 150 L290 150 Q272 124 262 114Z"/>
-<path class="c" d="M140 118 Q175 120 205 110 Q230 102 255 113" stroke-dasharray="3 4" opacity=".9"/>
-<g transform="translate(300 54)">
-<path class="c" d="M-22 0 H22 M-14 0 V-6 M14 0 V-6"/><ellipse class="cf" cx="-14" cy="-8" rx="10" ry="2.5"/><ellipse class="cf" cx="14" cy="-8" rx="10" ry="2.5"/>
-<rect class="cf" x="-8" y="-3" width="16" height="9" rx="3"/>
-</g>
-<path class="c" d="M292 64 L276 104 M308 64 L324 104" stroke-dasharray="2 5" opacity=".8"/>
-<path class="line" d="M280 104 H322" stroke-width="2"/>
-</svg></div>
-        <div class="body">
-        <div class="num">02</div>
-        <h4>Remote &amp; robotic sensing</h4>
-        <p>Integrating NISAR/InSAR, satellite soil-moisture products, UAV, LiDAR, and autonomous robotic platforms for early detection of infrastructure failure and post-storm reconnaissance.</p>
-      </div>
-      </div>
-      <div class="theme">
-        <div class="art"><svg viewBox="0 0 400 150" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-<g class="muted" opacity=".55"><ellipse cx="300" cy="26" rx="44" ry="15"/><ellipse cx="335" cy="20" rx="34" ry="14"/><ellipse cx="268" cy="30" rx="26" ry="11"/></g>
-<g class="line" stroke-width="1.6" opacity=".8"><path d="M262 46 L256 60 M282 48 L276 62 M302 46 L296 60 M322 48 L316 62 M342 46 L336 60 M362 44 L356 58"/></g>
-<path class="cf" d="M318 40 L310 56 L318 56 L311 72 L328 50 L320 50 L326 40Z" opacity=".9"/>
-<path class="soil" d="M0 92 L60 92 L130 60 L175 60 L240 106 L250 112 L0 112Z"/>
-<path class="soil2" d="M0 112 L250 112 L270 118 L400 118 L400 150 L0 150Z"/>
-<path class="w" d="M138 60 V42 L152 32 L166 42 V60Z"/><path class="c" d="M138 60 V42 L152 32 L166 42 V60" stroke-width="1.8"/><rect class="cf" x="148" y="48" width="8" height="12"/>
-<path class="water" d="M190 92 Q215 82 240 92 T290 90 T340 92 T400 90 L400 118 L270 118 L250 112 L215 92Z"/>
-<path class="water2" d="M215 86 Q235 74 258 84 T300 82" opacity=".5"/>
-<path class="w" d="M224 106 Q238 116 252 112 L250 112Z" opacity=".9"/>
-<path class="c" d="M226 104 Q240 118 256 112" stroke-width="2.2"/>
-<path class="dash" d="M0 128 Q120 122 230 126 T400 124"/>
-<path class="c" d="M60 30 C70 40 90 40 100 30" opacity=".0"/>
-
-</svg></div>
-        <div class="body">
-        <div class="num">03</div>
-        <h4>Compound coastal hazards &amp; adaptation</h4>
-        <p>Hydrologic change during erosion and scour under storm surge, extreme rainfall, groundwater rise, and freeze–thaw; nature-based solutions and beneficial use of dredged material.</p>
-      </div>
-      </div>
-      <div class="theme">
-        <div class="art"><svg viewBox="0 0 400 150" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-<path class="water" d="M250 0 Q230 30 255 55 Q280 80 250 105 Q228 128 250 150 L400 150 L400 0Z" opacity=".55"/>
-<path class="c" d="M250 0 Q230 30 255 55 Q280 80 250 105 Q228 128 250 150" opacity=".6"/>
-<g class="line" opacity=".35"><path d="M0 50 H240 M0 100 H240 M80 0 V150 M160 0 V150"/></g>
-<g class="cf">
-<path d="M200 30 a9 9 0 1 1 18 0 c0 8 -9 18 -9 18 s-9 -10 -9 -18z"/>
-<path d="M222 82 a9 9 0 1 1 18 0 c0 8 -9 18 -9 18 s-9 -10 -9 -18z"/>
-<path d="M196 116 a9 9 0 1 1 18 0 c0 8 -9 18 -9 18 s-9 -10 -9 -18z"/>
-</g>
-<g class="w"><circle cx="209" cy="30" r="3.2"/><circle cx="231" cy="82" r="3.2"/><circle cx="205" cy="116" r="3.2"/></g>
-<path class="c" d="M150 40 Q175 35 198 34 M150 75 Q190 80 220 86 M150 110 Q170 118 194 120" stroke-dasharray="3 5" opacity=".75"/>
-<g transform="translate(60 0)">
-<g class="cf"><circle cx="40" cy="34" r="9"/><path d="M24 62 a16 14 0 0 1 32 0Z"/></g>
-<g class="muted"><circle cx="78" cy="70" r="9"/><path d="M62 98 a16 14 0 0 1 32 0Z"/></g>
-<g class="cf" opacity=".65"><circle cx="40" cy="104" r="9"/><path d="M24 132 a16 14 0 0 1 32 0Z"/></g>
-</g>
-<path class="line" d="M108 52 L130 66 M108 116 L130 98" stroke-width="1.6"/>
-</svg></div>
-        <div class="body">
-        <div class="num">04</div>
-        <h4>Community-based coastal resilience</h4>
-        <p>Co-developing research and decision tools with local communities, regional planning agencies, tribal governments, and state agencies.</p>
-      </div>
-      </div>
-    </div>
-    <p class="muted" style="margin-top:18px">Other ongoing work: dynamic behavior of mine tailings, and remote-sensing-based prediction of earthquake-induced excess pore-water pressure. Earlier work centered on sustainable ground improvement of expansive and sulfate-rich soils, geosynthetics for pavements, and low-carbon stabilizers.</p>
-
-    <div class="grid2">
+    <div class="rec-grid">
+      <h2 id="rec-h">A record built from the lab, the field, and <em>the model</em>.</h2>
       <div>
-        <h3>Appointments</h3>
-        <ul class="timeline">
-          <li><span class="yr">2024 – present</span><span>Assistant Professor, Civil &amp; Environmental Engineering, UMass Lowell</span></li>
-          <li><span class="yr">2023 – 2024</span><span>Senior Research Engineer I &amp; Instructional Lecturer, Texas A&amp;M University</span></li>
-          <li><span class="yr">2022 – 2023</span><span>Postdoctoral Researcher &amp; Alternate Instructor, Texas A&amp;M University</span></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Education</h3>
-        <ul class="timeline">
-          <li><span class="yr">2022</span><span>Ph.D., Civil Engineering, Texas A&amp;M University</span></li>
-          <li><span class="yr">2017</span><span>M.Tech., Civil Engineering, IIT Kanpur</span></li>
-          <li><span class="yr">2013</span><span>B.E., Civil Engineering, IIEST Shibpur</span></li>
-        </ul>
-      </div>
-    </div>
-
-    <h3>Honors &amp; Awards</h3>
-    <ul class="timeline">
-      <li><span class="yr">2025</span><span>USUCGER Early Career Workshop Awardee</span></li>
-      <li><span class="yr">2025</span><span>ASCE ExCEEd (Excellence in Civil Engineering Education) Fellow</span></li>
-      <li><span class="yr">2021</span><span>Terracon Endowed Fellowship in Geotechnical Engineering</span></li>
-      <li><span class="yr">2020</span><span>Hooper Fellowship in Geotechnical Engineering</span></li>
-      <li><span class="yr">2020</span><span>Geo-Institute Travel Award (Geo-Congress)</span></li>
-      <li><span class="yr">2020</span><span>Zachry Department of Civil &amp; Environmental Engineering Travel Award (TRB)</span></li>
-      <li><span class="yr">2019</span><span>Academic Excellence Award, Outstanding Civil Engineering Ph.D. Student, UT Arlington</span></li>
-    </ul>
-  </div>
-</section>
-
-
-<!-- MAP: research impacts / field sites. Edit the SITES list in the script at the bottom of this section -->
-<section id="sites">
-  <div class="wrap">
-    <p class="kicker">Field sites &amp; partners</p>
-    <h2>Research Impacts</h2>
-    <div class="site-filters" role="group" aria-label="Filter sites by theme"><button type="button" aria-pressed="true" data-f="all">All sites</button><button type="button" aria-pressed="false" data-f="coast" class="t-coast"><i></i>Coastal</button><button type="button" aria-pressed="false" data-f="slope" class="t-slope"><i></i>Slopes & embankments</button><button type="button" aria-pressed="false" data-f="pave" class="t-pave"><i></i>Pavements</button><button type="button" aria-pressed="false" data-f="test" class="t-test"><i></i>Testing & patent</button></div>
-    <div class="sites-map">
-      <svg viewBox="0 0 960 600" role="img" aria-label="Map of the United States showing project sites">
-        <path class="land" d="M638,484.5L638,484.5L638,484.5ZM768.2,458.6L774.7,477.8L783.3,492.4L792.3,502.8L794.2,513.6L807.4,535.6L810.1,544.7L811,564.6L809.2,564.4L807.1,576.7L794.5,580.4L788.3,568.6L779.7,566.2L774.4,555.3L765.6,548L754.3,533.1L759.3,524.7L752.9,521.4L755.6,525.7L750.3,525.4L749,517.7L751.9,512.2L750.2,502L747.2,497L743.4,496.8L734.6,490.4L729,482.8L720.9,478.9L716.3,479.6L715.4,484.2L711.6,484.4L702.6,492.8L696.6,491.8L695.8,486.5L684.2,480.2L670.2,478L653.5,482.2L648.8,483L643.3,474L641.6,482.3L636.5,481.7L626.9,481.9L615.1,487.5L609.7,490.9L613,494.8L616.1,489.7L618.6,493.3L617.7,499.1L613.2,499.6L616.7,505.2L622.7,505.6L624.4,513.5L610.3,507.1L603.2,512.8L598.8,507.2L591.8,514.4L581.2,509.2L575.2,499.7L570,497.7L561.8,504.9L545.1,500.1L532.3,502.2L526.6,503.3L514,509.6L515.7,501L509.6,503.3L511.9,511.1L515.1,510.5L502.4,521.1L486,529.4L470.5,542.3L472.2,538.2L481.7,532.7L474.8,531.8L474.5,535.3L466.3,538.6L470.1,539.4L466.8,544L461.5,543L465.4,547L462.2,555.3L460.9,566.6L461.9,573.9L467.1,585.7L462.5,588.1L453.9,583.1L445.9,583L440.6,579.2L427.6,574.2L424.8,565L421.3,560.9L421,550.5L413.4,543.3L412.5,539.2L405.7,532.2L399.1,513.6L384.3,497.6L373.2,496.8L368.5,494.5L361.6,497.2L356.1,508.6L351.3,513.2L332,502.8L325.4,496.5L322.7,489.8L322.7,482.8L318,472.2L310.9,467.7L301.5,455.3L297,452.6L291.7,444.8L260.2,441L258.9,451L243.1,448.9L204.9,443.2L140.1,405.1L142.8,400.5L98,395.2L96.4,391.7L97.2,381.4L95.1,376.1L85.2,363.8L80.8,363.3L80.1,356.2L75.2,355.9L68.6,350.9L64,343.6L48,338.6L45.7,334.9L49.1,323.2L41.4,308.7L34.5,287.5L39.1,281.2L31,269.7L32.7,256.5L37.9,265.7L35.3,253L32.7,255.6L25.8,249.3L28.1,244.1L19.8,225.1L23.7,205.6L18.2,193.9L18.6,189.8L25,182.2L30.8,169.9L32.1,157.2L30.7,154.5L33.1,144.1L32.3,137.4L43.2,121.4L56.3,90.7L60.2,79.9L61.2,73.5L64,69.2L69.8,68.8L62,66.3L68.6,57.8L64.9,56L65.9,49.9L66.1,31.5L64.9,23.1L67.5,18.7L75.7,26.4L88.8,32.2L93.2,32.1L93.2,37.6L86.7,43.1L95.1,38.1L94.9,41.7L89.8,52.5L94.7,50.8L96.5,40.8L100.1,36.7L97.2,30.8L99.7,30.6L100.8,20.3L97.8,18.5L98.5,13.8L180.8,35.1L195,38.1L371.1,64.4L472.1,69.3L502.9,69.4L502.8,60.9L507.7,62.8L510.6,75L522.7,77.3L523.3,79.7L529.9,77.1L535.3,77L542.6,80.7L544.9,85.6L546.4,82.6L554.7,85.7L557.1,89L561.8,87.9L567.1,84L569.2,87.2L578.6,86.3L582.6,88.9L587.1,88.4L581.4,92.4L573,95.7L564.5,103L559.4,109.3L550.3,117.2L551.6,119L559.3,117.5L567.3,113L570.8,114L568.1,120.6L571.3,118.3L576.3,120.9L585.6,114.7L591,113.8L609.1,98.7L616.3,99.3L608.8,104.5L606,109.7L606.1,114.5L609.1,110.5L618,111.8L622.9,118.3L635.4,118.5L641.8,113.1L651.8,111.9L659.7,109L659.3,115.5L666.1,116.2L671.4,112.9L674.9,122.2L678.3,124.1L682.5,121.4L683.4,125.3L674.7,124.9L670.7,126.5L666.1,124.3L663.9,128.7L660.7,125.9L652.8,124.9L650.8,128L642.5,129L640.3,133.1L635.1,136.3L637.6,131.9L630.1,133L622.6,150.4L617.2,159.3L617.7,163.5L622.9,156.1L626,154.3L630.6,145.2L631.2,149.7L625.7,162.3L625.6,170.7L622.8,177.7L623.6,182.1L621.2,192.3L624.4,208.8L624.2,213.1L630.5,226L635.6,227.4L641.9,223.7L645,220.4L649.6,207.5L648.8,194.7L642.3,180.8L643.7,177.7L641.9,172.1L645.1,165.1L644.5,157.3L646.9,152.7L651,150.8L653.4,145.3L654.7,154.6L657.5,150.5L657,143L663.8,139.4L660.2,135.8L665,130.4L674.1,132.7L676.9,135.7L686,137.5L690.5,144.4L688.1,146.6L691.4,151.3L691.6,159.7L688.5,166.5L684.7,168.5L683.4,174.1L688.2,177.1L693.8,167.7L699,164.8L704,169L707.9,182.7L710.2,187.3L709.8,196.4L705,196.7L701.9,204.1L700.8,211.3L697.4,218L706.6,221.7L708,219.8L714.4,223.6L721.7,219.5L726.3,219.4L737,209.5L744.5,205.4L755.7,196.9L764.5,188.9L768.3,182.9L762.9,173L771.7,168.8L784.3,167.6L787.5,169L796.6,166.3L803.9,159.1L806.7,158.3L806.4,149.1L802.2,147.7L802.4,143.8L807.9,138.8L815,126.5L821.5,121L844.4,115.7L872.5,108.5L873.1,103L877.2,100.5L881,101.2L881.4,94.5L886.2,84.5L884.3,74.8L885.3,66.2L892,46.6L894.8,46.5L898.4,51.2L907.1,44.5L915.4,48.7L924.3,78.4L930.1,78.3L931.6,85.4L937.4,86.4L942.3,93L938.1,96.8L935.6,103.7L932.2,102.3L929.3,108.3L922.6,112L922.9,117.7L917.6,112.3L916.7,108.1L914,122.6L903.9,128.6L898.8,135.7L896.2,147.5L895.5,152.1L900.2,155.7L895.5,162.9L902.9,168.3L906.1,173.8L911.2,174.8L914.7,171.6L916.6,173.8L905.9,180.2L905.4,176.4L898.7,183.2L895.2,184.2L896.5,179.7L895.8,179L892.8,178.1L893.7,187.5L887.9,190.2L871.6,196.1L860.6,204.8L863.6,205L877.2,200.8L880.9,196.2L885.8,198.4L869.8,210.8L858.3,215.6L855.8,212.8L855.5,213.5L853.2,217.7L858.7,219.5L859.8,233.3L857.5,241.5L849.3,254.7L849.7,249.6L837.3,245.4L836.3,242.3L836.1,241.7L836.7,240.3L836.4,245.6L841.5,253.6L847.9,258.2L850.4,265.8L849.3,275.9L845.2,283.5L843.2,296.9L839.5,295.8L839.6,287.8L842.3,279.1L838.7,280.7L838.1,274.1L832.5,274.5L828.5,269.6L833.3,266.9L826.1,261.9L827.1,250.8L823.4,254.5L825.1,269.2L828.2,277.3L821.8,276.9L817.1,273L814.2,275.6L814.4,269.2L813.4,276.4L817.5,274.6L819,278L825.3,278.2L833,282.6L832.1,294L836.1,300.5L833.3,305.4L841.6,303L845.6,310.8L842.8,312.3L846.1,317.7L834.4,327.3L849.4,323.6L851.8,331.8L846.5,338.7L830.1,337.8L841.1,341.4L837.4,350L842.6,345.8L845.8,347.9L842.9,356.5L840,354.7L833.8,356.7L825.5,364L821.7,370.6L820.6,377.9L810.1,379.9L807.1,381.6L801.7,389.8L798.5,401.3L788.3,412.2L779.9,416.9L780.9,419.8L774,427.6L770.5,435.2L769.3,447.1L767.5,449.1ZM109.3,536.3L109.3,536.3L109.3,536.3ZM108,550.6L108,550.6L108,550.6ZM105.1,552.1L105.1,552.1L105.1,552.1ZM104.3,552.3L104.3,552.3L104.3,552.3ZM103.7,552L103.7,552L103.7,552ZM103.8,559.5L103.8,559.5L103.8,559.5ZM102.9,554L102.9,554L102.9,554ZM102.6,542.8L102.6,542.8L102.6,542.8ZM101.8,554.1L101.8,554.1L101.8,554.1ZM100.5,544.3L100.5,544.3L100.5,544.3ZM97.6,560.8L98.6,560.6L99.1,558.9L99.7,559.1L100.6,556.8L102,556.3L101.3,557.9L103.4,558.4L103.1,560L100.9,559.9L99.4,561.4ZM96.9,550.4L96.9,550.4L96.9,550.4ZM94.5,571.6L94.5,571.6L94.5,571.6ZM93.6,572.7L94.8,572.2L95.4,573ZM91.9,566.3L94.2,564L95.3,564.1L96.3,562.2L98,562.5L97.5,561.6L101.5,561.5L101.6,564.4L102.9,564.2L102.2,565.8L100.4,565.2L100.6,566.9L99.5,566.5L95.3,571.2L96,567.9L93.9,570.4L93,569.2L92.9,567.8ZM91.7,573.6L91.7,573.6L91.7,573.6ZM87.5,578.3L87.5,578.3L87.5,578.3ZM83.2,576.5L83.2,576.5L83.2,576.5ZM83,575.2L83,575.2L83,575.2ZM80.9,572.4L80.9,572.4L80.9,572.4ZM78.3,573.8L78.3,573.8L78.3,573.8ZM73.7,577.6L73.7,577.6L73.7,577.6ZM72.7,577.1L72.7,577.1L72.7,577.1ZM71.3,584.7L71.3,584.7L71.3,584.7ZM71.5,578L71.5,578L71.5,578ZM70.7,584.2L70.7,584.2L70.7,584.2ZM70,585.2L70,585.2L70,585.2ZM70,582.3L70,582.3L70,582.3ZM69,585.1L69,585.1L69,585.1ZM69,583.2L69,583.2L69,583.2ZM68,581L68,581L68,581ZM67.1,584L68.2,582L69,582.9ZM69.6,554.7L69.6,554.7L69.6,554.7ZM67.1,580.1L67.1,580.1L67.1,580.1ZM69.2,554.7L69.2,554.7L69.2,554.7ZM64.7,580.8L66,580.8L66.1,582.4L64.8,582ZM66.5,555.2L66.7,554.3L68.3,553.6L67.3,555.3ZM62.1,581.3L62.1,581.3L62.1,581.3ZM61,581.1L61,581.1L61,581.1ZM59.9,581.8L59.9,581.8L59.9,581.8ZM57.4,583L57.4,583L57.4,583ZM65.1,515.5L65.1,515.5L65.1,515.5ZM55.1,586.4L55.1,586.4L55.1,586.4ZM54.6,578.7L54.6,578.7L54.6,578.7ZM45.7,587L45.7,587L45.7,587ZM43.9,587.5L43.9,587.5L43.9,587.5ZM42.7,587.5L42.7,587.5L42.7,587.5ZM42.2,587.7L42.2,587.7L42.2,587.7ZM42,586L42,586L42,586ZM40,586.5L40.6,586L41.9,587.2L40.1,587.3ZM39.3,587.6L39.3,587.6L39.3,587.6ZM43.5,538.7L45.5,539.2L46.5,538.4L48.7,537.9L48.8,538.9L50.3,539.4L50.2,542.4L48.4,542.5L47.6,543.2L43.7,539.9ZM30.8,591.2L33.2,590.9L35.8,589.1L34.8,588L35.5,587.2L37.4,587L37.9,588L39.2,588L37.4,589.4L39.5,588.7L36,591.3L34.2,591.1L31.7,592ZM49.9,496.5L55.7,493.8L60.3,492L62.9,491.6L64.8,492.1L63.9,494.8L64.2,495.9L67.5,496.1L70.3,497L71.4,495.4L73.1,495.6L71.6,494.2L70.3,494.5L70.6,493.2L68.6,490.2L69.6,489.7L70.4,491L70.1,492.1L71.5,493.8L72.3,493.6L70.8,491.6L71.6,489.8L71.3,489L69.1,489.3L65.5,487.7L65.2,484.4L62,480.1L60.5,479.1L59.6,477.7L58.5,476.9L60.1,475.4L60.6,473.1L63,473.7L66.1,473.6L68.4,472.3L69.4,471.2L70.6,467.4L72.7,464.7L74.1,463.8L75.7,464.3L77,463.8L78.7,462.5L80.4,460.9L81.6,460.4L82.2,461L84.6,460.9L86,460.1L88,457.6L88.7,457.6L91.1,458.6L91.3,459.3L90,460.2L90.9,461.2L92.5,458.8L93.6,459.7L93.7,461.3L94.7,461.7L95.5,460.8L97.2,460.5L99.8,461.2L99.4,462.9L101.3,463.3L100.9,464.2L102.8,464.6L104.5,463.7L104.9,464.2L107.2,463.2L110.3,464.6L110.7,464.3L112.2,465.3L117.1,465L119.8,466.2L123.2,464.3L124.1,464.1L129.6,466.7L130.8,466.8L145,538.3L146.9,538.6L147,537.9L149,538.5L149.9,537L152.2,536.4L152.2,538.5L154.4,539.5L155.2,540.6L159.8,543.5L161.1,545.9L163,543.4L163.9,543.1L163.9,539.6L166.8,537.1L169,538.4L169.9,540.5L171,540.4L173.6,542.8L175.5,543.3L178,545L179.4,546.8L185.4,552.6L185.2,553.6L186.6,553.5L186.8,554.9L188,555.1L188.6,556.5L189.6,556.1L192.2,556.9L197,557.6L197.7,558.3L197.8,560.2L199.8,563.5L199.3,566.7L198.3,568.7L197,568.3L195.4,565.9L195.8,564.8L195,562.8L195.1,565.9L193.9,566L191.5,565L191.1,561.6L190.9,564.9L189.3,563.8L189.1,561.7L188.3,562.9L187.3,561.4L186.3,561.4L186.5,559.5L187.3,559.2L185.3,556.4L182.9,554.9L180.4,554.5L180.2,553.1L178.2,550.2L175.5,547.7L173.5,547.9L170.2,544L168.2,540.9L167.4,541.3L168.8,542.4L170.7,545.7L172,548.8L170,547.7L168.2,548.3L167.7,546.5L166.6,545.2L166.1,545.9L163.2,545L166.4,546.5L167.7,548.5L165.8,550.3L160.7,548.3L159.3,546.7L157.5,545.6L150.6,543.3L151.5,542.6L150.9,540.6L148.6,542.5L146.3,542.6L143.3,541.4L139.5,541.1L138.1,541.3L133.2,542.8L132.6,541.6L130.2,541.5L130.3,539.7L128.8,541L126.8,539.9L125.4,540.1L125.6,541L123.3,541.8L124.1,540.3L126.5,539L123.8,538.7L122.6,536.6L121.7,536.9L121.2,535.5L120.2,537.5L119.6,536L119,538.1L117.4,538.2L118.5,535.3L117.6,536.7L117.1,536.3L116.6,538.7L117.6,538.8L116.9,541L117.8,540L118.4,541.1L117.9,542.8L119.2,544.1L117.6,545.2L117.1,543.6L116.8,545.2L113.4,545.2L112.9,544.1L112.3,547.1L111.8,545.5L111.9,547.9L111.2,547.7L109.6,549.8L109.7,548.5L108.1,549.8L107.1,551.4L105.5,551.1L104.8,552L103.2,551.4L103.6,550L105.9,548.6L107,547.1L105,548.3L103.5,547.2L104.1,545.2L105.2,543.8L105.7,541.2L105,539.8L106.5,539.1L108.8,537.1L110.3,538.4L111.3,537.1L109.9,536.1L110.2,535.5L107.7,535.1L105.9,537.2L104.7,537.5L103.4,539.7L101.7,541.6L102,542.5L100.8,543.8L100.7,545L98.9,548L97.2,548.4L96.4,549.8L94.7,550.6L94.1,552.4L97.6,553.7L97.6,555.5L95.6,556.6L94.3,560.3L91.1,561.2L90.6,562.3L88.8,562.9L87.9,564.8L86.6,564.6L84.4,566.7L85.3,567.6L84.3,569.1L82.8,569.2L81.5,570.7L80.8,569.9L78.4,572L78.5,572.8L76.5,572.6L75.8,573.7L77.3,574.6L75.5,576.5L71.1,577.1L69.7,577L67,578.8L66.3,579.7L64.9,579.1L63.1,580.3L61.9,580.1L62.8,578.2L61.7,578.2L59.7,581.9L54.7,582.5L51.9,584.7L49,584.5L48.3,585.3L46,585.3L45.9,583.8L46.9,583.6L48.5,581.7L52.6,581.4L53.4,582.8L53.7,580.9L55.7,580.7L58.9,577.2L61.1,575.8L65.4,575.3L65.5,576.4L67.9,577L66.4,575.7L67.7,573.5L70.1,571.6L74,569.5L75.2,570.1L75.5,568.2L76.6,566.7L79.8,564.3L81.1,557L82.7,555.5L82.6,554.2L78.4,556L76.8,554.4L77.2,552.9L75.5,555.2L76,556.9L74.6,557.3L73.5,554.7L72.2,553L71.3,554.1L69.8,552.6L69.9,551.7L65.6,553.9L63.7,555.2L63.1,554.3L64,551.9L63.2,549.4L64.8,547.9L62.8,542.3L62.2,543.5L59.8,544.3L57.4,544.5L55.7,543.9L55.7,542.4L54.1,540L52.6,538.6L53.3,538.2L51.7,537.6L53.6,536.5L53.1,534.7L54.1,534.1L53,532.8L51.9,533.3L51.9,531.8L50.3,529.6L50.5,528.7L51.8,528.6L51,527.3L52.6,527.4L52.9,525.1L56.6,521.4L57.8,518.3L60.1,517.4L62.4,519.5L63.3,519.5L66.5,516.5L68.8,517.1L70.4,516.8L71.9,514.8L71.6,511.2L70.5,508.7L71.6,509.1L72.6,507.5L71.4,505.8L70.7,506.8L69.7,506.6L66.6,508.3L65.5,509.7L65.5,508.4L63.1,507.5L60.3,507.2L58.2,507.8L54.4,505.9L53.8,504.6L54.2,503.5L53,501.2L53.8,501.6L55,500.5L54.7,500L51.8,498.9L50,497.1ZM24.5,593.5L26.4,591.3L28.2,590.6L28.8,589.5L30.5,589.2L30.9,590.7L28.7,591.4L27.4,592.7ZM23.3,593.9L23.3,593.9L23.3,593.9ZM21.4,591.8L21.4,591.8L21.4,591.8ZM28,564.1L28,564.1L28,564.1ZM21.6,591L21.6,591L21.6,591ZM20.1,592.5L20.1,592.5L20.1,592.5ZM19.7,592L19.7,592L19.7,592ZM19,593.3L19,593.3L19,593.3ZM26.4,559.3L26.4,559.3L26.4,559.3ZM15.8,593.4L15.8,593.4L15.8,593.4ZM14.3,593.2L14.3,593.2L14.3,593.2ZM13.4,593.7L13.4,593.7L13.4,593.7ZM33.9,509.5L34.7,507.8L35,508.7L37.1,510.2L38.7,509.6L39.9,510.6L39.8,511.5L41.3,512.8L44.1,514.1L43.3,515.1L41.5,514.7L40.2,516.1L38.4,512.8L36.2,511.1L34.7,511.7L33.9,511ZM6.9,593.4L6.9,593.4L6.9,593.4ZM23.1,531.3L23.7,531.4L25.8,533.6L24,532.7ZM23.4,529.8L23.4,529.8L23.4,529.8ZM0,592.7L2.1,593.2L4.9,594.5L2.4,594.3ZM-6.2,591.6L-1,591.7L0,590.4L0.6,591.6L-3.5,592.6ZM-7.1,591.6L-7.1,591.6L-7.1,591.6ZM-6.7,590.1L-6.7,590.1L-6.7,590.1ZM-8.2,591.4L-8.2,591.4L-8.2,591.4ZM-9.1,591L-9.1,591L-9.1,591ZM-10,589.9L-10,589.9L-10,589.9ZM-10.8,591.7L-10.8,591.7L-10.8,591.7ZM-14.8,591.9L-12.9,589.8L-12.3,591L-11,591.2L-14,592.3ZM-16.2,589L-16.2,589L-16.2,589ZM-17.9,590.1L-14.3,589.8L-15.3,591.1ZM-19.7,588L-18.4,588.2L-19,589.6ZM-22.6,589.1L-22.6,589.1L-22.6,589.1ZM-23.5,589L-23.5,589L-23.5,589ZM-22.9,587.4L-22.9,587.4L-22.9,587.4ZM-24.6,590.2L-24.6,590.2L-24.6,590.2ZM-25.6,590.6L-25.6,590.6L-25.6,590.6ZM-29.8,583.1L-29.8,583.1L-29.8,583.1ZM-34.6,583.9L-34.6,583.9L-34.6,583.9ZM-34.4,581.1L-34.4,581.1L-34.4,581.1ZM-35.8,581.8L-35.8,581.8L-35.8,581.8ZM-35.8,580L-35.8,580L-35.8,580ZM-40.1,579.2L-40.1,579.2L-40.1,579.2ZM-44.3,573.1L-44.3,573.1L-44.3,573.1ZM-50.8,566.7L-50.8,566.7L-50.8,566.7ZM-51.2,566.4L-51.2,566.4L-51.2,566.4ZM-51.4,566L-51.4,566L-51.4,566ZM-54.9,567.4L-53.5,567.3L-53.6,568.6ZM-56.8,561.8L-53.8,562.8L-53.1,564.7L-55.8,563.5ZM195,566.8L195,566.8L195,566.8ZM194.4,568.2L194.4,568.2L194.4,568.2ZM193.8,568.5L193.8,568.5L193.8,568.5ZM193.5,567.8L193.2,565.9L194.6,567.6ZM191.7,565.7L192.8,565.8L192.8,567.3ZM186.2,558.2L186.2,558.2L186.2,558.2ZM186.2,559.2L186.2,559.2L186.2,559.2ZM185.6,558.6L185.6,558.6L185.6,558.6ZM188.3,570.1L188.3,570.1L188.3,570.1ZM184.7,560.9L184.7,560.9L184.7,560.9ZM184.2,560.1L184.6,559.1L186,559.2L185.3,560.7ZM185.4,567.3L185.4,567.3L185.4,567.3ZM185.7,571.8L185.7,571.8L185.7,571.8ZM183.5,566.3L183.5,566.3L183.5,566.3ZM183.2,566L183.2,566L183.2,566ZM183.4,567.7L184.7,566.4L185.1,567.8L184.1,568.7ZM182.1,564L182.7,562.2L182.1,560.8L183.9,560.5L185.7,562.3L187.1,562.7L188.4,564.3L190.3,565.4L188.4,565.1L191.7,567.3L192.7,570.9L190.4,571L191,570.2L188.9,569.7L186.7,568.4L188.5,570.7L189.1,570.1L190,572L189.1,572.1L187.2,570.6L186.3,568.7L185.4,569.1L186.5,567.1L183,565.2ZM178.7,554.1L178.7,554.1L178.7,554.1ZM181.6,564.5L181.6,564.5L181.6,564.5ZM179.9,565.1L179.9,565.1L179.9,565.1ZM177.6,558.1L177.9,557.3L179.8,557.5L178.6,556.3L179.1,555.6L182.5,555.3L185.8,557.6L184.9,558.7L183.5,558.8L181.6,560.2L181.1,559.5L181.2,563.2L179.8,563.4ZM171.9,547.1L173.9,548.2L175.5,548L177.7,551.2L176,550L178.4,552.8L178.3,554.1L176.8,556.8L175.7,555.6L176.1,554.1L174.3,552L174.2,551.1ZM171.3,546.3L171.3,546.3L171.3,546.3ZM169,542.9L169,542.9L169,542.9ZM171.2,555.8L171.9,553.9L174.5,554.4L176.9,559.3L178,563.5L174.1,560L173.2,559.9L172.8,556.3ZM168.9,548.2L168.9,548.2L168.9,548.2ZM170.8,556.9L172.2,556.7L172.2,558.4L171.3,558.7ZM166.8,547L166.8,547L166.8,547ZM167.4,549.3L167.4,549.3L167.4,549.3ZM166.5,552.5L166.3,551.3L168.9,548.9L170.5,549.7L172.6,549.8L172.8,551.1L174.4,553.7L173.4,554.3L171,553.3L171.1,555.8L168.6,554.6ZM127.2,540.7L127.2,540.7L127.2,540.7ZM125.8,540.7L125.8,540.7L125.8,540.7ZM120.5,537.4L120.5,537.4L120.5,537.4ZM120,539.3L120,539.3L120,539.3ZM120.2,542.4L120.2,542.4L120.2,542.4ZM119,546.2L120.8,543.4L121.7,541.3L122.4,542.2L120.5,545ZM118.5,542.7L119.8,539.9L119.3,543.3ZM117.9,538.9L117.9,538.9L117.9,538.9ZM802.1,585L802.1,585L802.1,585ZM800.2,586.5L800.2,586.5L800.2,586.5ZM795,589.5L795,589.5L795,589.5ZM781.5,594.6L788.2,588.2L792.7,590.6ZM777.5,595.8L777.5,595.8L777.5,595.8ZM774.3,595.8L774.3,595.8L774.3,595.8ZM765.5,549.4L765.5,549.4L765.5,549.4ZM758.4,596.6L758.4,596.6L758.4,596.6ZM709.4,487.3L709.4,487.3L709.4,487.3ZM925.3,112.7L925.3,112.7L925.3,112.7ZM923.5,114L923.5,114L923.5,114ZM921.9,110.2L921.9,110.2L921.9,110.2ZM917.8,113.9L917.8,113.9L917.8,113.9ZM919.1,122.5L919.1,122.5L919.1,122.5ZM917,117.1L917,117.1L917,117.1ZM915.8,114.2L915.8,114.2L915.8,114.2ZM913.4,183.6L913.4,183.6L913.4,183.6ZM904.2,185.1L907.1,181.3L910.3,183.6ZM851,323.8L851,323.8L851,323.8ZM850,344L850,344L850,344ZM76,368.2L76,368.2L76,368.2ZM73.6,378L73.6,378L73.6,378ZM67.9,365.9L67.9,365.9L67.9,365.9ZM64.1,352.5L64.1,352.5L64.1,352.5ZM57.4,368.2L57.4,368.2L57.4,368.2ZM55.7,349.3L55.7,349.3L55.7,349.3ZM49.5,349.4L49.5,349.4L49.5,349.4ZM46.1,347.7L46.1,347.7L46.1,347.7ZM300.7,575.2L305.6,568.9L304.5,563.5L317,568.9L321.1,575.2L327.1,580L323.5,583.8L312.2,588.7L308.9,593.6L304.4,590.9L304.3,584ZM287.1,549L295.1,548.4L301.8,551.8L300.6,555L292.7,556.1L292.1,552.1ZM287.1,557.7L287.1,557.7L287.1,557.7ZM279.5,549.4L279.5,549.4L279.5,549.4ZM274.3,545L275.3,542.4L286.9,543.8L283.4,546.2ZM254.1,534.4L260.6,531.4L267.2,540.6L257.5,540.5ZM222.6,524.1L226.9,519.9L232.9,522.6L231.8,526.3L226.4,527.2ZM213,528L213,528L213,528ZM835.9,280.5L836.8,280.3L835.9,280.5ZM834.2,276.9L834.2,276.9L834.2,276.9ZM826.1,263.7L826.1,263.7L826.1,263.7ZM666.7,128.5L666.7,128.5L666.7,128.5ZM655.4,131.7L655.4,131.7L655.4,131.7ZM653.3,130.8L653.3,130.8L653.3,130.8ZM652.2,136.1L652.2,136.1L652.2,136.1ZM650.8,133.2L650.8,133.2L650.8,133.2ZM648.6,140L648.6,140L648.6,140ZM646.5,147L646.5,147L646.5,147ZM645.4,150.1L645.4,150.1L645.4,150.1ZM635.6,137.4L635.6,137.4L635.6,137.4ZM592.2,90.7L600.7,84.2L600.7,87L594.2,91.6ZM634.6,485.2L634.6,485.2L634.6,485.2ZM629.5,485L629.5,485L629.5,485ZM625.4,485.9L625.4,485.9L625.4,485.9ZM622.1,485.7L622.1,485.7L622.1,485.7ZM885.4,192.4L885.4,192.4L885.4,192.4ZM884.5,196.2L884.5,196.2L884.5,196.2ZM882.9,194.7L882.9,194.7L882.9,194.7ZM802.9,151.2L802.9,151.2L802.9,151.2ZM801.6,151.1L801.6,151.1L801.6,151.1ZM709.6,219.3L709.6,219.3L709.6,219.3ZM707.6,218.5L707.6,218.5L707.6,218.5ZM837.2,282.6L837.2,282.6L837.2,282.6ZM91.8,49.8L91.8,49.8L91.8,49.8ZM97.2,23.9L97.2,23.9L97.2,23.9ZM97.3,19.7L97.3,19.7L97.3,19.7ZM96.2,22.8L96.2,22.8L96.2,22.8ZM93.6,30.2L98.1,36L96.6,38.3ZM94.1,17.4L94.1,17.4L94.1,17.4ZM92.2,18.9L92.2,18.9L92.2,18.9ZM93.8,12.5L93.8,12.5L93.8,12.5ZM89.6,20.6L96.6,21.1L94.3,25.8ZM89.7,18.5L89.7,18.5L89.7,18.5ZM632.1,143.7L632.1,143.7L632.1,143.7ZM625.8,147.7L625.8,147.7L625.8,147.7ZM575,111.2L575,111.2L575,111.2ZM574.3,114.1L574.3,114.1L574.3,114.1ZM572.3,113.1L572.3,113.1L572.3,113.1ZM570.7,115.1L570.7,115.1L570.7,115.1ZM570.9,112.3L570.9,112.3L570.9,112.3ZM570.3,111L570.3,111L570.3,111ZM570.3,116.3L570.3,116.3L570.3,116.3ZM567.1,112L567.1,112L567.1,112ZM627.7,489.4L627.7,489.4L627.7,489.4ZM618.8,489.9L618.8,489.9L618.8,489.9ZM614.1,502L614.1,502L614.1,502ZM600.1,512.4L600.1,512.4L600.1,512.4ZM596.6,513L596.6,513L596.6,513ZM592.9,514L592.9,514L592.9,514ZM567.7,503.3L567.7,503.3L567.7,503.3ZM893.9,180.7L893.9,180.7L893.9,180.7ZM894.5,185.2L894.5,185.2L894.5,185.2ZM892.8,192.7L892.8,192.7L892.8,192.7Z"/>
-        <path class="borders" d="M636.5,481.7L632.3,447.7L633.8,379.9L631.7,377.8L678.6,373.5L691.6,420L698.6,432.9L695.9,436.1L695.1,442.9L697.7,449.8L697.4,457.3L699.8,461.2L650.5,466.4L650.1,469.4L654.9,473.2L656.1,478.5L653.5,482.2M142.8,400.5L146.6,400.3L147.9,394.3L144.7,392.3L145.7,385.3L151.2,379.7L154,371.3L160.1,368.5L157.3,363.6L154.4,350.4L157.1,325.9L164,326.1L167.4,329.5L169.9,326L173.3,308.2L260.6,322.6L243.1,448.9M699.8,461.2L703.2,467.4L754,463.9L758,467.8L758.2,457.4L768.2,458.6M678.6,373.5L701.8,370.7L723.6,367.6L720.4,375.3L729.4,378.8L736.8,389.8L750.2,399.3L754.3,405.5L759.4,407.7L762.2,416.2L764.9,417.2L769.5,426.5L774,427.6M641.9,223.7L675.1,220.2L675.3,221.6L681.9,279.6L682.9,286.6L672.1,289.7L673.1,293.4L666.7,300.1L665.6,305.9L659.6,305.9L655.7,309.2L650.6,308.3L645.2,313.4L636.6,310L629.5,314.5L628.1,312.3L636.9,292.5L633.6,283.2L635.1,279L630.5,226M387.8,267.4L502.1,270.7L509.4,274.5L505.7,281.2L510.3,288.2L514.2,290.4L514.8,338.2L416.2,336.7L383.7,335.2M896.2,147.5L889.9,141.8L889,137.6L877.2,100.5M895.8,179L891.5,173L885,175L857.8,180.8L857.6,164.8L870.5,162L889,157.9L895.5,152.1M898.7,183.2L896.5,179.7M551.6,119L547.4,120.1L547.9,133.2L541.5,137.5L539.1,144.6L542.9,147.5L541.2,151L540.9,162.7L545.3,167L555.3,171.9L556.2,174.8L563.4,178.9L566.1,182.5L567.5,190L483,191.9L483.2,151.6L476.9,144.7L481.6,137.4L481.1,128.6L478.1,121.1L477.4,100.1L473.3,88.3L474,76.3L472.1,69.3M836.7,240.3L837.7,237.4L847.4,227.1L840.6,222.6L836.8,217.1L836.6,210.6L841.8,200.6L856.5,205.5L855.8,212.8M855.5,213.5L853.2,217.7M836.3,242.3L836.1,241.7M701.8,370.7L701.7,365.4L706.3,363.1L710,356.7L715.1,355.8L723.2,350.1L728.8,342.7L729.4,344.7L735.8,339.5L739.2,339.7L743.9,328.5L768.3,325.6L845.6,310.8M810.1,379.9L785.9,362.4L765.7,365.5L760.1,358.8L737.6,361.1L723.6,367.6M481.6,137.4L365.4,131.9L371.1,64.4M514.8,338.2L514.9,349.5L518.6,374.4L518.3,413.9L511.2,411.6L504.5,406.8L493.4,409.7L487.6,409.7L484.4,412.9L473.7,407L468.9,412L468.1,407.7L463.8,409.8L459.3,406L454.6,405.9L447,401.9L444.7,404L431.6,397.4L422.5,396L417.4,391.8L419.2,348.2L365.9,345.1L366.8,333.8M755.7,196.9L756.8,202.9L827.9,188.9L832.7,191.5L834.4,196.5L841.8,200.6M837.7,237.4L831.8,240.5L770.3,252.6L752.7,255.6L749.4,235.2L744.5,205.4M483,191.9L480.1,209.8L483.1,214.6L479.1,210.9L469.1,206L460.3,205.9L457.5,208.2L449.8,202.7L359.7,197.6L363.4,153L365.4,131.9M518.3,413.9L526.5,415.7L526.5,415.7L526.8,427.7L527.3,450.8L531.3,459.5L537.4,468.6L537.2,476.7L533.4,487.8L534.8,493.8L530.6,499.4L532.3,502.2M291.7,444.8L290.6,439.8L357.3,446L360.9,402.4L365.2,345L365.9,345.1M359.7,197.6L355.9,242.5M272.9,233.2L355.9,242.5L389.2,244.9L387.8,267.4L383.7,335.2L366.8,333.8L298.7,327.6L260.6,322.6L272.9,233.2L239.8,228.4L243.3,206L252.1,151.2L253.8,139.6L363.4,153M885,175L887.9,190.2M860.6,204.8L860.7,197.6L857.8,180.8M502.1,270.7L496.8,263.6L494.3,257.5L514,257.7L562.1,255.3L567.6,260.3L566.7,268.1L569.1,274.8L580.8,285.5L582.2,292.3L591.7,293.5L588,305.2L588.4,308.1L603.8,318.9L605.9,325.4L604.4,328.1L608.8,334.4L611.7,334.4L611.7,341.5L607.3,345.6L606.1,345.8L605.2,345.8L605.6,350.8L602.5,357.2L591,358.1L595.9,351.5L594.3,346.5L514.9,349.5M770.3,252.6L772.1,264.1L782.3,252.7L788,254.1L792,249.2L797.5,251.3L801.4,256L800.4,260.5L790.3,254.8L790.5,261.6L784.3,272L781.8,270.5L778.2,281.2L771.7,278.2L771.7,281.9L764.1,300.1L764.7,304.2L749.6,312.9L746.9,311L741.8,314.9L736.9,312L735.6,308.1L729.5,306L722.1,296.4L721.9,289.9L726.5,288.7L727.2,280.7L729.7,275L732.6,278.1L733.8,270.9L737.9,265.2L742.3,264.8L747.6,256.6L749.2,242.5L747.2,237L749.4,235.2M567.6,260.3L568.3,255.2L572.3,253.4L574.7,243.8L571.8,240.7L572.7,236.7L584.1,232.1L586.5,227L586.4,220.1L582.7,218.1L578,211.8L624.4,208.8M629.5,314.5L629.2,321.9L622.4,324.4L623.3,331.4L615,328.7L611.7,334.4M602.5,357.2L604.1,359.7L598.8,363.7L600.9,365.5L595.5,370.7L597.8,377L593.6,380.5L590.1,385.1L589.6,393.6L586.4,395.1L584.5,401.7L580.7,404.6L582.6,408.2L578.5,413.6L580.6,415.5L580.3,426.1L526.8,427.7M32.1,157.2L49,162L98.9,176.1L98.9,176.1L82,241.4L110.4,284.1L131.8,316.3L154.4,350.4M850.4,265.8L839.5,268L831.8,240.5M567.5,190L570.3,195.5L568.5,198.2L571,207L576.8,209L578,211.8M494.3,257.5L491.5,237.7L488.8,236.2L489.3,230.1L485.8,224.6L483.1,214.6M681.9,279.6L688.3,278.6L693.1,285.1L703,287.9L709.1,287.6L715.8,283.2L721.9,289.9M735.6,308.1L729.8,315.2L723.8,319.4L717.7,328.8L708.7,333.2L676.7,336.8L657.1,338L634.8,340.5L630.9,339.8L631.5,343.8L607.3,345.6M606.1,345.8L605.2,345.8M836.8,280.3L835.9,280.5M849.3,275.9L842.3,279.1M814.4,269.2L815.2,265.5M813.2,262.6L815.2,265.5L813.2,262.6L805.6,259.8L801.4,256M697.4,218L675.3,221.6M622.6,150.4L618.1,145.2L618.1,145.2L618.5,137.7L612.8,135L613.1,132.6L602.4,131.4L597.4,129L581.2,125.7L577.4,121.4L577.4,121.4L576.3,120.9M593.6,380.5L631.7,377.8M615.1,487.5L608.1,477.2L609.5,469.4L573.6,471.5L575.3,459.6L585.8,440.8L581.9,437.9L582.2,428.6L580.3,426.1M252.1,151.2L247.8,144.1L245.7,148.7L233,145.9L231,148.3L221.3,146.5L220.6,139L216,136.1L216.8,131.8L213.5,125.1L213.6,118.9L211.2,116.1L204.7,120.4L202,117.6L202.7,112.9L210,95.3L201.7,88L197.7,78.2L192.6,73.3L193.8,67.4L190.3,60.3L195,38.1M870.5,162L867,143.2L869.6,130.6L868.3,125.6L874.3,119.9L872.1,114.8L872.5,108.5M844.4,115.7L845.6,124L848.2,127.9L848,137.1L853.5,147.1L857.6,164.8M69.8,68.8L75.8,72.3L78.9,78.4L77.8,85.2L84.5,89.7L96.7,88.9L101.2,92.9L111.4,92.6L116.6,94.3L120.8,93.1L134.1,93.9L136.6,93L167.9,100.5L172.9,110.6L164.2,121.9L161.8,126.8L155.7,132.4L154.9,136.7L159.3,140.2L155.5,147.8L146.6,187.5L98.9,176.1M708.7,333.2L743.9,328.5M173.3,308.2L194.7,197.7L243.3,206M180.8,35.1L168.1,91.1L167.9,100.5M194.7,197.7L146.6,187.5"/>
-        <g class="pin t-coast" data-id="lovell" tabindex="0" role="button" aria-label="Lovell Island, Boston Harbor: Coastal bluff erosion"><circle class="halo" cx="897" cy="164.3" r="10"/><circle class="dotp" cx="897" cy="164.3" r="8"/><text x="881" y="154.3" text-anchor="end">Lovell Island</text></g><g class="pin t-coast" data-id="louisiana" tabindex="0" role="button" aria-label="Louisiana coast: Coastal resilience on the Gulf Coast"><circle class="halo" cx="596.5" cy="507.3" r="10"/><circle class="dotp" cx="596.5" cy="507.3" r="8"/><text x="612.5" y="525.3" text-anchor="start">Louisiana coast</text></g><g class="pin t-coast" data-id="galveston" tabindex="0" role="button" aria-label="Galveston, Texas: Coastal erosion monitoring"><circle class="halo" cx="518" cy="516" r="10"/><circle class="dotp" cx="518" cy="516" r="8"/><text x="532" y="537" text-anchor="start">Galveston</text></g><g class="pin t-slope" data-id="houston" tabindex="0" role="button" aria-label="Houston, Texas: Collapsed highway embankment slope"><circle class="halo" cx="502.6" cy="501.1" r="10"/><circle class="dotp" cx="502.6" cy="501.1" r="8"/><text x="486.6" y="517.1" text-anchor="end">Houston</text></g><g class="pin t-slope" data-id="paris" tabindex="0" role="button" aria-label="Paris, Texas: Highway embankment slope"><circle class="halo" cx="498.6" cy="413.6" r="10"/><circle class="dotp" cx="498.6" cy="413.6" r="8"/><text x="512.6" y="403.6" text-anchor="start">Paris</text></g><g class="pin t-pave" data-id="fortworth" tabindex="0" role="button" aria-label="Fort Worth, Texas: Wicking geotextile pavements"><circle class="halo" cx="465.5" cy="433.8" r="10"/><circle class="dotp" cx="465.5" cy="433.8" r="8"/><text x="449.5" y="437.8" text-anchor="end">Fort Worth</text></g><g class="pin t-pave" data-id="minneapolis" tabindex="0" role="button" aria-label="Minneapolis, Minnesota: Pavements under freeze–thaw"><circle class="halo" cx="533.5" cy="158.2" r="10"/><circle class="dotp" cx="533.5" cy="158.2" r="8"/><text x="549.5" y="164.2" text-anchor="start">Minneapolis</text></g><g class="pin t-test" data-id="vicksburg" tabindex="0" role="button" aria-label="Vicksburg, Mississippi: Seasonal-cycle materials testing"><circle class="halo" cx="586.5" cy="440.4" r="10"/><circle class="dotp" cx="586.5" cy="440.4" r="8"/><text x="602.5" y="444.4" text-anchor="start">Vicksburg</text></g>
-      </svg>
-      <div class="site-pop" hidden role="dialog" aria-live="polite"><button class="x" type="button" aria-label="Close">×</button><i class="k"></i><h4></h4><p class="loc"></p><p class="txt"></p></div>
-    </div>
-    <ul class="site-list">
-      <li class="t-coast" data-theme="coast"><button type="button" data-id="lovell"><span style="flex:1"><b>Coastal bluff erosion</b><span>Lovell Island, Boston Harbor, MA</span></span></button></li>
-      <li class="t-coast" data-theme="coast"><button type="button" data-id="louisiana"><span style="flex:1"><b>Coastal resilience on the Gulf Coast</b><span>Louisiana coast</span></span></button></li>
-      <li class="t-coast" data-theme="coast"><button type="button" data-id="galveston"><span style="flex:1"><b>Coastal erosion monitoring</b><span>Galveston, Texas</span></span></button></li>
-      <li class="t-slope" data-theme="slope"><button type="button" data-id="houston"><span style="flex:1"><b>Collapsed highway embankment slope</b><span>Houston, Texas</span></span></button></li>
-      <li class="t-slope" data-theme="slope"><button type="button" data-id="paris"><span style="flex:1"><b>Highway embankment slope</b><span>Paris, Texas</span></span></button></li>
-      <li class="t-pave" data-theme="pave"><button type="button" data-id="fortworth"><span style="flex:1"><b>Wicking geotextile pavements</b><span>Fort Worth, Texas</span></span></button></li>
-      <li class="t-pave" data-theme="pave"><button type="button" data-id="minneapolis"><span style="flex:1"><b>Pavements under freeze–thaw</b><span>Minneapolis, Minnesota</span></span></button></li>
-      <li class="t-test" data-theme="test"><button type="button" data-id="vicksburg"><span style="flex:1"><b>Seasonal-cycle materials testing</b><span>Vicksburg, Mississippi</span></span></button></li>
-    </ul>
-  </div>
-</section>
-<script>
-(function(){
-  var SITES={"lovell": {"t": "coast", "k": "Coastal", "place": "Lovell Island, Boston Harbor, Massachusetts", "title": "Coastal bluff erosion", "text": "Field site on the Boston Harbor Islands for studying how coastal bluffs erode, linking field observations with physics-informed models.", "x": 897, "y": 164.3}, "louisiana": {"t": "coast", "k": "Coastal", "place": "Louisiana coast", "title": "Coastal resilience on the Gulf Coast", "text": "Geotechnical work on coastal erosion and the resilience of geo-infrastructure along the Louisiana coast.", "x": 596.5, "y": 507.3}, "galveston": {"t": "coast", "k": "Coastal", "place": "Galveston, Texas", "title": "Coastal erosion monitoring", "text": "Monitoring coastal erosion along Galveston Island on the Texas Gulf Coast.", "x": 518, "y": 516}, "houston": {"t": "slope", "k": "Slopes & embankments", "place": "Houston, Texas", "title": "Collapsed highway embankment slope", "text": "Forensic investigation and remediation of a failed highway embankment slope, with field monitoring after rehabilitation.", "x": 502.6, "y": 501.1}, "paris": {"t": "slope", "k": "Slopes & embankments", "place": "Paris, Texas", "title": "Highway embankment slope", "text": "Field instrumentation and performance monitoring of a rehabilitated highway embankment slope.", "x": 498.6, "y": 413.6}, "fortworth": {"t": "pave", "k": "Pavements", "place": "Fort Worth, Texas", "title": "Wicking geotextile pavements", "text": "Field test sections using wicking geotextiles to drain flexible pavements built over expansive clay subgrades.", "x": 465.5, "y": 433.8}, "minneapolis": {"t": "pave", "k": "Pavements", "place": "Minneapolis, Minnesota", "title": "Pavements under freeze\u2013thaw", "text": "Evaluating how wicking geotextiles drain pavement layers through freeze\u2013thaw cycles in a cold climate.", "x": 533.5, "y": 158.2}, "vicksburg": {"t": "test", "k": "Testing & patent", "place": "Vicksburg, Mississippi", "title": "Seasonal-cycle materials testing", "text": "With the U.S. Army Corps of Engineers: a method for testing infrastructure materials across all seasonal cycles (U.S. Patent Application 2026/0057126 A1).", "x": 586.5, "y": 440.4}};
-  var box=document.querySelector('.sites-map'),pop=box.querySelector('.site-pop'),cur=null;
-  function show(id){
-    var s=SITES[id]; if(!s) return; cur=id;
-    pop.className='site-pop t-'+s.t;
-    pop.querySelector('.k').textContent=s.k; pop.querySelector('h4').textContent=s.title;
-    pop.querySelector('.loc').textContent=s.place; pop.querySelector('.txt').textContent=s.text;
-    pop.hidden=false;
-    document.querySelectorAll('.pin,.site-list button').forEach(function(e){e.classList.toggle('on',e.dataset.id===id);});
-  }
-  function hide(){pop.hidden=true;cur=null;document.querySelectorAll('.pin.on,.site-list button.on').forEach(function(e){e.classList.remove('on');});}
-  document.querySelectorAll('.pin').forEach(function(p){
-    p.addEventListener('click',function(){cur===p.dataset.id?hide():show(p.dataset.id);});
-    p.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();show(p.dataset.id);}});
-  });
-  document.querySelectorAll('.site-list button').forEach(function(b){
-    b.addEventListener('click',function(){show(b.dataset.id);box.scrollIntoView({behavior:'smooth',block:'center'});});
-  });
-  pop.querySelector('.x').addEventListener('click',hide);
-  document.addEventListener('keydown',function(e){if(e.key==='Escape')hide();});
-  window.addEventListener('resize',function(){if(cur)show(cur);});
-  document.querySelectorAll('.site-filters button').forEach(function(b){
-    b.addEventListener('click',function(){
-      var f=b.dataset.f;
-      document.querySelectorAll('.site-filters button').forEach(function(x){x.setAttribute('aria-pressed',x===b);});
-      document.querySelectorAll('.pin').forEach(function(p){p.classList.toggle('dim',f!=='all'&&SITES[p.dataset.id].t!==f);});
-      document.querySelectorAll('.site-list li').forEach(function(li){li.classList.toggle('dim',f!=='all'&&li.dataset.theme!==f);});
-      if(cur&&f!=='all'&&SITES[cur].t!==f) hide();
-    });
-  });
-})();
-</script>
-
-<section id="publications" class="alt">
-  <div class="wrap">
-    <p class="kicker">Scholarship</p>
-    <h2>Publications</h2>
-
-    <h3 style="margin-top:0">Selected publications</h3>
-    <div class="featured">
-      <a class="fp" href="https://doi.org/10.1139/cgj-2025-0118" target="_blank" rel="noopener"><span class="v">Canadian Geotechnical Journal · 2025</span><span class="t">Deep learning based surrogate model to estimate scour around slab-on-grade foundations subjected to flooding conditions</span><span class="a">Raj Chimauriya, H., <b>Biswas, N.</b>, Puppala, A.J., Gajurel, A.</span><span class="go">Read paper →</span></a>
-      <a class="fp" href="https://doi.org/10.1061/JGGEFK.GTENG-10999" target="_blank" rel="noopener"><span class="v">J. Geotech. Geoenviron. Eng. · 2023</span><span class="t">Role of nano- and crystalline silica to accelerate chemical treatment of problematic soil</span><span class="a"><b>Biswas, N.</b>, Puppala, A.J., Chakraborty, S.</span><span class="go">Read paper →</span></a>
-      <a class="fp" href="https://doi.org/10.1139/cgj-2023-0051" target="_blank" rel="noopener"><span class="v">Canadian Geotechnical Journal · 2024</span><span class="t">Micro-mechanical behavior of nano-silica in suppressing ettringite-induced heave</span><span class="a"><b>Biswas, N.</b>, Puppala, A.J., Chakraborty, S., Little, D.</span><span class="go">Read paper →</span></a>
-      <a class="fp" href="https://doi.org/10.1177/0361198124123053" target="_blank" rel="noopener"><span class="v">Transportation Research Record · 2024</span><span class="t">Application of satellite-based remote sensing for the management of pavement infrastructure assets</span><span class="a">Gajurel, A., Puppala, A.J., <b>Biswas, N.</b>, Chimauriya, H.</span><span class="go">Read paper →</span></a>
-    </div>
-
-    <h3>Patent</h3>
-    <ul class="plain">
-      <li>Method of Testing Infrastructure Materials Encompassing All Seasonal Cycles. US 2026/0057126 A1. <span class="tag p">Under review</span></li>
-    </ul>
-
-    <h3>Full list</h3>
-    <details>
-      <summary>Manuscripts Under Review (2)</summary>
-      <div>
-        <ol class="pubs">
-          <li>Samridh, Chakraborty, S., <span class="me">Biswas, N.</span> Systematic investigations on autogenous healing of chemically treated soils. <span class="venue">Acta Geotechnica</span>. <span class="tag p">Under review</span></li>
-          <li>Karbalaee, F., <span class="me">Biswas, N.</span> A physics-guided Gaussian process framework for wave-driven wetting in partially saturated coastal bluffs. <span class="venue">9th International Conference on Unsaturated Soils (UNSAT 2027)</span>, Boston, MA. <span class="tag p">Under review</span></li>
-        </ol>
-      </div>
-    </details>
-
-    <details>
-      <summary>Journal Articles (22)</summary>
-      <div>
-        <ol class="pubs" reversed>
-      <li>Gonnabathula, S.S.A., <span class="me">Biswas, N.</span>, Rameneni, K., Sadiq, M.F., Velasquez, R., Puppala, A.J. (2026). Evaluating the drainage performance of wicking geotextile under freeze–thaw conditions below pavement infrastructure. <span class="venue">Transportation Research Record</span>. <a class="doi" href="https://doi.org/10.1177/03611981261427737">DOI</a></li>
-      <li>Raj Chimauriya, H., <span class="me">Biswas, N.</span>, Puppala, A.J., Gajurel, A. (2025). Deep learning based surrogate model to estimate scour around slab-on-grade foundations subjected to flooding conditions. <span class="venue">Canadian Geotechnical Journal</span>, 62, 1–17. <a class="doi" href="https://doi.org/10.1139/cgj-2025-0118">DOI</a></li>
-      <li>Puppala, A.J., <span class="me">Biswas, N.</span>, Khan, M.A., Congress, S.S.C. (2025). Experimental investigations and sustainability assessments of ground improvement studies of expansive soils. <span class="venue">Soils and Foundations</span>, 65(4), 101637. <a class="doi" href="https://doi.org/10.1016/j.sandf.2025.101637">DOI</a></li>
-      <li>Sanei, M., <span class="me">Biswas, N.</span>, Chou, S., Puppala, A.J. (2025). Utilizing recycled concrete aggregate fines as co-additives in low-carbon cement for problematic soil stabilization. <span class="venue">Transportation Research Record</span>. <a class="doi" href="https://doi.org/10.1177/03611981251347627">DOI</a></li>
-      <li>Chou, S., Puppala, A.J., <span class="me">Biswas, N.</span>, Huang, O., Radovic, M. (2025). Role of calcined-clay-based geopolymers for effective stabilization of expansive soils. <span class="venue">Canadian Geotechnical Journal</span>. <a class="doi" href="https://doi.org/10.1139/cgj-2024-0577">DOI</a></li>
-      <li>Kumar, A., <span class="me">Biswas, N.</span>, Puppala, A.J., Mebarkia, B. (2025). Forensic investigation and chemical remediation of a collapsed highway embankment slope in Houston, Texas. <span class="venue">Transportation Geotechnics</span>, 51, 101503. <a class="doi" href="https://doi.org/10.1016/j.trgeo.2025.101503">DOI</a></li>
-      <li><span class="me">Biswas, N.</span>, Puppala, A.J., Chakraborty, S., et al. (2024). Ground improvement studies on problematic soils: Innovative materials with sustainable applications. <span class="venue">Indian Geotechnical Journal</span>. <a class="doi" href="https://doi.org/10.1007/s40098-024-01085-3">DOI</a></li>
-      <li><span class="me">Biswas, N.</span>, Puppala, A.J., Chakraborty, S., Little, D. (2024). Micro-mechanical behavior of nano-silica in suppressing ettringite-induced heave. <span class="venue">Canadian Geotechnical Journal</span>. <a class="doi" href="https://doi.org/10.1139/cgj-2023-0051">DOI</a></li>
-      <li><span class="me">Biswas, N.</span>, Puppala, A.J., Chakraborty, S. (2024). Experimental studies and sustainability assessments of quarry dust for chemical treatment of expansive soils. <span class="venue">Geotechnical Testing Journal</span>, 47(1), 20220243. <a class="doi" href="https://doi.org/10.1520/GTJ20220243">DOI</a></li>
-      <li>Gajurel, A., Puppala, A.J., <span class="me">Biswas, N.</span>, Chimauriya, H. (2024). Application of satellite-based remote sensing for the management of pavement infrastructure assets. <span class="venue">Transportation Research Record</span>. <a class="doi" href="https://doi.org/10.1177/0361198124123053">DOI</a></li>
-      <li>Chou, S., <span class="me">Biswas, N.</span>, Puppala, A.J., Huang, O., Radovic, M. (2024). Evaluation of locally available calcined clay-based geopolymer for stabilization of expansive soils. <span class="venue">Transportation Research Record</span>. <a class="doi" href="https://doi.org/10.1177/03611981241235189">DOI</a></li>
-      <li>Kumar, P., Puppala, A.J., <span class="me">Biswas, N.</span>, Congress, S.S.C., Tingle, J.S., Little, D.N. (2024). Assessment of durability of chemically stabilized soils using different moisture-susceptible methods. <span class="venue">Transportation Research Record</span>, 2678, 1454–1467. <a class="doi" href="https://doi.org/10.1177/03611981241244795">DOI</a></li>
-      <li><span class="me">Biswas, N.</span>, Puppala, A.J., Chakraborty, S. (2023). Role of nano- and crystalline silica to accelerate chemical treatment of problematic soil. <span class="venue">Journal of Geotechnical and Geoenvironmental Engineering</span>, 149(7). <a class="doi" href="https://doi.org/10.1061/JGGEFK.GTENG-10999">DOI</a></li>
-      <li><span class="me">Biswas, N.</span>, Puppala, A.J., Ramineni, K. (2023). Durability and permanency studies in sulfate-laden soils treated with nano- and crystalline silica-based admixtures. <span class="venue">Journal of Materials in Civil Engineering</span>. <a class="doi" href="https://doi.org/10.1061/JMCEE7.MTENG-16456">DOI</a></li>
-      <li>Khan, M.A., Puppala, A.J., <span class="me">Biswas, N.</span>, Congress, S.S.C. (2023). Evaluation of structural performance of the geocell reinforced flexible pavement. <span class="venue">Transportation Geotechnics</span>. <a class="doi" href="https://doi.org/10.1016/j.trgeo.2023.101021">DOI</a></li>
-      <li>Chakraborty, S., Puppala, A.J., <span class="me">Biswas, N.</span> (2022). Role of crystalline silica admixture in mitigating ettringite-induced heave in lime-treated sulfate-rich soils. <span class="venue">Géotechnique</span>, 1–17. <a class="doi" href="https://doi.org/10.1680/jgeot.20.p.154">DOI</a></li>
-      <li>Congress, S.S.C., Puppala, A.J., Khan, M.A., <span class="me">Biswas, N.</span>, Kumar, P. (2022). Application of unmanned aerial technologies for inspecting pavement and bridge infrastructure asset condition. <span class="venue">Transportation Research Record</span>. <a class="doi" href="https://doi.org/10.1177/03611981221105273">DOI</a></li>
-      <li>Jang, J., <span class="me">Biswas, N.</span>, Puppala, A.J., Congress, S.S.C., Radovic, M., Huang, O. (2022). Evaluation of geopolymer for stabilization of sulfate-rich expansive soils for supporting pavement infrastructure. <span class="venue">Transportation Research Record</span>. <a class="doi" href="https://doi.org/10.1177/03611981221086650">DOI</a></li>
-      <li><span class="me">Biswas, N.</span>, Puppala, A.J., Khan, M.A., Congress, S.S.C., Banerjee, A., Chakraborty, S. (2021). Evaluating the performance of wicking geotextile in providing drainage for flexible pavements built over expansive soils. <span class="venue">Transportation Research Record</span>. <a class="doi" href="https://doi.org/10.1177/03611981211001381">DOI</a></li>
-      <li>Khan, M.A., <span class="me">Biswas, N.</span>, Banerjee, A., Puppala, A.J. (2020). Field performance of geocell reinforced recycled asphalt pavement base layer. <span class="venue">Transportation Research Record</span>, 2674(3), 69–80. <a class="doi" href="https://doi.org/10.1177/0361198120908861">DOI</a></li>
-      <li><span class="me">Biswas, N.</span>, Ghosh, P. (2019). Bearing capacity factors for isolated surface strip footing resting on multi-layered reinforced soil bed. <span class="venue">Indian Geotechnical Journal</span>, 49(1). <a class="doi" href="https://doi.org/10.1007/s40098-017-0293-z">DOI</a></li>
-      <li><span class="me">Biswas, N.</span>, Ghosh, P. (2018). Interaction of adjacent strip footings on reinforced soil using upper-bound limit analysis. <span class="venue">Geosynthetics International</span>, 25(6), 599–611. <a class="doi" href="https://doi.org/10.1680/jgein.18.00020">DOI</a></li>
-    </ol>
-      </div>
-    </details>
-
-    <details>
-      <summary>Geotechnical Special Publications (30)</summary>
-      <div>
-        <ol class="pubs" reversed>
-          <li>Yadav, U.K., <span class="me">Biswas, N.</span> (2027). Satellite-based interferometry for monitoring and predicting slope instability under climate-induced seasonal variability. <span class="venue">ASCE 2027</span>, ASCE, Reston, VA. <span class="tag">Accepted</span></li>
-          <li>Machado, J.A.R., <span class="me">Biswas, N.</span> (2027). Post-cyclic monotonic strength degradation of bauxite residue. <span class="venue">ASCE 2027</span>, ASCE, Reston, VA. <span class="tag">Accepted</span></li>
-          <li>Machado, J.A.R., <span class="me">Biswas, N.</span>, Apostolov, A. (2026). Utilization of bauxite ore residue as a sustainable material for pavement infrastructure. <span class="venue">Airfield and Highway Pavements 2026</span>, ASCE. <a class="doi" href="https://doi.org/10.1061/9780784487037.050">DOI</a></li>
-          <li>Sanei, M., Lakshminarayanan, V., Huang, J., <span class="me">Biswas, N.</span>, Puppala, A.J. (2026). Efficacy and sustainability benefits of innovative materials for stabilization of problematic pavement subgrades. <span class="venue">Airfield and Highway Pavements 2026</span>, ASCE. <a class="doi" href="https://doi.org/10.1061/9780784487037.041">DOI</a></li>
-          <li><span class="me">Biswas, N.</span>, Chou, S., Rameneni, K., Chakraborty, S., Puppala, A.J. (2026). Enhancing durability and permanency of problematic soils using silica-based co-additives with calcium-based stabilizers. <span class="venue">Geo-Congress 2026</span>, ASCE. <a class="doi" href="https://doi.org/10.1061/9780784486764.036">DOI</a></li>
-          <li>Raj Chimauriya, H., <span class="me">Biswas, N.</span>, Puppala, A.J., Gajurel, A. (2026). Development of deep learning based model for estimating erosion rates in cohesive soils. <span class="venue">Geo-Congress 2026</span>, ASCE. <a class="doi" href="https://doi.org/10.1061/9780784486719.009">DOI</a></li>
-          <li>Sanei, M., <span class="me">Biswas, N.</span>, Huang, J., Puppala, A.J. (2026). Sustainability benefits assessment of cement and recycled concrete aggregate fines in subgrade stabilization application. <span class="venue">Geo-Congress 2026</span>, ASCE. <a class="doi" href="https://doi.org/10.1061/9780784486757.053">DOI</a></li>
-          <li>Mukherjee, A., Kotha, V., Chakraborty, S., Suresh, S., <span class="me">Biswas, N.</span>, Roy, S. (2026). Effect of clay mineralogy on the extent of ettringite-induced heaving in lime-treated sulfate-rich soils. <span class="venue">Geo-Congress 2026</span>, ASCE. <a class="doi" href="https://doi.org/10.1061/9780784486764.033">DOI</a></li>
-          <li><span class="me">Biswas, N.</span>, Sanei, M., Puppala, A.J., Mallick, R., Nazarian, S. (2025). Application of low-carbon cement with recycled concrete aggregate fines for enhancing sustainability and durability of transportation infrastructure. <span class="venue">Geotechnical Frontiers 2025</span>, ASCE, 1–10. <a class="doi" href="https://doi.org/10.1061/9780784486009.001">DOI</a></li>
-          <li>Chou, S., Parr, K., <span class="me">Biswas, N.</span>, Puppala, A.J. (2025). Use of laser-based method for measuring small strains in geomaterials under repetitive loads in triaxial environment. <span class="venue">Geotechnical Frontiers 2025</span>, ASCE, 248–257. <a class="doi" href="https://doi.org/10.1061/9780784485965.022">DOI</a></li>
-          <li>Raj Chimauriya, H., <span class="me">Biswas, N.</span>, Gajurel, A., Puppala, A.J. (2025). Development of machine learning based surrogate models using fully coupled 3D numerical analysis of scour around slab-on-grade foundations. <span class="venue">Geotechnical Frontiers 2025</span>, ASCE, 21–29. <a class="doi" href="https://doi.org/10.1061/9780784485989.003">DOI</a></li>
-          <li>Raj Chimauriya, H., <span class="me">Biswas, N.</span>, Puppala, A.J., Gajurel, A. (2025). Effect of storm surge-induced scour on the bearing capacity of shallow foundations for coastal residential buildings. <span class="venue">Geo-EnvironMeet 2025</span>, ASCE, 10–19. <a class="doi" href="https://doi.org/10.1061/9780784485705.002">DOI</a></li>
-          <li>Samridh, Chakraborty, S., <span class="me">Biswas, N.</span>, Puppala, A.J., Ramineni, K., Banerjee, A. (2025). Micro-mechanical analyses to understand the durability of chemically stabilized geomaterials against moisture-induced damage. <span class="venue">Geotechnical Frontiers 2025</span>, ASCE, 346–356. <a class="doi" href="https://doi.org/10.1061/9780784486016.035">DOI</a></li>
-          <li>Kumar, A., <span class="me">Biswas, N.</span>, Puppala, A.J. (2025). Case histories of two recent slope failures: Lessons learned and future recommendations. <span class="venue">Geotechnical Frontiers 2025</span>, ASCE, 69–83. <a class="doi" href="https://doi.org/10.1061/9780784485965.007">DOI</a></li>
-          <li>Ramineni, K., Congress, S.S.C., <span class="me">Biswas, N.</span>, Puppala, A.J., Kriegstein, S. (2025). An experimental study to evaluate the performance of fiber-based cement mixture bags as alternative flood and erosion barriers. <span class="venue">Geo-EnvironMeet 2025</span>, ASCE, 89–98. <a class="doi" href="https://doi.org/10.1061/9780784485682.011">DOI</a></li>
-          <li>Chimauriya, H., Caldwell, C., Puppala, A.J., <span class="me">Biswas, N.</span>, Congress, S.S.C. (2024). Role of EPS geofoams in reducing thermal losses from slab-on-grade foundations under freezing conditions. <span class="venue">Geo-Congress 2024</span>. <a class="doi" href="https://doi.org/10.1061/9780784485330.067">DOI</a></li>
-          <li>Chou, S., <span class="me">Biswas, N.</span>, Puppala, A.J., Jafari, N. (2024). Stabilization of coastal soils to improve resiliency of transportation infrastructure after storm surge events. <span class="venue">Geo-Congress 2024</span>. <a class="doi" href="https://doi.org/10.1061/9780784485330.027">DOI</a></li>
-          <li>Kumar, A., <span class="me">Biswas, N.</span>, Puppala, A.J., Khan, M.A. (2024). Investigations on fully-softened strength of lime-treated slopes built with expansive soils under future extreme precipitation. <span class="venue">Geo-Congress 2024</span>. <a class="doi" href="https://doi.org/10.1061/9780784485354.014">DOI</a></li>
-          <li>Gajurel, A., Puppala, A.J., <span class="me">Biswas, N.</span>, Chimauriya, H. (2024). Use of orbital synthetic aperture radar data in monitoring geotechnical and transportation infrastructure assets. <span class="venue">Geo-Congress 2024</span>. <a class="doi" href="https://doi.org/10.1061/9780784485347.052">DOI</a></li>
-          <li>Mukherjee, A., Justin, A., Chakraborty, S., <span class="me">Biswas, N.</span>, Puppala, A.J., Roy, S. (2024). Utilization of quarry fines as a sustainable admixture for suppressing ettringite-induced heaving. <span class="venue">Geo-Congress 2024</span>. <a class="doi" href="https://doi.org/10.1061/9780784485330.035">DOI</a></li>
-          <li>Jang, J., <span class="me">Biswas, N.</span>, Puppala, A.J., Congress, S.S.C., Radovic, M., Huang, O. (2024). Application of metakaolin-based geopolymer for eco-friendly stabilization of coastal soils. <span class="venue">Geo-Congress 2024</span>. <a class="doi" href="https://doi.org/10.1061/9780784485330.052">DOI</a></li>
-          <li>Gajurel, A., Chimauriya, H., <span class="me">Biswas, N.</span>, Boluk, B., Congress, S.S.C., Puppala, A.J. (2023). Post-construction monitoring of rehabilitated highway embankment slope in Texas. <span class="venue">Geo-Congress 2023</span>, ASCE, 116–125.</li>
-          <li>Khan, M.A., <span class="me">Biswas, N.</span>, Banerjee, A., Puppala, A.J. (2023). Effects of traffic loading magnitude and frequency on the performance of geocell-reinforced flexible pavements. <span class="venue">Geo-Congress 2023</span>, ASCE, 517–525.</li>
-          <li>Samridh, Jain, A., Chakraborty, S., <span class="me">Biswas, N.</span>, Puppala, A.J., Ramineni, K. (2023). Durability and recuperative properties of lime stabilized soils. <span class="venue">Geo-Congress 2023</span>, ASCE, 440–451.</li>
-          <li>Jang, J., Puppala, A.J., <span class="me">Biswas, N.</span>, Chakraborty, S., Radovic, M. (2022). Utilization of metakaolin-based geopolymers for stabilization of sulfate-rich expansive soils. <span class="venue">Geo-Congress 2022</span>, ASCE, 222–231.</li>
-          <li>Khan, M.A., Puppala, A.J., <span class="me">Biswas, N.</span>, Congress, S.S.C., Jafari, K.H. (2022). An analytical approach to estimate the load-bearing capacity of subgrade soil with a geocell-reinforced base layer. <span class="venue">Geo-Congress 2022</span>, ASCE, 380–389.</li>
-          <li><span class="me">Biswas, N.</span>, Puppala, A.J., Chakraborty, S., Khan, M.A. (2021). Utilization of silica-based admixture to improve the durability of lime-treated expansive soil. <span class="venue">IFCEE 2021</span>, 233–242.</li>
-          <li><span class="me">Biswas, N.</span>, Chakraborty, S., Mosadegh, L., Puppala, A.J., Corcoran, M. (2020). Influence of anisotropic permeability on slope stability analysis of an earthen dam during rapid drawdown. <span class="venue">Geo-Congress 2020</span>, ASCE, 29–39.</li>
-          <li>Khan, M.A., <span class="me">Biswas, N.</span>, Banerjee, A., Puppala, A.J. (2020). Performance of geocell-reinforced recycled asphalt pavement (RAP) bases in flexible pavements built on expansive soils. <span class="venue">Geo-Congress 2020</span>, ASCE, 488–497.</li>
-          <li>Mosadegh, L., Chakraborty, S., <span class="me">Biswas, N.</span>, Bhaskar, P., Puppala, A.J. (2020). Comparison of earthquake-induced pore water pressure and deformations in earthen dams using non-linear and equivalent linear analyses. <span class="venue">Geo-Congress 2020</span>, ASCE, 151–160.</li>
-        </ol>
-      </div>
-    </details>
-
-    <details>
-      <summary>Conference Proceedings (8)</summary>
-      <div>
-        <ol class="pubs" reversed>
-          <li>Lakkimsetti, B., Sanei, M., Chou, S., Huang, J., Gonnabathula, A., Puppala, A.J., <span class="me">Biswas, N.</span> (2026). Relative effectiveness and sustainability assessment of low-carbon cement and geopolymer based soil stabilization methods. <span class="venue">21st ICSMGE</span>, Salzburg, Austria. <a class="doi" href="https://doi.org/10.53243/ICSMGE2026-773">DOI</a></li>
-          <li>Chou, S., <span class="me">Biswas, N.</span>, Puppala, A.J. (2024). Machine learning methods to predict resilient moduli behavior of subgrade soils. <span class="venue">5th International Conference on Transportation Geotechnics</span>, Sydney.</li>
-          <li>Rameneni, K., <span class="me">Biswas, N.</span>, Puppala, A.J., Khan, M.A. (2024). Experimental investigation of geogrid reinforced unpaved sections under repeated loads. <span class="venue">5th International Conference on Transportation Geotechnics</span>, Sydney.</li>
-          <li>Rameneni, K., Puppala, A.J., Khan, M.A., <span class="me">Biswas, N.</span>, Kumar, P. (2023). Role of high-modulus geogrids in improving base layer properties. <span class="venue">Geosynthetics Conference 2023</span>, Kansas City.</li>
-          <li>Rameneni, K., Khan, M.A., <span class="me">Biswas, N.</span>, Puppala, A.J. (2023). Evaluation of the performance of geocell and geogrid reinforced pavement sections constructed over weaker subgrade conditions based on large-scale repeated load tests. <span class="venue">TRB Annual Meeting 2023</span>.</li>
-          <li><span class="me">Biswas, N.</span>, Chakraborty, S., Puppala, A.J. (2022). Mitigating ettringite-induced heaving in lime-treated sulfate-rich soils using crystalline silica admixture. <span class="venue">20th ICSMGE</span>, Sydney.</li>
-          <li><span class="me">Biswas, N.</span>, Puppala, A.J., Khan, M.A., Congress, S.S.C., Chakraborty, S. (2021). Depth of influence of a wicking geotextile below the flexible pavement constructed over expansive subgrade. <span class="venue">Geosynthetics Conference 2021</span>, 583–594.</li>
-          <li>Jang, J., Puppala, A.J., Chakraborty, S., <span class="me">Biswas, N.</span>, Huang, O., Radovic, M. (2021). Eco-friendly stabilization of sulfate-rich expansive soils using geopolymers for transportation infrastructure. <span class="venue">Tran-SET 2021</span>, ASCE, 223–231.</li>
-        </ol>
-      </div>
-    </details>
-
-    <details>
-      <summary>Book Chapters &amp; Magazine Articles (9)</summary>
-      <div>
-        <ol class="pubs" reversed>
-          <li>Huang, J., Puppala, A.J., <span class="me">Biswas, N.</span> (2026). Carbon-friendly construction materials in transportation infrastructure applications in the United States: Current practices and guidelines. In <span class="venue">Transportation Geotechnics for Green, Digital, and Modern Infrastructures</span>. <a class="doi" href="https://doi.org/10.1201/9781003530220">DOI</a></li>
-          <li>Gajurel, A., Puppala, A.J., Bhaskar, P., <span class="me">Biswas, N.</span> (2026). Satellite-based health monitoring of transportation infrastructure. In <span class="venue">Condition Monitoring and Structural Health Monitoring of Infrastructure Systems</span>, Woodhead, 827–848. <a class="doi" href="https://doi.org/10.1016/B978-0-443-38315-1.00011-8">DOI</a></li>
-          <li>Zhang, X., <span class="me">Biswas, N.</span>, Lostumbo, J.M., Laprade, R. (2025). From Alaska to Texas: Unsaturated moisture management transforms pavement performance. <span class="venue">GEOSTRATA</span>.</li>
-          <li>Gajurel, A., <span class="me">Biswas, N.</span>, Boluk, B., Puppala, A.J. (2024). From collapse to cutting-edge. <span class="venue">GEOSTRATA</span>, 28, 50–56. <a class="doi" href="https://doi.org/10.1061/geosek.0000542">DOI</a></li>
-          <li>Puppala, A.J., <span class="me">Biswas, N.</span>, Khan, M.A., Congress, S.S.C. (2024). Sustainable ground improvement practices and comprehensive assessments for problematic expansive soils. In <span class="venue">Geotechnics and Sustainable Development</span>, Lecture Notes in Civil Engineering, Springer.</li>
-          <li><span class="me">Biswas, N.</span>, Khan, M.A., Rameneni, K., Puppala, A.J. (2023). Performance of low-volume roads built over expansive soils reinforced with wicking geotextiles. <span class="venue">TR Circular E-C283</span>, 33–41.</li>
-          <li><span class="me">Biswas, N.</span>, Khan, M.A., Banerjee, A., Puppala, A.J., Chakraborty, S. (2022). Application of wicking geotextile for pavement infrastructure on expansive soil. In <span class="venue">Advances in Transportation Geotechnics IV</span>, Springer, 533–544.</li>
-          <li>Khan, M.A., <span class="me">Biswas, N.</span>, Banerjee, A., Congress, S.S.C., Puppala, A.J. (2022). Effectiveness of double-layer HDPE geocell system to reinforce reclaimed asphalt pavement (RAP) base layer. In <span class="venue">Advances in Transportation Geotechnics IV</span>, Springer, 593–604.</li>
-          <li><span class="me">Biswas, N.</span>, Chakraborty, S., Puppala, A.J., Banerjee, A. (2021). A novel method to improve the durability of lime-treated expansive soil. In <span class="venue">Proceedings of IGC 2019</span>, Lecture Notes in Civil Engineering, Springer, 227–238.</li>
-        </ol>
-      </div>
-    </details>
-
-    <details>
-      <summary>Technical Reports (6)</summary>
-      <div>
-        <ol class="pubs" reversed>
-          <li><span class="me">Biswas, N.</span>, Mallick, R., Puppala, A.J., Nazarian, S., Sanei, M., Khallaghi, F. (2025). Impacts reduction and durability of pavement recycling and stabilization using novel materials. Southern Plains Transportation Center (Region 6).</li>
-          <li>Puppala, A.J., Radovic, M., <span class="me">Biswas, N.</span>, Chou, S., Huang, O. (2023). Stabilization of expansive soil using geopolymers from locally available resources. Tran-SET UTC, Region 6.</li>
-          <li>Puppala, A.J., <span class="me">Biswas, N.</span>, Gajurel, A. (2023). Monitoring of transportation system assets using synthetic aperture radar (SAR) satellite data. Tran-SET UTC, Region 6.</li>
-          <li><span class="me">Biswas, N.</span>, Puppala, A.J., Khan, M.A. (2023). Application of wicking geotextile for improving performance of pavement built over expansive soil. TenCate Geosynthetics.</li>
-          <li>Puppala, A.J., Jafari, N., <span class="me">Biswas, N.</span>, Chou, S., Gallegos, D. (2023). Resiliency of transportation infrastructure and the environment after hurricanes. Tran-SET UTC, Region 6.</li>
-          <li>Chakraborty, S., <span class="me">Biswas, N.</span>, Puppala, A.J., Little, D. (2020). Longevity of admixture treatment of soils. CERGEP Report No. 11, Texas A&amp;M University.</li>
-        </ol>
-      </div>
-    </details>
-
-    <details>
-      <summary>Keynotes, Invited Talks &amp; Workshops</summary>
-      <div>
-        <h3 style="margin-top:6px">Keynote lectures</h3>
-        <ul class="plain">
-          <li>Role of silica-based admixtures for effective stabilization of problematic soils. Young Researcher Special Speaker, 2nd Int'l Conference on Construction Resources for Environmentally Sustainable Technologies, Fukuoka, Japan, 2023.</li>
-          <li>Chemical stabilization of problematic soils with traditional calcium-based and non-traditional stabilizers. Cement Stabilization &amp; RCC Conference, Arlington, TX, 2022.</li>
-        </ul>
-        <h3>Invited webinars</h3>
-        <ul class="plain">
-          <li>Use of wicking geotextile for improving performance of pavements on weak subgrade soils: A field study. BITS, India, 2025.</li>
-          <li>Utilizing recycled concrete aggregate fines as co-additives in low-carbon cement for problematic soil stabilization. Oregon State University, 2025.</li>
-          <li>Role of wicking geotextiles for improving resiliency of pavement infrastructure: From laboratory to practice. Southern Illinois University Carbondale, 2024.</li>
-        </ul>
-        <h3>Workshops &amp; symposia</h3>
-        <ul class="plain">
-          <li>Composite mangroves for reducing soil erosion near transportation infrastructure. CREATE USDOT Tier-1 UTC Symposium (virtual), 2024.</li>
-          <li>Integrated approach for geotechnical and hydrodynamic analyses in coastal residential built infrastructure. CREATE UTC, San Marcos, TX, 2024.</li>
-          <li>Opportunities, challenges, and perspectives on base and subgrade stabilization with nontraditional stabilizers. TRB Annual Meeting, 2024.</li>
-          <li>Application of wicking geotextile for pavement infrastructures on expansive soils. TRB Annual Meeting, 2023.</li>
-        </ul>
-      </div>
-    </details>
-  </div>
-</section>
-
-<section id="funding">
-  <div class="wrap">
-    <p class="kicker">Support</p>
-    <h2>Funding</h2>
-    <h3 style="margin-top:0">Awarded</h3>
-    <ul class="plain">
-      <li><strong>Bridging Physics and Machine Learning for Erosion Resilience in Coastal Geotechnical Systems</strong>. UML Researchers and Scholars Investment Fund, FY26. PI.</li>
-    </ul>
-    <h3>Pending</h3>
-    <ul class="plain">
-      <li><strong>Path-Dependent Coastal-Bluff Stability: Coupling Hydrologic Memory, Toe Erosion, and NISAR Observations through Physics-Informed Neural Networks</strong>. NSF GEO/EAR. Sole PI.</li>
-      <li><strong>Application of Scientific Machine Learning for Understanding the Fundamentals of Using Clay Liners for Nuclear Fuel Storage</strong>. Powe Award, 2026. PI.</li>
-    </ul>
-  </div>
-</section>
-
-<section id="teaching" class="alt">
-  <div class="wrap">
-    <p class="kicker">Students &amp; classroom</p>
-    <h2>Teaching &amp; Mentoring</h2>
-    <div class="grid2">
-      <div>
-        <h3 style="margin-top:0">Courses taught</h3>
-        <ul class="plain">
-          <li>Engineering with Geosynthetics (CIVE.5290), UML, Spring 2027 <span class="tag">Upcoming</span></li>
-          <li>Engineering Materials (CIVE.3100), UML, Spring 2027 <span class="tag">Upcoming</span></li>
-          <li>Advanced Soil Mechanics (CIVE.5310), UML, Fall 2024, Fall 2025, Fall 2026</li>
-          <li>Soil Behavior (CIVE.5380), UML, Spring 2025</li>
-          <li>Soil Engineering (CIVE.5360), UML, Spring 2026</li>
-          <li>Design with Geosynthetics (CVEN 720), Texas A&amp;M, Fall 2023</li>
-          <li>Ground Improvement (CVEN 689), Texas A&amp;M, Spring 2024</li>
-        </ul>
-        <p class="muted" style="font-size:14px;margin-top:12px">ASCE ExCEEd Fellow (2025), trained in evidence-based civil engineering pedagogy.</p>
-      </div>
-      <div>
-        <h3 style="margin-top:0">Research group</h3>
-        <ul class="plain">
-          <li><strong>João Alves Ribeiro Machado</strong>, Ph.D. (2024–). Behavior of mine tailings residue under dynamic loads</li>
-          <li><strong>Uday Yadav</strong>, Ph.D. (2025–). Satellite remote sensing for natural hazards and slope stability</li>
-          <li><strong>Fatemeh Karbalaee</strong>, Ph.D. (2025–). Deep learning for granular soil behavior and coastal resilience</li>
-        </ul>
-        <h3>Alumni</h3>
-        <ul class="plain">
-          <li>Muddassir Sanei, M.S., Texas A&amp;M (2023–2024)</li>
-          <li>Nicole Arackal and Gustavo Hernandez Martin, undergraduate researchers, Texas A&amp;M (2023–2024)</li>
-        </ul>
+        <div class="figs">
+          {% for s in P.stats %}<div class="fig"><b>{{ s.value }}</b><span>{{ s.label }}</span></div>{% endfor %}
+        </div>
+        <p class="rec-src mono">{{ P.stats_source }}</p>
       </div>
     </div>
   </div>
 </section>
 
-<section id="service">
+<!-- =================== THEMES =================== -->
+<section class="themes sec" id="research" aria-labelledby="th-h">
   <div class="wrap">
-    <p class="kicker">Profession &amp; community</p>
-    <h2>Service</h2>
-    <div class="grid2">
-      <div>
-        <h3 style="margin-top:0">Editorial &amp; leadership</h3>
-        <ul class="plain">
-          <li>Handling Editor, <em>Transportation Research Record</em> (2026–)</li>
-          <li>Secretary, ASCE G-I Committee on Sustainability in Geotechnical Engineering (2025–)</li>
-          <li>Session Chair, Soil Improvement, ASCE Geo-Congress 2026</li>
-          <li>Presiding Officer, poster session, TRB Annual Meeting 2026</li>
-          <li>Paper Review Coordinator, Geo-Congress 2026 (Soil Improvement) and 2024 (Pavements)</li>
-          <li>Technical Committee, ICGESI-2026, NIT Hamirpur</li>
-          <li>Proposal reviewer, National Center for Infrastructure Transformation (UTC)</li>
-          <li>Reviewer for ~50 journal papers in the past two years, including <em>Géotechnique</em>, <em>JGGE</em>, <em>Canadian Geotechnical Journal</em>, <em>Geotextiles and Geomembranes</em>, and <em>Transportation Geotechnics</em></li>
-        </ul>
-      </div>
-      <div>
-        <h3 style="margin-top:0">Memberships</h3>
-        <ul class="plain">
-          <li>ASCE Geo-Institute</li>
-          <li>TRB Committee on Geomaterials Behavior and Properties (AKH19)</li>
-          <li>USUCGER · ISSMGE · U.S. Permafrost Association</li>
-          <li>Past TRB committees: AKG80, AKG90, AKG30</li>
-          <li>Engineer-in-Training (EIT), Texas</li>
-        </ul>
-        <h3>University</h3>
-        <ul class="plain">
-          <li>CEE Undergraduate Curriculum Committee</li>
-          <li>CEE Outreach Committee</li>
-          <li>Undergraduate Academic Advisor</li>
-        </ul>
+    <div class="head">
+      <div><p class="mono">Research themes</p><h2 id="th-h">Five themes, one <em>transect</em></h2></div>
+      <p>From the physics of erosion to the communities that live with it. Scroll through each theme.</p>
+    </div>
+    <div class="th-grid">
+      <div class="th-sticky"><div class="th-stage" id="th-stage">
+        {% for t in site.data.themes %}<figure class="scn{% if forloop.first %} on{% endif %}" data-i="{{ forloop.index0 }}" style="margin:0">{% include {{ t.scene }} %}</figure>
+        {% endfor %}
+        <div class="th-count mono"><span><b id="th-n">1</b> / {{ site.data.themes | size }}</span><span class="bars" id="th-bars">{% for t in site.data.themes %}<i{% if forloop.first %} class="on"{% endif %}></i>{% endfor %}</span></div>
+      </div></div>
+      <div class="th-list">
+        {% for t in site.data.themes %}
+        <article class="th{% if forloop.first %} on{% endif %}" data-i="{{ forloop.index0 }}">
+          <div class="th-art"></div>
+          <p class="mono">{{ t.label }}</p>
+          <h3>{{ t.title }}</h3>
+          <p>{{ t.text }}</p>
+          <ul>{% for g in t.tags %}<li>{{ g }}</li>{% endfor %}</ul>
+        </article>
+        {% endfor %}
       </div>
     </div>
   </div>
 </section>
 
-<section id="contact" style="border-bottom:none">
+{% include field.html %}
+
+<!-- =================== FEATURED PUBLICATIONS =================== -->
+<section class="pubs sec" id="publications" aria-labelledby="pb-h">
   <div class="wrap">
-    <p class="kicker">Get in touch</p>
-    <h2>Contact</h2>
-    <div class="card">
-    <p style="margin:0">Department of Civil and Environmental Engineering<br>University of Massachusetts Lowell<br>
-    <a href="mailto:Nripojyoti_Biswas@uml.edu">Nripojyoti_Biswas@uml.edu</a></p>
-    <p class="muted" style="margin-top:14px">Prospective students interested in coastal geotechnics, physics-informed machine learning, or remote sensing are welcome to get in touch.</p>
+    <div class="head">
+      <div><p class="mono">Scholarship</p><h2 id="pb-h">Featured <em>publications</em></h2></div>
+      <p>One paper for each research direction. The full record of {{ site.data.publications | size }} entries, with talks and the patent, is on the Publications page.</p>
     </div>
+    <div class="feat">
+      {% for p in site.data.publications %}{% if p.featured %}
+      <a class="fcard" href="{{ p.doi }}" target="_blank" rel="noopener">
+        <p class="dir mono">{{ p.direction }}</p>
+        <h3>{{ p.title }}</h3>
+        <p class="au">{{ p.authors | replace: "Biswas, N.", "<b>Biswas, N.</b>" }}</p>
+        <p class="ven"><span>{{ p.venue }} · {{ p.year }}</span><span>Read ↗</span></p>
+      </a>
+      {% endif %}{% endfor %}
+    </div>
+    <div class="feat-foot"><a class="btn-ink" href="/publications/">All publications →</a><a class="tlink" href="{{ P.scholar | escape }}" target="_blank" rel="noopener">Google Scholar ↗</a></div>
   </div>
 </section>
 
-</main>
+<!-- =================== NEWS =================== -->
+<section class="news sec" id="news" aria-labelledby="nw-h">
+  <div class="wrap">
+    <div class="head">
+      <div><p class="mono">Group news</p><h2 id="nw-h">Latest from the <em>group</em></h2></div>
+      <p>Conferences, awards, talks, and milestones from students and faculty.</p>
+    </div>
+    <div class="rail-head"><a class="tlink" href="/news/">All news →</a>
+      <div class="rail-btns"><button type="button" id="prev" aria-label="Previous news"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M15 6l-6 6 6 6"/></svg></button><button type="button" id="next" aria-label="Next news"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M9 6l6 6-6 6"/></svg></button></div>
+    </div>
+    <div class="rail" id="rail" tabindex="0" aria-label="News items, scroll sideways">
+      {% for n in site.data.news %}{% include news-card.html %}{% endfor %}
+    </div>
+    <div class="progress"><i id="rail-bar"></i></div>
+  </div>
+</section>
 
-<footer>
-  <div class="wrap">© 2026 Nripojyoti Biswas · Last updated October 2026</div>
-</footer>
-
-
-<script>
-(function(){
-  var t=document.querySelector('.news-track'); if(!t) return;
-  var n=t.children.length;
-  for(var i=0;i<n;i++){var c=t.children[i].cloneNode(true);c.setAttribute('aria-hidden','true');t.appendChild(c);}
-  t.style.setProperty('--dur',(n*6)+'s');
-  t.classList.add('rolling');
-})();
-</script>
-</body>
-</html>
+{% include join.html %}
