@@ -62,7 +62,18 @@ description: "About the Principal Investigator, Nripojyoti Biswas, Ph.D.: resear
     </div>
   </div>
 </section>
-<section class="block alt" id="contact" aria-labelledby="co-h">
+<section class="block alt" id="record" aria-labelledby="rec-h">
+  <div class="wrap sub-h">
+    <div><p class="mono">Scholarship</p><h2 id="rec-h">Research <em>record</em></h2></div>
+    <div>
+      <div class="figs figs-light">
+        {% for s in P.stats %}<div class="fig"><b>{{ s.value }}</b><span>{{ s.label }}</span></div>{% endfor %}
+      </div>
+      <p class="rec-src mono">{{ P.stats_source }} · <a href="{{ P.scholar | escape }}" target="_blank" rel="noopener">Google Scholar ↗</a></p>
+    </div>
+  </div>
+</section>
+<section class="block" id="contact" aria-labelledby="co-h">
   <div class="wrap sub-h">
     <div><p class="mono">Get in touch</p><h2 id="co-h">Contact</h2></div>
     <div>
