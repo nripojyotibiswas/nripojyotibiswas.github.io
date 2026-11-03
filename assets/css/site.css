@@ -444,6 +444,13 @@ footer{background:var(--abyss);color:var(--on-muted);border-top:1px solid rgba(2
 .group-photo{margin:0 0 clamp(48px,6vw,80px)}
 .group-photo img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:24px;border:1px solid var(--line);background:var(--surface)}
 .group-photo figcaption{margin-top:14px;color:var(--muted)}
+.figs-light{border-top-color:var(--line)}
+.figs-light .fig + .fig{border-left-color:var(--line)}
+.figs-light .fig b{color:var(--ink)}
+.figs-light .fig span{color:var(--muted)}
+.figs-light + .rec-src{color:var(--muted);opacity:1}
+.figs-light + .rec-src a{color:var(--teal)}
+@media (max-width:520px){.figs-light .fig:nth-child(4){border-left-color:var(--line)}}
 
 .rows{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
 .rows li{display:grid;grid-template-columns:150px minmax(0,1fr) auto;gap:6px 28px;align-items:baseline;padding:18px 0;border-bottom:1px solid var(--line)}
