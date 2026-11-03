@@ -12,9 +12,17 @@ orcid: https://orcid.org/0000-0001-5548-1292
 group_url: https://www.uml.edu/research/biswas-geosystems-research-group/
 group_news_url: https://www.uml.edu/research/biswas-geosystems-research-group/news.aspx
 
-# Short line on the home page hero, and the full research statement used on Research and About.
+# Group mission: the short line is on the home page; the full version is on the Research page.
+mission_short: We study how coastal geo-infrastructure fails under storms, erosion, and changing hydrology, and how to see it coming.
+mission: We study how coastal geo-infrastructure fails under storms, erosion, and changing hydrology, and how to see it coming. The group couples granular mechanics with physics-informed machine learning, satellite and robotic sensing, and laboratory experiments to build digital twins for bluffs, foundations, bridges, and embankments.
+
+# The PI's own research statement, shown on the About the PI page.
 lede_short: I study how coastal geo-infrastructure fails under storms, erosion, and changing hydrology, and how to see it coming.
 lede: I study how coastal geo-infrastructure fails under storms, erosion, and changing hydrology, and how to see it coming. My group couples granular mechanics with physics-informed machine learning, satellite and robotic sensing, and laboratory experiments to build digital twins for bluffs, foundations, bridges, and embankments.
+
+# Home page headline
+headline_1: From shoreline
+headline_2: to subsurface
 
 # Join Us text (Group page and home page)
 join_text: Prospective students interested in coastal geotechnics, physics-informed machine learning, or remote sensing are welcome to get in touch.

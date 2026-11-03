@@ -20,7 +20,7 @@ in simple text files ending in `.yml`. To edit one on GitHub:
 | Publications (add a paper, mark one as featured) | `_data/publications.yml` |
 | News items | `_data/news.yml` |
 | Students and alumni | `_data/people.yml` |
-| Courses | `_data/courses.yml` |
+| Courses (shown on the About the PI page) | `_data/courses.yml` |
 | Appointments, education, honors | `_data/cv.yml` |
 | Service, memberships, committees | `_data/service.yml` |
 | Keynotes, webinars, workshops | `_data/talks.yml` |
@@ -28,7 +28,7 @@ in simple text files ending in `.yml`. To edit one on GitHub:
 | Patent | `_data/patents.yml` |
 | Field sites on the map | `_data/sites.yml` |
 | Research theme text | `_data/themes.yml` |
-| Name, email, links, citation numbers, Join Us text, "last updated" date | `_data/profile.yml` |
+| Home headline, group mission, name, email, links, citation numbers, Join Us text, "last updated" date | `_data/profile.yml` |
 
 ### Example: adding a journal article
 
@@ -67,7 +67,7 @@ Open `_data/news.yml` and add an entry at the top:
 
 ## What's where (for reference)
 
-- `index.html`, `research.html`, `publications.html`, `group.html`, `teaching.html`, `news.html`, `about.html`: the pages
+- `index.html`, `research.html`, `publications.html`, `group.html`, `news.html`, `about.html`: the pages (`teaching.html` only forwards old links to the Teaching section of About the PI)
 - `_layouts/` and `_includes/`: shared page parts (head, menu, footer, map, illustrations)
 - `assets/css/site.css`: all styling (colors and fonts are set at the top)
 - `assets/js/site.js`: the interactive parts (hero animation, map, publication explorer, news rail)

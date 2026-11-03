@@ -2,12 +2,12 @@
 <footer>
   <div class="wrap">
     <div class="ft">
-      <div class="who"><b>{{ P.name }}, {{ P.credentials }}</b><p>Assistant Professor<br>{{ P.department }}<br>{{ P.university }}</p><p style="user-select:all">{{ P.email }}</p></div>
-      <div><h4>Explore</h4><ul><li><a href="/research/">Research</a></li><li><a href="/publications/">Publications</a></li><li><a href="/group/">Group</a></li><li><a href="/teaching/">Teaching</a></li><li><a href="/news/">News</a></li><li><a href="/about/">About</a></li></ul></div>
+      <div class="who"><b>{{ P.group_long }}</b><p>{{ P.department }}<br>{{ P.university }}</p><p>Principal Investigator: <a href="/about/">{{ P.name }}, {{ P.credentials }}</a></p><p style="user-select:all">{{ P.email }}</p></div>
+      <div><h4>Explore</h4><ul><li><a href="/research/">Research</a></li><li><a href="/publications/">Publications</a></li><li><a href="/group/">Group</a></li><li><a href="/news/">News</a></li><li><a href="/about/">About the PI</a></li><li><a href="/about/#teaching">Teaching</a></li></ul></div>
       <div><h4>Academic profiles</h4><ul><li><a href="{{ P.scholar | escape }}" target="_blank" rel="noopener">Google Scholar</a></li><li><a href="{{ P.orcid }}" target="_blank" rel="noopener">ORCID</a></li></ul></div>
       <div><h4>Institution</h4><ul><li><a href="{{ P.group_url }}" target="_blank" rel="noopener">Research group at UML</a></li><li><a href="{{ P.group_news_url }}" target="_blank" rel="noopener">Group news at UML</a></li></ul></div>
     </div>
     <div class="word" aria-hidden="true">Shoreline <em>to</em> subsurface</div>
-    <div class="fb"><span>© 2026 {{ P.name }}</span><span>Last updated {{ P.last_updated }}</span></div>
+    <div class="fb"><span>© 2026 {{ P.group_long }}</span><span>Last updated {{ P.last_updated }}</span></div>
   </div>
 </footer>

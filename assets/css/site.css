@@ -79,11 +79,11 @@ button{font:inherit;color:inherit}
 .stage::after{content:"";position:absolute;inset:0;pointer-events:none;background:
    linear-gradient(90deg,rgba(5,13,20,.55) 0%,rgba(5,13,20,.15) 45%,transparent 65%)}
 .c0{position:absolute;z-index:3;left:0;right:0;top:0;padding-top:calc(env(safe-area-inset-top,0px) + clamp(110px,16vh,170px))}
-.c0 .inner{max-width:760px}
+.c0 .inner{max-width:900px}
 .kicker{display:flex;flex-wrap:wrap;gap:8px 18px;color:var(--sandglow);margin-bottom:clamp(18px,3vh,30px)}
 .kicker span{display:inline-flex;align-items:center;gap:10px}
 .kicker span+span::before{content:"";width:18px;height:1px;background:currentColor;opacity:.55}
-.name{font:300 clamp(48px,8.6vw,128px)/1.02 var(--display);letter-spacing:-.035em;font-variation-settings:"opsz" 72}
+.name{font:300 clamp(46px,7.4vw,112px)/1.02 var(--display);letter-spacing:-.035em;font-variation-settings:"opsz" 72}
 .name .ln{display:block;overflow:hidden;padding:.08em .04em .16em 0;margin:-.08em 0 -.16em}
 .name .ln > span{display:inline-block;animation:rise 1.2s var(--ease) both}
 .name .ln:nth-child(2) > span{animation-delay:.12s}
@@ -96,12 +96,17 @@ button{font:inherit;color:inherit}
 .role span{color:var(--on-muted)}
 .lede{margin-top:clamp(14px,2.4vh,22px);max-width:56ch;font:300 clamp(17px,1.55vw,21px)/1.55 var(--display);color:#D6E1E7}
 .hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:clamp(20px,3.4vh,32px)}
-.pillbtn{display:inline-flex;align-items:center;gap:9px;padding:11px 17px;border-radius:12px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.04);
+.pillbtn{display:inline-flex;align-items:center;gap:9px;padding:11px 17px;border-radius:12px;border:1px solid rgba(255,255,255,.22);background:rgba(7,18,27,.55);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
   color:var(--on);text-decoration:none;font-size:14px;font-weight:500;transition:border-color .25s,background .25s}
 .pillbtn:hover{border-color:var(--glow);background:rgba(127,209,195,.1)}
 .pillbtn.solid{background:var(--on);border-color:var(--on);color:var(--navy)}
 .pillbtn.solid:hover{background:var(--sandglow);border-color:var(--sandglow)}
-@media (max-width:640px){.lede{display:none}}
+.pi{margin-top:clamp(18px,3vh,26px);display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;font-size:14.5px;color:var(--on-muted)}
+.pi .mono{color:var(--sandglow);font-size:10.5px}
+.pi a{color:var(--on);font-weight:500;text-decoration:none;border-bottom:1px solid rgba(127,209,195,.5)}
+.pi a:hover{border-bottom-color:var(--glow)}
+.pi .pi-role{flex-basis:100%}
+@media (max-width:640px){.lede{font-size:16.5px}}
 
 .chapters{position:absolute;inset:0;z-index:3;pointer-events:none}
 .chap{position:absolute;left:0;right:0;bottom:clamp(40px,12vh,130px);opacity:0;transform:translateY(30px)}

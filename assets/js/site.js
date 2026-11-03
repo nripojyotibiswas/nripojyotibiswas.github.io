@@ -190,7 +190,7 @@ nav.classList.toggle("solid",scrollY>innerHeight*.4);
 (function(){var path=location.pathname.replace(/index\.html$/,"");
   $$("#links a, #overlay a").forEach(function(a){var h=a.getAttribute("href");if(h&&h!=="/"&&h.indexOf("#")<0&&path.indexOf(h)===0)a.classList.add("on")})})();
 /* old single-page links (e.g. /#teaching) now live on their own pages */
-(function(){var map={"#teaching":"/teaching/","#service":"/about/#service","#contact":"/about/#contact","#funding":"/research/#funding","#sites":"/research/#field"};
+(function(){var map={"#teaching":"/about/#teaching","#service":"/about/#service","#contact":"/about/#contact","#funding":"/research/#funding","#sites":"/research/#field"};
   function go(){if((location.pathname==="/"||/\/index\.html$/.test(location.pathname))&&map[location.hash])location.replace(map[location.hash])}
   go();window.addEventListener("hashchange",go)})();
 

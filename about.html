@@ -1,10 +1,10 @@
 ---
 layout: page
-title: About
+title: About the PI
 permalink: /about/
-kicker: About
+kicker: About the PI · Principal Investigator
 heading: Nripojyoti <em>Biswas</em>
-description: Biography, appointments, education, honors, professional service and contact details for Nripojyoti Biswas, Ph.D.
+description: "About the Principal Investigator, Nripojyoti Biswas, Ph.D.: research statement, appointments, education, teaching, honors, professional service and contact."
 ---
 {% assign P = site.data.profile %}
 <section class="block" aria-labelledby="bio-h">
@@ -21,13 +21,28 @@ description: Biography, appointments, education, honors, professional service an
     </div>
   </div>
 </section>
-<section class="block" aria-labelledby="hn-h">
+<section class="block" id="teaching" aria-labelledby="ct-h">
+  <div class="wrap sub-h">
+    <div><p class="mono">Teaching &amp; mentoring</p><h2 id="ct-h">Courses <em>taught</em></h2><p class="lead">ASCE ExCEEd Fellow (2025), trained in evidence-based civil engineering pedagogy.</p></div>
+    <div>
+      {% assign insts = site.data.courses | map: "institution" | uniq %}
+      {% for inst in insts %}
+      <p class="course-inst">{{ inst }}</p>
+      <ul class="rows">
+        {% for c in site.data.courses %}{% if c.institution == inst %}<li><span class="when">{{ c.code }}</span><span class="what">{{ c.title }}<small>{{ c.terms }}</small></span>{% if c.upcoming %}<span class="tagx">Upcoming</span>{% else %}<span></span>{% endif %}</li>
+        {% endif %}{% endfor %}
+      </ul>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<section class="block alt" aria-labelledby="hn-h">
   <div class="wrap sub-h">
     <div><p class="mono">Recognition</p><h2 id="hn-h">Honors &amp; <em>awards</em></h2></div>
     <ul class="rows">{% for x in site.data.cv.honors %}<li><span class="when">{{ x.years }}</span><span class="what">{{ x.text }}</span><span></span></li>{% endfor %}</ul>
   </div>
 </section>
-<section class="block alt" id="service" aria-labelledby="sv-h">
+<section class="block" id="service" aria-labelledby="sv-h">
   <div class="wrap sub-h">
     <div><p class="mono">Profession &amp; community</p><h2 id="sv-h">Service</h2></div>
     <div class="cols2" style="grid-template-columns:1fr">
@@ -39,7 +54,7 @@ description: Biography, appointments, education, honors, professional service an
     </div>
   </div>
 </section>
-<section class="block" id="contact" aria-labelledby="co-h">
+<section class="block alt" id="contact" aria-labelledby="co-h">
   <div class="wrap sub-h">
     <div><p class="mono">Get in touch</p><h2 id="co-h">Contact</h2></div>
     <div>

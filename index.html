@@ -1,6 +1,6 @@
 ---
 layout: default
-description: Nripojyoti Biswas, Assistant Professor of Civil and Environmental Engineering at UMass Lowell, and the Biswas Geosystems Research Group. Coastal geotechnics, geohazards, sustainable geosystems, remote sensing, and physics-informed machine learning.
+description: The Biswas Geosystems Research Group at UMass Lowell studies coastal geotechnics, geohazards, sustainable geosystems, remote sensing, and physics-informed machine learning. Principal Investigator Nripojyoti Biswas, Ph.D.
 ---
 {% assign P = site.data.profile %}
 <!-- =================== HERO: the descent =================== -->
@@ -10,14 +10,13 @@ description: Nripojyoti Biswas, Assistant Professor of Civil and Environmental E
       <canvas id="sea" aria-hidden="true"></canvas>
       <div class="c0" id="c0">
         <div class="wrap"><div class="inner">
-          <p class="kicker mono fade-in"><span>Coastal geotechnics</span><span>Geohazards</span><span>Physics-informed ML</span></p>
-          <h1 class="name"><span class="ln"><span>Nripojyoti</span></span><span class="ln"><span>Biswas, <em>{{ P.credentials }}</em></span></span></h1>
-          <p class="role fade-in"><b>{{ P.position }}</b><span>{{ P.university }}</span></p>
-          <p class="lede fade-in">{{ P.lede_short }}</p>
+          <p class="kicker mono fade-in"><span>{{ P.group_long }}</span><span>UMass Lowell</span></p>
+          <h1 class="name"><span class="ln"><span>{{ P.headline_1 }}</span></span><span class="ln"><span><em>{{ P.headline_2 }}</em></span></span></h1>
+          <p class="lede fade-in">{{ P.mission_short }}</p>
+          <p class="pi fade-in"><span class="mono">Principal Investigator</span><a href="/about/">{{ P.name }}, {{ P.credentials }}</a><span class="pi-role">{{ P.position }}, {{ P.university }}</span></p>
           <div class="hero-actions fade-in">
             <a class="pillbtn solid" href="/research/">Explore the research</a>
-            <a class="pillbtn" href="{{ P.scholar | escape }}" target="_blank" rel="noopener">Google Scholar</a>
-            <a class="pillbtn" href="{{ P.orcid }}" target="_blank" rel="noopener">ORCID</a>
+            <a class="pillbtn" href="/group/#join">Join Us</a>
           </div>
         </div></div>
       </div>
