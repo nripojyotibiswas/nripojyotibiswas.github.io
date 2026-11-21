@@ -1,0 +1,19 @@
+# RESEARCH OUTCOMES — conference papers shown on the Research page, below the funded project.
+
+- venue: UNSAT 2027
+  title: A physics-guided Gaussian process framework for wave-driven wetting in partially saturated coastal bluffs
+  authors: F. Karbalaee, <b>N. Biswas</b>
+  image: /assets/img/paper-pg-gpr-roc.jpg
+  alt: ROC curve of the PG-GPR model, AUC 0.881, with chance line
+  caption: Out-of-sample ROC curve (leave-one-run-out) for the physics-guided GPR model.
+  text: >-
+    Coastal bluff failure can begin inside the partially saturated soil, where wave-driven wetting weakens the suction that holds the bluff together. This work builds a physics-guided Gaussian process surrogate, trained on a database of high-resolution CFD simulations, to predict wetting above the water level quickly and reliably, without rerunning the full simulations for every wave and soil condition.
+
+- venue: ASCE 2027
+  title: Use of satellite-based remote sensing for monitoring geotechnical hazards after extreme climatic events
+  authors: U. Yaduwanshi, <b>N. Biswas</b>
+  image: /assets/img/paper-cotton-brook-insar.jpg
+  alt: Sentinel-1 colour interferogram of the Cotton Brook landslide area, Vermont
+  caption: Sentinel-1 interferogram, 27 April – 2 June 2019, Cotton Brook landslide, Vermont.
+  text: >-
+    Landslides triggered by extreme rainfall are hard to monitor on the ground, especially on steep, forested slopes. This work tests whether free satellite data can detect and characterize such failures, using the 2019 Cotton Brook landslide in Vermont as a case study that combines Sentinel-1 radar interferometry, Sentinel-2 vegetation and moisture indices, and rainfall and soil records.

@@ -1,0 +1,21 @@
+<section class="field sec dark-sec papers" id="outcomes" aria-labelledby="oc-h">
+  <div class="wrap">
+    <div class="head">
+      <div><p class="mono">Conference papers</p><h2 id="oc-h">Our ongoing research <em>outcomes</em></h2></div>
+      <p>Recent work from the group, from CFD-trained surrogates to satellite monitoring of rainfall-triggered landslides.</p>
+    </div>
+    <div class="funding">
+      {% for p in site.data.papers %}
+      <article class="rp">
+        <figure class="rp-fig"><img src="{{ p.image }}" alt="{{ p.alt }}" width="800" height="600" loading="lazy"><figcaption>{{ p.caption }}</figcaption></figure>
+        <div class="rp-body">
+          <span class="tag ok">Conference paper · {{ p.venue }}</span>
+          <h3>{{ p.title }}</h3>
+          <p class="rp-meta">{{ p.authors }} · UMass Lowell</p>
+          <p class="rp-desc">{{ p.text }}</p>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
